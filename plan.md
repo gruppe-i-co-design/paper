@@ -1,18 +1,20 @@
 # Some planning notes
 
+- [ ] Format and cleanup VHDL and C code (Ole)
+
 - [ ] Rewrite methods to explain more our approach to the project as a whole instead of individual algoritms. (Anders)
 
 > The methods section tells readers how you conducted your study. It includes information about your population, sample, methods, and equipment. The “gold standard” of the methods section is that it should enable readers to duplicate your study. Methods sections typically use subheadings; they are written in past tense, and they use a lot of passive voice. This is typically the least read section of an IMRaD report.
 
-- [ ] Write introduction which explains the challange with hardware/software considerations and that we are setting out to explore benefits and disadvantages with different solutions.
+- [ ] Write introduction which explains the challange with hardware/software considerations and that we are setting out to explore benefits and disadvantages with different solutions. (Ole)
 
 > The introduction explains why this research is important or necessary or important. Begin by describing the problem or situation that motivates the research. Move to discussing the current state of research in the field; then reveal a “gap” or problem in the field. Finally, explain how the present research is a solution to that problem or gap. If the study has hypotheses, they are presented at the end of the introduction.
 
-- [ ] Move images into GitHub repo for paper (from Google Drive).
+- [ ] Move images into GitHub repo for paper (from Google Drive). (Ole)
 
 - [ ] Sort and organize links/references used.
 
-- [ ] Write results from odd-even sort.
+- [ ] Write results from odd-even sort. (Rahm)
 
 - [ ] Cleanup results chapter (each subchapter should have similar structure).
 	- [ ] Selection sort explanations and figures.
