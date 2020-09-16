@@ -18,7 +18,7 @@
 	- [ ] Selection sort explanations and figures.
 	- [ ] Linear cell sort explanations and figures.
 
-- [ ] Digitize FSMD and ASMD charts for odd-even sort.
+- [ ] Digitize FSMD and ASMD charts for odd-even sort. (Anders)
 
 - [ ] Write discussion topics
 	- [ ] Concrete comparison of our algoritms in terms of speed, size (space) and parallelization. Talk about why there was no parallelization in HW implementation of selection sort a lot of parallalization in linear sort.
@@ -31,3 +31,4 @@
 - [ ] Write conclusion based on discussed topics in discussion. Many tradeoffs between HW and SW.
 
 - [ ] Write abstract.
+
