@@ -5,9 +5,23 @@ author:
     - Rahmat Mozafari
     - Ole Martin Ruud
     - Øzlem Tuzkaya
-date: 2020-09-21
-instituition: University of South-Eastern Norway
+institute: University of South-Eastern Norway
+date: 21.09.2020
+lang: en-US
+bibliography: paper.bib
+header-includes: |
+    \usepackage[toc,page]{appendix}
 ---
+
+# Test
+
+You can in @fig:example see a graph.
+
+```{#fig:example .matplotlib preamble=style.py caption="A simple figure"}
+plt.figure()
+plt.plot([0,1,2,3,4], [1,2,3,4,5])
+plt.title('This is an example figure')
+```
 
 # Vision statement
 
@@ -66,15 +80,14 @@ After going through our architectures / chars and verifying that it should work 
 
 ---------- move or delete above ---------- 
 
- 
 
 
 # Results
 
-In this section we will discuss the results we gathered throughout our research with regards to the different algorithms.  
+In this section we will discuss the results we gathered throughout our research with regards to the different algorithms.
 
 
-## Selection Sort
+## Selection sort
 
 Selection sort is the simplest sorting algorithm. In our implementation it will find the smallest element in the array and swap it with the element in the first position. then it will find the second smallest element and swap it with the element in the second position, and it will keep on doing this until the entire array is sorted. It has an O(n^2) time complexity and this is inefficient on large arrays. The input array divides into two subarrays, a sorted subarray of elements which is built up from the top to the bottom and the remaining unsorted elements occupy the rest of the array. 
 
@@ -208,25 +221,22 @@ TODO add code from file
 
 ### Software implementation
 
+# Discussion
 
-# Appendix 
+TODO
 
-Click to the links and it will navigate you to the files. 
+# Conclusion
 
-[VHDL code for the hardware implementation for  Selection sort](https://drive.google.com/drive/u/0/folders/11M6L_d4wSiqDomZrZS4rpU_q2PV-XrMc)
+TODO
 
-[Software implementation code  for Selection sort](https://drive.google.com/drive/u/0/folders/1VvU5pwuXmeHH2R9Az5_1_RrhUMAYxoEJ)
+# References {-}
 
-[IP implementation code for the Selection sort](https://drive.google.com/drive/u/0/folders/1E7tOzUvZYuaMUpTJExdSYgssHIWZG2uI)
 
-[VHDL code for the hardware implementation for the linear cell sort](https://drive.google.com/drive/u/0/folders/1FGTspiUHSEMUZeLDCJAXLv5cFgNYWshZ)
+::: {#refs}
+:::
 
-[Software implementation code  for the linear cell sort](https://drive.google.com/drive/u/0/folders/1RMSNPuhLWe77ts9YGAc6EpMlsd6bUva0)
-
-All FSMD and ASMD charts 
-
-[ASMD and FSMD charts](https://app.lucidchart.com/invitations/accept/4f18b690-f5b3-4d20-a44a-b7fe59f9f84e)  (To navigate between diagrams click on page at the bottom of file)
-
+\clearpage
+\appendix
 
 # Links
 
