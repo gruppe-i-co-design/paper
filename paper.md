@@ -1,168 +1,44 @@
-# Title of paper
-
-University of South-Eastern Norway, Kongsberg
-
-Title of the paper
-
-subtitle
-
-(sorted by last name)
-
-Anders Mæhlum Halvorsen  \
-Rahmat Mozafari \
-Ole Martin Ruud \
- Øzlem Tuzkaya
-
+---
+title: An Exploration of Hardware and Software Array Sorting
+author:
+    - Anders Mæhlum Halvorsen
+    - Rahmat Mozafari
+    - Ole Martin Ruud
+    - Øzlem Tuzkaya
+date: 2020-09-21
+instituition: University of South-Eastern Norway
+---
 
 ## Vision statement
 
 Explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
 
+## Abstract
 
-## Storyboard
-
-
-### Figure 1.1 (FSMD architecture for Selection sort)
-
-
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image1.png "image_tooltip")
-
-
-
-### Figure 1.2 (ASMD chart for Selection sort)
-
-
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image2.png "image_tooltip")
-
-
-
-### Figure 1.3 (Result from hardware implementation of Selection sort)
-
-
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image3.png "image_tooltip")
-
-
-The link above will navigate you to the directory where you can see simulation pictures in good quality. 
-
-[Click here to see more pictures of simulation](https://drive.google.com/drive/u/0/folders/1ffAJxOUncl40DwOUA_8caFRPS7MD4N5g)
-
-
-### Figure 1.4 (Result from software implementation of Selection sort)
-
-
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image4.png "image_tooltip")
- \
- \
-Figure 1.3 (Result from hardware implementation of linear cell sort) 
-
-
-
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image5.png "image_tooltip")
-
-
-The link above will navigate you to the directory where you can see simulation pictures in good quality. 
-
-[Click here to see more pictures of simulation](https://drive.google.com/drive/u/0/folders/1FGTspiUHSEMUZeLDCJAXLv5cFgNYWshZ)
-
-
-### Figure 2.1 (FSMD architecture of linear cell sort)
-
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image6.png "image_tooltip")
- \
-Figure 2.1.1 (FSMD architecture of single cell in linear cell sort) \
-
-
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image7.png "image_tooltip")
- \
-
-
-
-### Figure 2.1.2 (FSMD architecture of sort controller)
-
-<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image8.png "image_tooltip")
-Figure 2.2 (ASMD chart of linear cell sort) \
-
-
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image9.png "image_tooltip")
- \
-
-
-
-### Figure 2.2.1 (ASMD chart of single cell in linear cell sort)
-
-
-
-<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image10.png "image_tooltip")
- \
-
-
-Figure 2.2.2 (ASMD chart for sort controller) \
-
-
-<p id="gdcalert11" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image11.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert12">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image11.png "image_tooltip")
-
-
+TODO write abstract
 
 ## Introduction
 
-(Something here)
-
+TODO write introduction
 
 ## Methods
 ---------- new below ----------
 
-Our goal for this papaer was to explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
+Our goal for this paper was to explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
 
-For all of our algorithms we followed the same steps. We started by creating an FSMD architecture of the overall algorithm we were currently building; we did this to get an overview of what componenets and signals were needed. Based on the FSMD architecture created, we then designed the ASMD chart, this was done to easily convert the chart into code when implementing, while also having a good overview of the states the algorithm needed.
+For all of our algorithms, we followed the same steps. We started by creating an FSMD architecture of the overall algorithm we were currently building; we did this to get an overview of what components and signals were needed. Based on the FSMD architecture created, we then designed the ASMD chart, this was done to easily convert the chart into code when implementing, while also having a good overview of the states the algorithm needed.
 
 After finishing making all of the necessary charts, we then started to implement the sorting algorithm into Vivado. To make the code as reusable as possible we made a new file for each of our components. We also made the last two algorithms generic, such that the inputs and sizes could be adjusted by the user. 
 
-To confirm that our sorting algorithms worked as excpected we created a test bench for the project, and analysed the outputs to see weather we achived to create the algorithm or not.
+To confirm that our sorting algorithms worked as expected we created a test bench for the project and analysed the outputs to see whether we achieved to create the algorithm or not.
 
-The implementation of software in contrast to the hardware was a much more straight forward process. We used Vitis to connect our Zybo board to our computer and created a C file that would be used to implmenet the algorithm. For testing we used the buildt in Vitis console.
+The implementation of software in contrast to the hardware was a much more straight forward process. We used Vitis to connect our Zybo board to our computer and created a C file that would be used to implement the algorithm. For testing, we used the built-in Vitis console.
 
-For our first algoritm we tried to implement an IP implmentation. This turned out to be a very time consuming process; seeing that the implmentation of the IP wouldn't have had such an impact on we therefore chose to not include this in our paper. We spent about thirty hours trying to troubleshoot without finding a solution. 
-
-(30t on IP) 
+For our first algorithm, we made an effort to implement an IP implementation. Troubleshooting and implementation turned out to be an immensely time-consuming process. Seeing that the implementation of the IP would not have had a significant impact on our vision or result for our paper, we chose to exclude it.
 
 ---------- new above ----------
+
+---------- move or delete below ----------
 
 For our first sorting algorithm we decided to implement selection sort. The selection sort algorithm sorts an array by repeatedly finding the smallest element and swapping it with the first non-sorted element. If the first non-sorted element is the smallest, it will be “swapped” with itself. After swapping, we sort the remaining part of the array in similar fashion until the entire array is sorted. 
 
@@ -188,7 +64,7 @@ After learning from our previous mistake by starting with the ASMD chart instead
 
 After going through our architectures / chars and verifying that it should work as expected, we started implementing the hardware implementation in Vivado. Similar to the previous sorting algorithm, the process was quite straightforward. We made sure to make the files as reusable as possible. Though, unlike the previous implementation, we made this implementation generic; meaning that we could define the length and size of the array in the top level file, instead of hard-coding the length inside the components.
 
- 
+---------- move or delete above ---------- 
 
  
 
@@ -202,208 +78,42 @@ In this section we will discuss the results we gathered throughout our research 
 
 Selection sort is the simplest sorting algorithm. In our implementation it will find the smallest element in the array and swap it with the element in the first position. then it will find the second smallest element and swap it with the element in the second position, and it will keep on doing this until the entire array is sorted. It has an O(n^2) time complexity and this is inefficient on large arrays. The input array divides into two subarrays, a sorted subarray of elements which is built up from the top to the bottom and the remaining unsorted elements occupy the rest of the array. 
 
-The following example explains the necessary steps in our implementation of the selection sort algorithm. 
-
-
-
-<p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image12.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image12.png "image_tooltip")
-
-
-Find the minimum element in RAM [0...4] and place it at the beginning.
-
-
-
-<p id="gdcalert13" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image13.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert14">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image13.png "image_tooltip")
-
-
-Find the minimum element in RAM [1...4] and place it at beginning [1...4].
-
-
-
-<p id="gdcalert14" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image14.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert15">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image14.png "image_tooltip")
-
-
-Find the minimum element in RAM [2...4] and place it at beginning [2...4].
-
-
-
-<p id="gdcalert15" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image15.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert16">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image15.png "image_tooltip")
-
-
-Find the minimum element in RAM [3...4] and place it at beginning [3...4].
-
-
-
-<p id="gdcalert16" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image16.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert17">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image16.png "image_tooltip")
-
+See appendix \ref{} for a visual explanation of the algorithm.
 
 
 #### Hardware Implementation
 
 In the hardware implementation we have created a generic counter and register which we want to reuse as much code as possible. The comparing counter is set to 1 as a default value and output of the ram will be the first element in the array when we run the program. We temporarily store this index value of this element in a register and increment the index counter to compare the elements to find the smallest element in the array. Again we temporarily store the index and the value of the smallest element in registers, then we swap those elements till the array is sorted. We have removed the ram from the design file into the test bench file which we wanted an external ram instead of an internal ram.
 
-
-
-<p id="gdcalert17" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image17.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert18">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image17.png "image_tooltip")
-
-
-File hierarchy for the hardware implementation.
-
-
-
-<p id="gdcalert18" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image18.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert19">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image18.png "image_tooltip")
-
+TODO add image of synth report
 
 Synthesized report (Shows the power consumption) 
 
 
+TODO add image of elaborated schematic
 
-<p id="gdcalert19" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image19.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert20">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image19.png "image_tooltip")
-
-
-Schematic of Elaborated design (external RAM) 
+Schematic of Elaborated design
 
 
 
-<p id="gdcalert20" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image20.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert21">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image20.png "image_tooltip")
-
+TODO add image of synthesized report
 
 Summary of synthesized report
-
-
-
-<p id="gdcalert21" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image21.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert22">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image21.png "image_tooltip")
 
 
 The picture below shows an unsorted array in the ram when the program starts. 
 
 
-
-<p id="gdcalert22" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image22.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert23">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image22.png "image_tooltip")
-
-
-swapping 77 with 01
-
-
-
-<p id="gdcalert23" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image23.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert24">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image23.png "image_tooltip")
-
-
-swapping the last elements
-
-
-
-<p id="gdcalert24" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image24.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert25">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image24.png "image_tooltip")
-
-
-Now array are sorted in the ram
+TODO add images of waveform diagrams
 
 
 #### Software Implementation
 
 The implementation of the algorithm in software was quick to write, and certainly inspired by the hardware implementation. To keep it consistent, we decided to stick with similar names for the different components (in particular index_counter and comparing_tindex_counter). This means that it should be easy to compare the implementations. We have tested the software implementation on Zybo board and worked perfectly.
 
-Below is the code produced for the software implementation.
+In listing \ref{} you can see the code.
 
-
-```
-#include <stdio.h>
-#include "platform.h"
-#include "xil_printf.h"
-
-void sort(unsigned int *array, unsigned int length);
-void print_array(unsigned int *array, unsigned int length);
-
-const unsigned int DATA_LEN = 9;
-unsigned int data[] = {14, 3, 8, 12, 5, 4, 5, 1, 77};
-
-int main()
-{
-	init_platform();
-
-	print("\n\rbefore: ");
-	print_array(data, DATA_LEN);
-
-	sort(data, DATA_LEN);
-
-	print("\n\rafter : ");
-	print_array(data, DATA_LEN);
-
-	cleanup_platform();
-	return 0;
-}
-
-void sort(unsigned int *array, unsigned int length) {
-
-	for (int index_counter = 0; index_counter < length; ++index_counter) {
-		// Set index_counter element as smallest found element
-		unsigned int smallest_index = index_counter;
-		unsigned int smallest_value = array[index_counter];
-		
-		// Compare smallest element with rest of array and keep the smallest element
-		// found (including index)
-		for (int comparing_index_counter = index_counter + 1; comparing_index_counter < length; ++comparing_index_counter) {
-			if (array[comparing_index_counter] < smallest_value) {
-				smallest_value = array[comparing_index_counter];
-				smallest_index = comparing_index_counter;
-			}
-		}
-
-		// Swap first and smallest elements
-		unsigned int temp = array[index_counter];
-		array[index_counter] = smallest_value;
-		array[smallest_index] = temp;
-	}
-}
-
-void print_array(unsigned int *array, unsigned int length) {
-	for (int i = 0; i < length; ++i) {
-		char buf[10];
-		sprintf(buf, "%2d%s", array[i], i + 1 == length ? "" : ", ");
-		print(buf);
-	}
-}
-```
-
+TODO add code from file as listing
 
 
 #### IP Implementation
@@ -413,47 +123,16 @@ In IP implementation we followed the “Vivado Quick Start Tutorial” and made 
 After this we created a new block design to integrate our IP, added and customized the “ZYNQ7 Processing System”. Our next step was that we added “selection_sort_IP_v1.0” into our design and created HDL Wrapper. Further we added the sort controller and the block memory IP blocks into our design. The block memory generator is the previously explained external RAM, while the sort controller enables us to inspect the memory after it has be sorted (simply enabling our software running on the ZYNQ prossessor to read the memory through AXI). 
 
 
-
-<p id="gdcalert25" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image25.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert26">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image25.png "image_tooltip")
-
+TODO add image of IP block diagram
 
 The IP block diagram including the selection sort block, sort controller and memory
-
-
-
-<p id="gdcalert26" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image26.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert27">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image26.png "image_tooltip")
-
-
-Synthesized power consumption report  
-
-
-
-<p id="gdcalert27" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image27.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert28">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image27.png "image_tooltip")
-
-
-<p id="gdcalert28" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image28.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert29">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image28.png "image_tooltip")
-
-
-Schematic of Elaborated design ( we need to update this two images)
 
 Finally, after putting together the different IP blocks, we generated a bitstream to see if there was any error and also we needed to export hardware design  to the Vitis IDE. In Vitis IDE we first created a project platform for the (XSA) file extension which exported from the Vivado and generated multiple domains. We built the project and created a new application project for the software application to test our IP implementation.
 
 To communicate with the sort controller, enabling us to read the sorted memory, we need to talk through the AXI interface. This is done using some special functions provided by the platform. By reading slave register 2 of the sort controller, we can tell if the sorting is done, as the first bit represents the sort_done variable. Further by then repeatedly reading slave register 1, we will get the contents of the memory block, as the sort controller continuously updates the RAM address and reads the data into the slave register. 
 
 
-```
+```c
 #include "xparameters.h"
 #include "xuartps_hw.h"
 
@@ -488,154 +167,46 @@ Linear cell sort receives data once per clock cycle and sorts the data while it'
 
 Since we decided to make the algorithm generic it will let you decide the size and length of the array. As you can see from figure 2.1 (Top FSMD architecture), the amount of cells will be the same as array size. New incoming data will be placed to the cell from top to bottom with increasing size. So when all cells are empty the first element will automatically take the first place. Second incoming data will be compared with the first element, if it's smaller than the first element then the first element will be moved to the second cell and the new data will be placed to the first cell. Third incoming data will be compared with the other cells, if the incoming data is smaller than the first cell then we have a full and pushed.The data in the first cell will be pushed to the second cell and the data in the second cell will be pushed to third cell and the new incoming data will be placed to the first cell. The sorting algorithm will continue like this until the whole array is sorted.  
 
-Hardware implementation of linear cell sort
+#### Hardware implementation
 
 The implementation of linear cell sort algorithms was more complicated than Selection sort.  We needed to draw multi FSMD and ASMD charts to implement this in hardware. Since this algorithm uses cells and to implement this in hardware we needed to draw a FSMD and ASMD chart for this to control each cell. Then we draw another FSMD and ASMD chart to control all cells and plus other components. In our implementation we neither use RAM or ROM.
 
-
-
-<p id="gdcalert29" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image29.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert30">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image29.png "image_tooltip")
-
-
-File hierarchy of design sources
-
-
-
-<p id="gdcalert30" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image30.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert31">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image30.png "image_tooltip")
-
+TODO add image of schematic
 
 Schematic of elaborated design
 
 
-
-<p id="gdcalert31" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image31.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert32">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image31.png "image_tooltip")
-
+TODO add image of synth report
 
 Synthesized report of On-Chip Power
 
- 
 
-<p id="gdcalert32" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image32.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert33">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image32.png "image_tooltip")
-
+TODO add image of utilization report
 
 Utilization synthesized report
 
 
-## 
-
-<p id="gdcalert33" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image33.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert34">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image33.png "image_tooltip")
-
-
-<p id="gdcalert34" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image34.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert35">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image34.png "image_tooltip")
-
-
-If the pictures are unreadable so please,  see the appendix for links and it will navigate you to a directory where you can see pictures in good quality. 
-
-
-### Software implementation
+#### Software implementation
 
 Since this algorithm is parallel by nature, there are some tradeoffs to be made when implementing it in software. As we only have a single core to work with, we have chosen to simply transform it into a sequential algorithm. This means that instead of O(N) time complexity, it will be O(N²) time complexity (as we have to iterate through every cell on every insertion). As such, we chose to handle the algorithm by having a ROM and a pointer to the “incoming” input, and Instead of using cells, we chose to use an array to be simulated as multiple cells.
 
 The implementation was tested on the Zybo board, and it returned the expected outcome.
 
 
-
-<p id="gdcalert35" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image35.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert36">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image35.png "image_tooltip")
-
+TODO add image of vitis serial terminal
 
 Result from inspecting the serial monitor
 
 
-```
-#include "xparameters.h"
-#include "xuartps_hw.h"
+TODO add code from file
 
-#include <stdio.h>
+### Odd-even sort
 
-#define DATA_LENGTH 8
 
-void shiftAndReplace(unsigned int fromPosition, unsigned int newValue);
-void print_array(unsigned int *array, unsigned int length);
-void sort(unsigned int *array, unsigned int length);
 
-unsigned int data[DATA_LENGTH] = {7, 4, 2, 12, 4, 6, 4, 100};
-unsigned int sorted_data[DATA_LENGTH] = {0, 0, 0, 0, 0, 0, 0, 0};
+#### Hardware implementation
 
-int main() {
-    //init_platform();
-
-    // Sorts the array "data", that is in this case used as a ROM
-    sort(data, DATA_LENGTH);
-
-    // Prints out the sorted array
-    print_array(sorted_data, DATA_LENGTH);
-
-    //cleanup_platform();
-    return 0;
-}
-
-void sort(unsigned int *array, unsigned int length) {
-    for (int i = 0; i < length; i++){
-   	 // The contents of this loop is done in parallel in the hardware implementation, however we do it sequentially to simplify the software implementation
-
-   	 if((i == 0)){
-   		 sorted_data[i] = array[i];
-   	 } else {
-   		 for(int j = 0; j < length; j++){
-   			 // If true, then move every element in the array to the right
-   			 if(sorted_data[j] > array[i]){
-   				 // Logic for moving and replacing here
-   				 shiftAndReplace(j, array[i]);
-   				 break;
-   			 } else if (sorted_data[j] == '\0' && sorted_data[j-1] != '\0') {
-   				 // Else if the element is bigger, we place it in the empty spot
-   				 sorted_data[j] = array[i];
-   				 break;
-   			 }
-   		 }
-   	 }
-    }
-}
-
-void shiftAndReplace(unsigned int fromPosition, unsigned int newValue){
-    for(int i = DATA_LENGTH - 1; i > fromPosition; i--){
-   	 sorted_data[i] = sorted_data[i-1];
-    }
-    sorted_data[fromPosition] = newValue;
-}
-
-void print_array(unsigned int *array, unsigned int length) {
-    printf("Sorted Array: ");
-    for (int i = 0; i < length; ++i) {
-   	 char buffer[10];
-   	 sprintf(buffer, "%2d%s", array[i], i + 1 == length ? "" : ", ");
-   	 printf(buffer);
-    }
-    printf("\n");
-}
-```
-
+#### Software implementation
 
 
 ## Appendix 
