@@ -17,12 +17,12 @@ uint hibit(uint n);
 int main() {
   init_platform();
 
-  fputs("\n\rbefore: ", stdout);
+  fputs("\rodd-even merge sort\rbefore: ", stdout);
   print_array(data, DATA_LEN);
 
   sort(data, DATA_LEN);
 
-  fputs("\n\rafter : ", stdout);
+  fputs("\rafter : ", stdout);
   print_array(data, DATA_LEN);
 
   cleanup_platform();

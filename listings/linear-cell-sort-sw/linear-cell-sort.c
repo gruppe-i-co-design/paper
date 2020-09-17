@@ -16,13 +16,13 @@ void shift_and_replace(uint *data, uint length, uint from_position,
 int main() {
   init_platform();
 
-  fputs("\n\rbefore: ", stdout);
+  fputs("\rlinear cell sort\rbefore: ", stdout);
   print_array(data, DATA_LEN);
 
   uint sorted_data[DATA_LEN] = {};
   sort(sorted_data, data, DATA_LEN);
 
-  fputs("\n\rafter: ", stdout);
+  fputs("\rafter : ", stdout);
   print_array(sorted_data, DATA_LEN);
 
   cleanup_platform();
