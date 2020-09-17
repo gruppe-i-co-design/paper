@@ -79,14 +79,14 @@ In this section we will discuss the results we gathered throughout our research 
 
 ## Selection sort
 
-Selection sort is the simplest sorting algorithm. In our implementation it will find the smallest element in the array and swap it with the element in the first position. then it will find the second smallest element and swap it with the element in the second position, and it will keep on doing this until the entire array is sorted. It has an O(n^2) time complexity and this is inefficient on large arrays. The input array divides into two subarrays, a sorted subarray of elements which is built up from the top to the bottom and the remaining unsorted elements occupy the rest of the array. 
+The selection sort is the most straightforward sorting algorithm. Our implementation will identify the minimum element in the array and swap it with the element in the primary position. Then it will identify the second position minimum element and swap it with the element in the second location, and it will continue executing this until the entire array is sorted. It has an O(n^2) time complexity, and this is inefficient on large arrays. The input array divides into two subarrays, a sorted subarray of elements built up from top to bottom, and the remaining unsorted elements occupy the rest of the array.
 
 See appendix \ref{} for a visual explanation of the algorithm.
 
 
 ### Hardware Implementation
 
-In the hardware implementation we have created a generic counter and register which we want to reuse as much code as possible. The comparing counter is set to 1 as a default value and output of the ram will be the first element in the array when we run the program. We temporarily store this index value of this element in a register and increment the index counter to compare the elements to find the smallest element in the array. Again we temporarily store the index and the value of the smallest element in registers, then we swap those elements till the array is sorted. We have removed the ram from the design file into the test bench file which we wanted an external ram instead of an internal ram.
+We have created a generic counter and register in the hardware implementation, which we want to reuse as much code as possible. The comparing counter is set to 1 as a default value, and the output of the ram will be the first element in the array when we run the program. We temporarily store this index value of this element in a register and increment the index counter to compare the elements to find the smallest element in the array. Again we temporarily store the index and the value of the smallest element in registers, then we swap those elements till the array is sorted. We have removed the ram from the design file into the test bench file, which we wanted an external ram instead of an internal ram.
 
 TODO add image of synth report
 
@@ -121,9 +121,9 @@ TODO add code from file as listing
 
 ### IP Implementation
 
-In IP implementation we followed the “Vivado Quick Start Tutorial” and made some necessary changes in some files. We declared some output ports and port mapped those in the  “selection_sort_IP_v1_0.vhd”. Next, we made a component declaration and created some signals for inputs and outputs in the “selection_sort_IP_v1_0_S00_AXI.vhd” file. The VHDL description files which were created for the hardware implementation of selection sort algorithm we copied those files into IP directory and created a new AXI4 Peripheral for IP. 
-
-After this we created a new block design to integrate our IP, added and customized the “ZYNQ7 Processing System”. Our next step was that we added “selection_sort_IP_v1.0” into our design and created HDL Wrapper. Further we added the sort controller and the block memory IP blocks into our design. The block memory generator is the previously explained external RAM, while the sort controller enables us to inspect the memory after it has be sorted (simply enabling our software running on the ZYNQ prossessor to read the memory through AXI). 
+In the IP-implementation, we followed the “Vivado Quick Start Tutorial” and made some necessary changes in some files. We declared some output ports and port mapped those in the “selection_sort_IP_v1_0.vhd”. Next, we made a component declaration and created some signals for inputs and outputs in the “selection_sort_IP_v1_0_S00_AXI.vhd” file. The VHDL description files created for the hardware implementation of the selection sort algorithm we copied those files into the IP directory and created a new AXI4 Peripheral for IP.
+ Comment
+After this, we created a new block design to integrate our IP, added, and customized the “ZYNQ7 Processing System”. Our next step was that we added “selection_sort_IP_v1.0” into our design and created HDL Wrapper. Further, we added the Sort Controller and the block memory IP blocks into our design. The block memory generator is the previously explained external RAM, while the Sort Controller enables us to inspect the memory after it has been sorted (simply enabling our software running on the ZYNQ processor to read the memory through AXI). 
 
 
 TODO add image of IP block diagram
@@ -166,9 +166,9 @@ int main(){
 
 ## Linear cell sort
 
-Linear cell sort [@linear-cell-sort] receives data once per clock cycle and sorts the data while it's being clocked in serially, that's why this algorithm is called linear cell sort. Hence it can sort an array in O(N) time complexity. After we have clocked in our data the array will be sorted immediately and should be ready to clocked out. The solution provides the sorting in parallel. 
+Linear cell sort [@linear-cell-sort] receives data once per clock cycle and sorts the data while it is being clocked in serially; that is why this algorithm is called linear cell sort. Hence it can sort an array in O(N) time complexity. After we have clocked in our data, the array will be sorted immediately and ready to clock out. The solution provides the sorting in parallel. 
 
-Since we decided to make the algorithm generic it will let you decide the size and length of the array. As you can see from figure 2.1 (Top FSMD architecture), the amount of cells will be the same as array size. New incoming data will be placed to the cell from top to bottom with increasing size. So when all cells are empty the first element will automatically take the first place. Second incoming data will be compared with the first element, if it's smaller than the first element then the first element will be moved to the second cell and the new data will be placed to the first cell. Third incoming data will be compared with the other cells, if the incoming data is smaller than the first cell then we have a full and pushed.The data in the first cell will be pushed to the second cell and the data in the second cell will be pushed to third cell and the new incoming data will be placed to the first cell. The sorting algorithm will continue like this until the whole array is sorted.  
+Since we decided to make the algorithm generic, it will let the user decide the array's size and length. Figure 2.1 (Top FSMD architecture), the number of cells will be the same as the array size. New incoming data will be placed to the cell from top to bottom with increasing size. So when all cells are empty, the first element will automatically take the first place. Second incoming data will be compared with the first element; if it is smaller than the first element, then the first element will be moved to the second cell, and the new data will be placed to the first cell. Third incoming data will be compared with the other cells; if the incoming data is smaller than the first cell, we have a full and pushed. The first cell's data will be pushed to the second cell, and the data in the second cell will be pushed to the third cell, and the new incoming data will be placed to the first cell. The sorting algorithm will continue like this until the whole array is sorted. 
 
 ### Hardware implementation
 
