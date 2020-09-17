@@ -1,74 +1,4 @@
-<!-- Copy and paste the converted output. -->
-
-<!-----
-NEW: Check the "Suppress top comment" option to remove this info from the output.
-
-Conversion time: 12.798 seconds.
-
-
-Using this Markdown file:
-
-1. Paste this output into your source file.
-2. See the notes and action items below regarding this conversion run.
-3. Check the rendered output (headings, lists, code blocks, tables) for proper
-   formatting and use a linkchecker before you publish this page.
-
-Conversion notes:
-
-* Docs to Markdown version 1.0β29
-* Wed Sep 16 2020 04:33:22 GMT-0700 (PDT)
-* Source doc: codesign
-* Tables are currently converted to HTML tables.
-* This document has images: check for >>>>>  gd2md-html alert:  inline image link in generated source and store images to your server. NOTE: Images in exported zip file from Google Docs may not appear in  the same order as they do in your doc. Please check the images!
-
-
-WARNING:
-You have 8 H1 headings. You may want to use the "H1 -> H2" option to demote all headings by one level.
-
------>
-
-
-<p style="color: red; font-weight: bold">>>>>>  gd2md-html alert:  ERRORs: 0; WARNINGs: 1; ALERTS: 35.</p>
-<ul style="color: red; font-weight: bold"><li>See top comment block for details on ERRORs and WARNINGs. <li>In the converted Markdown or HTML, search for inline alerts that start with >>>>>  gd2md-html alert:  for specific instances that need correction.</ul>
-
-<p style="color: red; font-weight: bold">Links to alert messages:</p><a href="#gdcalert1">alert1</a>
-<a href="#gdcalert2">alert2</a>
-<a href="#gdcalert3">alert3</a>
-<a href="#gdcalert4">alert4</a>
-<a href="#gdcalert5">alert5</a>
-<a href="#gdcalert6">alert6</a>
-<a href="#gdcalert7">alert7</a>
-<a href="#gdcalert8">alert8</a>
-<a href="#gdcalert9">alert9</a>
-<a href="#gdcalert10">alert10</a>
-<a href="#gdcalert11">alert11</a>
-<a href="#gdcalert12">alert12</a>
-<a href="#gdcalert13">alert13</a>
-<a href="#gdcalert14">alert14</a>
-<a href="#gdcalert15">alert15</a>
-<a href="#gdcalert16">alert16</a>
-<a href="#gdcalert17">alert17</a>
-<a href="#gdcalert18">alert18</a>
-<a href="#gdcalert19">alert19</a>
-<a href="#gdcalert20">alert20</a>
-<a href="#gdcalert21">alert21</a>
-<a href="#gdcalert22">alert22</a>
-<a href="#gdcalert23">alert23</a>
-<a href="#gdcalert24">alert24</a>
-<a href="#gdcalert25">alert25</a>
-<a href="#gdcalert26">alert26</a>
-<a href="#gdcalert27">alert27</a>
-<a href="#gdcalert28">alert28</a>
-<a href="#gdcalert29">alert29</a>
-<a href="#gdcalert30">alert30</a>
-<a href="#gdcalert31">alert31</a>
-<a href="#gdcalert32">alert32</a>
-<a href="#gdcalert33">alert33</a>
-<a href="#gdcalert34">alert34</a>
-<a href="#gdcalert35">alert35</a>
-
-<p style="color: red; font-weight: bold">>>>>> PLEASE check and correct alert issues and delete this message and the inline alerts.<hr></p>
-
+# Title of paper
 
 University of South-Eastern Norway, Kongsberg
 
@@ -84,15 +14,15 @@ Ole Martin Ruud \
  Øzlem Tuzkaya
 
 
-# Vision statement
+## Vision statement
 
 Explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
 
 
-# Storyboard
+## Storyboard
 
 
-## Figure 1.1 (FSMD architecture for Selection sort)
+### Figure 1.1 (FSMD architecture for Selection sort)
 
 
 
@@ -103,7 +33,7 @@ Explore and implement three different sorting algorithms in software, hardware a
 
 
 
-## Figure 1.2 (ASMD chart for Selection sort)
+### Figure 1.2 (ASMD chart for Selection sort)
 
 
 
@@ -114,7 +44,7 @@ Explore and implement three different sorting algorithms in software, hardware a
 
 
 
-## Figure 1.3 (Result from hardware implementation of Selection sort)
+### Figure 1.3 (Result from hardware implementation of Selection sort)
 
 
 
@@ -129,7 +59,7 @@ The link above will navigate you to the directory where you can see simulation p
 [Click here to see more pictures of simulation](https://drive.google.com/drive/u/0/folders/1ffAJxOUncl40DwOUA_8caFRPS7MD4N5g)
 
 
-## Figure 1.4 (Result from software implementation of Selection sort)
+### Figure 1.4 (Result from software implementation of Selection sort)
 
 
 
@@ -154,7 +84,7 @@ The link above will navigate you to the directory where you can see simulation p
 [Click here to see more pictures of simulation](https://drive.google.com/drive/u/0/folders/1FGTspiUHSEMUZeLDCJAXLv5cFgNYWshZ)
 
 
-## Figure 2.1 (FSMD architecture of linear cell sort)
+### Figure 2.1 (FSMD architecture of linear cell sort)
 
 <p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
@@ -172,7 +102,7 @@ Figure 2.1.1 (FSMD architecture of single cell in linear cell sort) \
 
 
 
-## Figure 2.1.2 (FSMD architecture of sort controller)
+### Figure 2.1.2 (FSMD architecture of sort controller)
 
 <p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
@@ -189,7 +119,7 @@ Figure 2.2 (ASMD chart of linear cell sort) \
 
 
 
-## Figure 2.2.1 (ASMD chart of single cell in linear cell sort)
+### Figure 2.2.1 (ASMD chart of single cell in linear cell sort)
 
 
 
@@ -210,14 +140,29 @@ Figure 2.2.2 (ASMD chart for sort controller) \
 
 
 
-# Introduction
+## Introduction
 
 (Something here)
 
 
-# Methods
+## Methods
+---------- new below ----------
 
-(The methods section is simply a record of what we did)
+Our goal for this papaer was to explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
+
+For all of our algorithms we followed the same steps. We started by creating an FSMD architecture of the overall algorithm we were currently building; we did this to get an overview of what componenets and signals were needed. Based on the FSMD architecture created, we then designed the ASMD chart, this was done to easily convert the chart into code when implementing, while also having a good overview of the states the algorithm needed.
+
+After finishing making all of the necessary charts, we then started to implement the sorting algorithm into Vivado. To make the code as reusable as possible we made a new file for each of our components. We also made the last two algorithms generic, such that the inputs and sizes could be adjusted by the user. 
+
+To confirm that our sorting algorithms worked as excpected we created a test bench for the project, and analysed the outputs to see weather we achived to create the algorithm or not.
+
+The implementation of software in contrast to the hardware was a much more straight forward process. We used Vitis to connect our Zybo board to our computer and created a C file that would be used to implmenet the algorithm. For testing we used the buildt in Vitis console.
+
+For our first algoritm we tried to implement an IP implmentation. This turned out to be a very time consuming process; seeing that the implmentation of the IP wouldn't have had such an impact on we therefore chose to not include this in our paper. We spent about thirty hours trying to troubleshoot without finding a solution. 
+
+(30t on IP) 
+
+---------- new above ----------
 
 For our first sorting algorithm we decided to implement selection sort. The selection sort algorithm sorts an array by repeatedly finding the smallest element and swapping it with the first non-sorted element. If the first non-sorted element is the smallest, it will be “swapped” with itself. After swapping, we sort the remaining part of the array in similar fashion until the entire array is sorted. 
 
@@ -248,12 +193,12 @@ After going through our architectures / chars and verifying that it should work 
  
 
 
-# Results
+## Results
 
 In this section we will discuss the results we gathered throughout our research with regards to the different algorithms.  
 
 
-## Selection Sort
+### Selection Sort
 
 Selection sort is the simplest sorting algorithm. In our implementation it will find the smallest element in the array and swap it with the element in the first position. then it will find the second smallest element and swap it with the element in the second position, and it will keep on doing this until the entire array is sorted. It has an O(n^2) time complexity and this is inefficient on large arrays. The input array divides into two subarrays, a sorted subarray of elements which is built up from the top to the bottom and the remaining unsorted elements occupy the rest of the array. 
 
@@ -308,7 +253,7 @@ Find the minimum element in RAM [3...4] and place it at beginning [3...4].
 
 
 
-### Hardware Implementation
+#### Hardware Implementation
 
 In the hardware implementation we have created a generic counter and register which we want to reuse as much code as possible. The comparing counter is set to 1 as a default value and output of the ram will be the first element in the array when we run the program. We temporarily store this index value of this element in a register and increment the index counter to compare the elements to find the smallest element in the array. Again we temporarily store the index and the value of the smallest element in registers, then we swap those elements till the array is sorted. We have removed the ram from the design file into the test bench file which we wanted an external ram instead of an internal ram.
 
@@ -393,7 +338,7 @@ swapping the last elements
 Now array are sorted in the ram
 
 
-### Software Implementation
+#### Software Implementation
 
 The implementation of the algorithm in software was quick to write, and certainly inspired by the hardware implementation. To keep it consistent, we decided to stick with similar names for the different components (in particular index_counter and comparing_tindex_counter). This means that it should be easy to compare the implementations. We have tested the software implementation on Zybo board and worked perfectly.
 
@@ -461,7 +406,7 @@ void print_array(unsigned int *array, unsigned int length) {
 
 
 
-### IP Implementation
+#### IP Implementation
 
 In IP implementation we followed the “Vivado Quick Start Tutorial” and made some necessary changes in some files. We declared some output ports and port mapped those in the  “selection_sort_IP_v1_0.vhd”. Next, we made a component declaration and created some signals for inputs and outputs in the “selection_sort_IP_v1_0_S00_AXI.vhd” file. The VHDL description files which were created for the hardware implementation of selection sort algorithm we copied those files into IP directory and created a new AXI4 Peripheral for IP. 
 
@@ -537,7 +482,7 @@ int main(){
 
 
 
-## Linear cell sort 
+### Linear cell sort 
 
 Linear cell sort receives data once per clock cycle and sorts the data while it's being clocked in serially, that's why this algorithm is called linear cell sort. Hence it can sort an array in O(N) time complexity. After we have clocked in our data the array will be sorted immediately and should be ready to clocked out. The solution provides the sorting in parallel. 
 
@@ -588,7 +533,7 @@ Synthesized report of On-Chip Power
 Utilization synthesized report
 
 
-# 
+## 
 
 <p id="gdcalert33" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image33.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert34">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
@@ -605,7 +550,7 @@ Utilization synthesized report
 If the pictures are unreadable so please,  see the appendix for links and it will navigate you to a directory where you can see pictures in good quality. 
 
 
-## Software implementation
+### Software implementation
 
 Since this algorithm is parallel by nature, there are some tradeoffs to be made when implementing it in software. As we only have a single core to work with, we have chosen to simply transform it into a sequential algorithm. This means that instead of O(N) time complexity, it will be O(N²) time complexity (as we have to iterate through every cell on every insertion). As such, we chose to handle the algorithm by having a ROM and a pointer to the “incoming” input, and Instead of using cells, we chose to use an array to be simulated as multiple cells.
 
@@ -693,7 +638,7 @@ void print_array(unsigned int *array, unsigned int length) {
 
 
 
-# Appendix 
+## Appendix 
 
 Click to the links and it will navigate you to the files. 
 
@@ -712,7 +657,7 @@ All FSMD and ASMD charts
 [ASMD and FSMD charts](https://app.lucidchart.com/invitations/accept/4f18b690-f5b3-4d20-a44a-b7fe59f9f84e)  (To navigate between diagrams click on page at the bottom of file)
 
 
-# Links
+## Links
 
 [https://hackaday.com/2016/01/20/a-linear-time-sorting-algorithm-for-fpgas/](https://hackaday.com/2016/01/20/a-linear-time-sorting-algorithm-for-fpgas/)
 
