@@ -8,9 +8,6 @@ author:
 institute: University of South-Eastern Norway
 date: 21.09.2020
 lang: en-US
-bibliography: paper.bib
-header-includes: |
-    \usepackage[toc,page]{appendix}
 ---
 
 # Test
