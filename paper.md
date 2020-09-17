@@ -8,17 +8,10 @@ author:
 institute: University of South-Eastern Norway
 date: 21.09.2020
 lang: en-US
+bibliography: paper.bib
+header-includes: |
+    \usepackage[toc,page]{appendix}
 ---
-
-# Test
-
-You can in @fig:example see a graph.
-
-```{#fig:example .matplotlib preamble=style.py caption="A simple figure"}
-plt.figure()
-plt.plot([0,1,2,3,4], [1,2,3,4,5])
-plt.title('This is an example figure')
-```
 
 # Vision statement
 
