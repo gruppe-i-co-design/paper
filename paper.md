@@ -9,19 +9,19 @@ date: 2020-09-21
 instituition: University of South-Eastern Norway
 ---
 
-## Vision statement
+# Vision statement
 
 Explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
 
-## Abstract
+# Abstract
 
 TODO write abstract
 
-## Introduction
+# Introduction
 
 TODO write introduction
 
-## Methods
+# Methods
 ---------- new below ----------
 
 Our goal for this paper was to explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
@@ -69,19 +69,19 @@ After going through our architectures / chars and verifying that it should work 
  
 
 
-## Results
+# Results
 
 In this section we will discuss the results we gathered throughout our research with regards to the different algorithms.  
 
 
-### Selection Sort
+## Selection Sort
 
 Selection sort is the simplest sorting algorithm. In our implementation it will find the smallest element in the array and swap it with the element in the first position. then it will find the second smallest element and swap it with the element in the second position, and it will keep on doing this until the entire array is sorted. It has an O(n^2) time complexity and this is inefficient on large arrays. The input array divides into two subarrays, a sorted subarray of elements which is built up from the top to the bottom and the remaining unsorted elements occupy the rest of the array. 
 
 See appendix \ref{} for a visual explanation of the algorithm.
 
 
-#### Hardware Implementation
+### Hardware Implementation
 
 In the hardware implementation we have created a generic counter and register which we want to reuse as much code as possible. The comparing counter is set to 1 as a default value and output of the ram will be the first element in the array when we run the program. We temporarily store this index value of this element in a register and increment the index counter to compare the elements to find the smallest element in the array. Again we temporarily store the index and the value of the smallest element in registers, then we swap those elements till the array is sorted. We have removed the ram from the design file into the test bench file which we wanted an external ram instead of an internal ram.
 
@@ -107,7 +107,7 @@ The picture below shows an unsorted array in the ram when the program starts.
 TODO add images of waveform diagrams
 
 
-#### Software Implementation
+### Software Implementation
 
 The implementation of the algorithm in software was quick to write, and certainly inspired by the hardware implementation. To keep it consistent, we decided to stick with similar names for the different components (in particular index_counter and comparing_tindex_counter). This means that it should be easy to compare the implementations. We have tested the software implementation on Zybo board and worked perfectly.
 
@@ -116,7 +116,7 @@ In listing \ref{} you can see the code.
 TODO add code from file as listing
 
 
-#### IP Implementation
+### IP Implementation
 
 In IP implementation we followed the “Vivado Quick Start Tutorial” and made some necessary changes in some files. We declared some output ports and port mapped those in the  “selection_sort_IP_v1_0.vhd”. Next, we made a component declaration and created some signals for inputs and outputs in the “selection_sort_IP_v1_0_S00_AXI.vhd” file. The VHDL description files which were created for the hardware implementation of selection sort algorithm we copied those files into IP directory and created a new AXI4 Peripheral for IP. 
 
@@ -133,8 +133,8 @@ To communicate with the sort controller, enabling us to read the sorted memory, 
 
 
 ```c
-#include "xparameters.h"
-#include "xuartps_hw.h"
+include "xparameters.h"
+include "xuartps_hw.h"
 
 int main(){
 	xil_printf("Start selection sort\n\n\r");
@@ -161,13 +161,13 @@ int main(){
 
 
 
-### Linear cell sort 
+## Linear cell sort 
 
 Linear cell sort receives data once per clock cycle and sorts the data while it's being clocked in serially, that's why this algorithm is called linear cell sort. Hence it can sort an array in O(N) time complexity. After we have clocked in our data the array will be sorted immediately and should be ready to clocked out. The solution provides the sorting in parallel. 
 
 Since we decided to make the algorithm generic it will let you decide the size and length of the array. As you can see from figure 2.1 (Top FSMD architecture), the amount of cells will be the same as array size. New incoming data will be placed to the cell from top to bottom with increasing size. So when all cells are empty the first element will automatically take the first place. Second incoming data will be compared with the first element, if it's smaller than the first element then the first element will be moved to the second cell and the new data will be placed to the first cell. Third incoming data will be compared with the other cells, if the incoming data is smaller than the first cell then we have a full and pushed.The data in the first cell will be pushed to the second cell and the data in the second cell will be pushed to third cell and the new incoming data will be placed to the first cell. The sorting algorithm will continue like this until the whole array is sorted.  
 
-#### Hardware implementation
+### Hardware implementation
 
 The implementation of linear cell sort algorithms was more complicated than Selection sort.  We needed to draw multi FSMD and ASMD charts to implement this in hardware. Since this algorithm uses cells and to implement this in hardware we needed to draw a FSMD and ASMD chart for this to control each cell. Then we draw another FSMD and ASMD chart to control all cells and plus other components. In our implementation we neither use RAM or ROM.
 
@@ -186,7 +186,7 @@ TODO add image of utilization report
 Utilization synthesized report
 
 
-#### Software implementation
+### Software implementation
 
 Since this algorithm is parallel by nature, there are some tradeoffs to be made when implementing it in software. As we only have a single core to work with, we have chosen to simply transform it into a sequential algorithm. This means that instead of O(N) time complexity, it will be O(N²) time complexity (as we have to iterate through every cell on every insertion). As such, we chose to handle the algorithm by having a ROM and a pointer to the “incoming” input, and Instead of using cells, we chose to use an array to be simulated as multiple cells.
 
@@ -200,16 +200,16 @@ Result from inspecting the serial monitor
 
 TODO add code from file
 
-### Odd-even sort
+## Odd-even sort
 
 
 
-#### Hardware implementation
+### Hardware implementation
 
-#### Software implementation
+### Software implementation
 
 
-## Appendix 
+# Appendix 
 
 Click to the links and it will navigate you to the files. 
 
@@ -228,7 +228,7 @@ All FSMD and ASMD charts
 [ASMD and FSMD charts](https://app.lucidchart.com/invitations/accept/4f18b690-f5b3-4d20-a44a-b7fe59f9f84e)  (To navigate between diagrams click on page at the bottom of file)
 
 
-## Links
+# Links
 
 [https://hackaday.com/2016/01/20/a-linear-time-sorting-algorithm-for-fpgas/](https://hackaday.com/2016/01/20/a-linear-time-sorting-algorithm-for-fpgas/)
 
