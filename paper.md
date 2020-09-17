@@ -164,9 +164,9 @@ int main(){
 
 
 
-## Linear cell sort 
+## Linear cell sort
 
-Linear cell sort receives data once per clock cycle and sorts the data while it's being clocked in serially, that's why this algorithm is called linear cell sort. Hence it can sort an array in O(N) time complexity. After we have clocked in our data the array will be sorted immediately and should be ready to clocked out. The solution provides the sorting in parallel. 
+Linear cell sort [@linear-cell-sort] receives data once per clock cycle and sorts the data while it's being clocked in serially, that's why this algorithm is called linear cell sort. Hence it can sort an array in O(N) time complexity. After we have clocked in our data the array will be sorted immediately and should be ready to clocked out. The solution provides the sorting in parallel. 
 
 Since we decided to make the algorithm generic it will let you decide the size and length of the array. As you can see from figure 2.1 (Top FSMD architecture), the amount of cells will be the same as array size. New incoming data will be placed to the cell from top to bottom with increasing size. So when all cells are empty the first element will automatically take the first place. Second incoming data will be compared with the first element, if it's smaller than the first element then the first element will be moved to the second cell and the new data will be placed to the first cell. Third incoming data will be compared with the other cells, if the incoming data is smaller than the first cell then we have a full and pushed.The data in the first cell will be pushed to the second cell and the data in the second cell will be pushed to third cell and the new incoming data will be placed to the first cell. The sorting algorithm will continue like this until the whole array is sorted.  
 
