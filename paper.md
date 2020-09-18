@@ -30,13 +30,15 @@ TODO write introduction
 
 Our goal for this paper was to explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
 
-For all of our algorithms, we followed the same steps. We started by creating an FSMD architecture of the overall algorithm we were currently building; we did this to get an overview of what components and signals were needed. Based on the FSMD architecture created, we then designed the ASMD chart, this was done to easily convert the chart into code when implementing, while also having a good overview of the states the algorithm needed.
+The tools used in this paper was Vivado 2020.1 and Vitis ++. Vivado was used for the Hardware implementation of our paper, to be able to program our boards. For the software and IP implementation, we took in use Vitis ++.
+
+For all of our algorithms, we followed the same steps. We started by creating an FSMD architecture of the overall algorithm we were currently building; we did this to get an overview of what components and signals were needed. Based on the FSMD architecture created, we then designed the ASMD chart, this was done to easily convert the chart into code when implementing the algorithm, while also having a good overview of the states needed.
 
 After finishing making all of the necessary charts, we then started to implement the sorting algorithm into Vivado. To make the code as reusable as possible we made a new file for each of our components. We also made the last two algorithms generic, such that the inputs and sizes could be adjusted by the user. 
 
 To confirm that our sorting algorithms worked as expected we created a test bench for the project and analysed the outputs to see whether we achieved to create the algorithm or not.
 
-The implementation of software in contrast to the hardware was a much more straight forward process. We used Vitis to connect our Zybo board to our computer and created a C file that would be used to implement the algorithm. For testing, we used the built-in Vitis console.
+The software implementation in contrast to the hardware implmentation was a much more straight forward process. We used Vitis ++ to connect our Zybo board to our computer and created a C file that would be used to implement the algorithm. For testing, we used the built-in Vitis console.
 
 For our first algorithm, we made an effort to implement an IP implementation. Troubleshooting and implementation turned out to be an immensely time-consuming process. Seeing that the implementation of the IP would not have had a significant impact on our vision or result for our paper, we chose to exclude it.
 
