@@ -14,7 +14,7 @@
 
 - [x] Add paragraph to methods which explains which tools we used (Vivado 2020.1 and Vitis ++). (Anders)
 
-- [ ] Write introduction which explains the challange with hardware/software considerations and that we are setting out to explore benefits and disadvantages with different solutions. (ØzOlem)
+- [ ] Write introduction which explains the challange with hardware/software considerations and that we are setting out to explore benefits and disadvantages with different solutions. (Øzlem)
 
 > The introduction explains why this research is important or necessary or important. Begin by describing the problem or situation that motivates the research. Move to discussing the current state of research in the field; then reveal a “gap” or problem in the field. Finally, explain how the present research is a solution to that problem or gap. If the study has hypotheses, they are presented at the end of the introduction.
 
@@ -46,5 +46,5 @@
 
 - [ ] Write a small "whodidwhat" that will be appended as an appendix.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc0MjgzMjk5MV19
+eyJoaXN0b3J5IjpbLTEzNDM4MjUzMTRdfQ==
 -->
