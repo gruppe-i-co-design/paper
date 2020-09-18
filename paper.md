@@ -11,7 +11,7 @@ lang: en-US
 bibliography: paper.bib
 header-includes: |
     \usepackage[toc,page]{appendix}
----
+...
 
 # Vision statement
 
@@ -194,6 +194,6 @@ TODO
 \clearpage
 \appendix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzE5MTQ2NzAsLTE2NzE5MTQ2NzBdfQ
-==
+eyJoaXN0b3J5IjpbNjc4NzUyNzg1LC0xNjcxOTE0NjcwLC0xNj
+cxOTE0NjcwXX0=
 -->
