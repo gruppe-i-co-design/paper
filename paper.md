@@ -73,7 +73,8 @@ After going through our architectures / chars and verifying that it should work 
 
 # Results
 
-In this section we will discuss the results we gathered throughout our research with regards to the different algorithms.
+In this section, we are going to presenting the results we gathered through to applying our methods. The suggested methods were synthesized and simulated using Vivado 2020.1 and Vitis 2020.1 and located on a Digilent Zynq-7000 Development Board with a Digilent Zybo Z7 ARM/ FPGA. The array sorting algorithms used were Selection Sor, Linear Cell Sort, and Odd-even Sort algorithm. The results were measured by simulating and outputting the data on the simulation waveform. 
+
 
 
 ## Selection sort
@@ -258,6 +259,6 @@ TODO
 \clearpage
 \appendix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwNTA3MTE5MSw2Nzg3NTI3ODUsLTE2Nz
-E5MTQ2NzAsLTE2NzE5MTQ2NzBdfQ==
+eyJoaXN0b3J5IjpbLTYzNTE2MDQzMiwtNDA1MDcxMTkxLDY3OD
+c1Mjc4NSwtMTY3MTkxNDY3MCwtMTY3MTkxNDY3MF19
 -->
