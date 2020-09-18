@@ -1,5 +1,5 @@
 ---
-title: An Exploration of Hardware and Software Array Sorting
+title: An Exploration of Array Sorting in Hardware and Software
 author:
     - Anders Mæhlum Halvorsen
     - Rahmat Mozafari
@@ -54,12 +54,9 @@ After verifying that the hardware implementation worked as expected, we created 
 
 The IP implementation, unlike the hardware and software implementation, was not as straightforward. We tried to implement it, but soon bumped into some problems with generating the IP block.
 
-For our second algorithm we chose to implement a linear cell sorting algorithm based on the article linked below: [https://hackaday.com/2016/01/20/a-linear-time-sorting-algorithm-for-fpgas/](https://hackaday.com/2016/01/20/a-linear-time-sorting-algorithm-for-fpgas/)
+For our second algorithm we chose to implement a linear cell sorting algorithm based on an article by Vasquez [@vasquez16].
 
 The sorting algorithm uses cells / registers to sort the incoming data. It has only four rules: \
-
-
-
 
 1. If a cell is empty, it will only be populated if the cell above is full.
 2. If a cell is full, the cell data will be replaced if both the incoming data is less than the stored data, and the cell above is not pushing its data.
@@ -81,7 +78,7 @@ In this section we will discuss the results we gathered throughout our research 
 
 ## Selection sort
 
-The selection sort is the most straightforward sorting algorithm. Our implementation will identify the minimum element in the array and swap it with the element in the primary position. Then it will identify the second position minimum element and swap it with the element in the second location, and it will continue executing this until the entire array is sorted. It has an O(n^2) time complexity, and this is inefficient on large arrays. The input array divides into two subarrays, a sorted subarray of elements built up from top to bottom, and the remaining unsorted elements occupy the rest of the array.
+The selection sort is the most straightforward sorting algorithm. Our implementation will identify the minimum element in the array and swap it with the element in the primary position. Then it will identify the second position minimum element and swap it with the element in the second location, and it will continue executing this until the entire array is sorted. It has an $O(n^2)$ time complexity, and this is inefficient on large arrays. The input array divides into two subarrays, a sorted subarray of elements built up from top to bottom, and the remaining unsorted elements occupy the rest of the array.
 
 See appendix \ref{} for a visual explanation of the algorithm.
 
@@ -116,10 +113,10 @@ TODO add images of waveform diagrams
 
 The implementation of the algorithm in software was quick to write, and certainly inspired by the hardware implementation. To keep it consistent, we decided to stick with similar names for the different components (in particular index_counter and comparing_tindex_counter). This means that it should be easy to compare the implementations. We have tested the software implementation on Zybo board and worked perfectly.
 
-In listing \ref{} you can see the code.
+The code for the software implementation can be found in @lst:selection-code.
 
-TODO add code from file as listing
-
+~~~{#lst:selection-code .c include=listings/selection-sort-sw/selection-sort.c caption="Code for software implementation of selection sort"}
+~~~
 
 ### IP Implementation
 
@@ -134,10 +131,9 @@ The IP block diagram including the selection sort block, sort controller and mem
 
 Finally, after putting together the different IP blocks, we generated a bitstream to see if there was any error and also we needed to export hardware design  to the Vitis IDE. In Vitis IDE we first created a project platform for the (XSA) file extension which exported from the Vivado and generated multiple domains. We built the project and created a new application project for the software application to test our IP implementation.
 
-To communicate with the sort controller, enabling us to read the sorted memory, we need to talk through the AXI interface. This is done using some special functions provided by the platform. By reading slave register 2 of the sort controller, we can tell if the sorting is done, as the first bit represents the sort_done variable. Further by then repeatedly reading slave register 1, we will get the contents of the memory block, as the sort controller continuously updates the RAM address and reads the data into the slave register. 
+To be able to display the sorted values in the serial terminal, we need to communicate with the sort controller from the Zynq prossessing unit through the AXI interface. The code that has to run on the prosessing unit can be found in listing @lst:sort-controller-code. The function ~Xil_In32~, provided by the platform, reads a value from the AXI interface. By reading slave register 2 of the sort controller, we can tell if the sorting is done, as the first bit represents the ~sort_done~ signal. Further by then repeatedly reading slave register 1 we will get the contents of the memory block. Sort controller continuously updates the RAM address and reads the data into the slave register.
 
-
-```c
+~~~{#lst:sort-controller-code .c caption="Code for communicating with the sort controller"}
 include "xparameters.h"
 include "xuartps_hw.h"
 
@@ -162,15 +158,13 @@ int main(){
 
 	return 0;
 }
-```
-
-
+~~~
 
 ## Linear cell sort
 
-Linear cell sort [@linear-cell-sort] receives data once per clock cycle and sorts the data while it is being clocked in serially; that is why this algorithm is called linear cell sort. Hence it can sort an array in O(N) time complexity. After we have clocked in our data, the array will be sorted immediately and ready to clock out. The solution provides the sorting in parallel. 
+Linear cell sort, as detailed by Vasquez's article [@vasquez16], receives data once per clock cycle and sorts the data while it is being clocked in. This means that the algoritm only needs the $N$ clock cycles to sort the data, giving it a time complexity of $O(N)$.
 
-Since we decided to make the algorithm generic, it will let the user decide the array's size and length. Figure 2.1 (Top FSMD architecture), the number of cells will be the same as the array size. New incoming data will be placed to the cell from top to bottom with increasing size. So when all cells are empty, the first element will automatically take the first place. Second incoming data will be compared with the first element; if it is smaller than the first element, then the first element will be moved to the second cell, and the new data will be placed to the first cell. Third incoming data will be compared with the other cells; if the incoming data is smaller than the first cell, we have a full and pushed. The first cell's data will be pushed to the second cell, and the data in the second cell will be pushed to the third cell, and the new incoming data will be placed to the first cell. The sorting algorithm will continue like this until the whole array is sorted. 
+Since we decided to make the algorithm generic, it will let the user decide the array's size and length. Figure 2.1 (Top FSMD architecture), the number of cells will be the same as the array size. New incoming data will be placed to the cell from top to bottom with increasing size. So when all cells are empty, the first element will automatically take the first place. Second incoming data will be compared with the first element; if it is smaller than the first element, then the first element will be moved to the second cell, and the new data will be placed to the first cell. Third incoming data will be compared with the other cells; if the incoming data is smaller than the first cell, we have a full and pushed. The first cell's data will be pushed to the second cell, and the data in the second cell will be pushed to the third cell, and the new incoming data will be placed to the first cell. The sorting algorithm will continue like this until the whole array is sorted.
 
 ### Hardware implementation
 
@@ -193,25 +187,31 @@ Utilization synthesized report
 
 ### Software implementation
 
-Since this algorithm is parallel by nature, there are some tradeoffs to be made when implementing it in software. As we only have a single core to work with, we have chosen to simply transform it into a sequential algorithm. This means that instead of O(N) time complexity, it will be O(N²) time complexity (as we have to iterate through every cell on every insertion). As such, we chose to handle the algorithm by having a ROM and a pointer to the “incoming” input, and Instead of using cells, we chose to use an array to be simulated as multiple cells.
-
-The implementation was tested on the Zybo board, and it returned the expected outcome.
-
+Since this algorithm is parallel by nature, there are some tradeoffs to be made when implementing it in software. As we only have a single core to work with, we have chosen to simply transform it into a sequential algorithm. This means that instead of $O(N)$ time complexity, it will be $O(N^2)$ time complexity (as we have to iterate through every cell on every insertion). As such, we chose to handle the algorithm by having a ROM and a pointer to the “incoming” input, and Instead of using cells, we chose to use an array to be simulated as multiple cells.
 
 TODO add image of vitis serial terminal
 
 Result from inspecting the serial monitor
 
+The code for the software implementation of linear cell sort can be found in @lst:linear-cell-code.
 
-TODO add code from file
+~~~{#lst:linear-cell-code .c include=listings/linear-cell-sort-sw/linear-cell-sort.c caption="Code for software implementation of linear cell sort"}
+~~~
 
 ## Odd-even sort
 
-
+Based on the book by Nvidia which details sorting using networks and parallel comparisions [@gpugems2; chapter 46].
 
 ### Hardware implementation
 
 ### Software implementation
+
+The main challange of this algorithm is calculating the correct neighbouring indicies for comparisions. As this is already a solved problem, we simply translated the code shared by Bekbolatov [@bekbolatov15] into C to be usable for our purpose. The function simply takes the current signal index, the current layer and the internal layer index.
+
+The code for our software implementation can be found in @lst:odd-even-code.
+
+~~~{#lst:odd-even-code .c include=listings/odd-even-merge-sw/odd-even-merge-sort.c caption="Code for software implementation of Batcher's odd-even merge sort"}
+~~~
 
 # Discussion
 
@@ -229,9 +229,3 @@ TODO
 
 \clearpage
 \appendix
-
-# Links
-
-[https://hackaday.com/2016/01/20/a-linear-time-sorting-algorithm-for-fpgas/](https://hackaday.com/2016/01/20/a-linear-time-sorting-algorithm-for-fpgas/)
-
-[https://en.wikipedia.org/wiki/Batcher_odd%E2%80%93even_mergesort](https://en.wikipedia.org/wiki/Batcher_odd%E2%80%93even_mergesort)
