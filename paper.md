@@ -192,6 +192,7 @@ In this step, we apply to rule No. 2 and insert the element, 2,  at the top cell
 
 Step 5
 In this step, we insert the last from the unsorted array. Now we have two elements that are the same, and to insert this into the sorted cell, we apply rule No. 2 and 3. 
+
 ### Hardware implementation
 
 The implementation of linear cell sort algorithms was more complicated than Selection sort.  We needed to draw multi FSMD and ASMD charts to implement this in hardware. Since this algorithm uses cells and to implement this in hardware we needed to draw a FSMD and ASMD chart for this to control each cell. Then we draw another FSMD and ASMD chart to control all cells and plus other components. In our implementation we neither use RAM or ROM.
@@ -271,7 +272,7 @@ TODO
 \clearpage
 \appendix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTA2ODc5MzksLTUwMjM1NDA3MCwtNj
-M1MTYwNDMyLC00MDUwNzExOTEsNjc4NzUyNzg1LC0xNjcxOTE0
-NjcwLC0xNjcxOTE0NjcwXX0=
+eyJoaXN0b3J5IjpbNDYxMDUwNTc1LC01MDIzNTQwNzAsLTYzNT
+E2MDQzMiwtNDA1MDcxMTkxLDY3ODc1Mjc4NSwtMTY3MTkxNDY3
+MCwtMTY3MTkxNDY3MF19
 -->
