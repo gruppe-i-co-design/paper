@@ -4,7 +4,7 @@
 
 - [ ] If extra time and will, implement selection sort using higher level approach and compare to low level approach.
 
-- [x- [ ] Format and cleanup VHDL and C code. (Ole)
+- [x] Format and cleanup VHDL and C code. (Ole)
 
 - [ ] Get utilization metrics for each algorithm at size 4, 16 and 64.
 
@@ -46,5 +46,5 @@
 
 - [ ] Write a small "whodidwhat" that will be appended as an appendix.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzA4NTMxMjIzXX0=
+eyJoaXN0b3J5IjpbLTExMTM2NzkzNDVdfQ==
 -->
