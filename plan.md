@@ -4,7 +4,7 @@
 
 - [ ] If extra time and will, implement selection sort using higher level approach and compare to low level approach.
 
-- [x] Format and cleanup VHDL and C code. (Ole)
+- [x- [ ] Format and cleanup VHDL and C code. (Ole)
 
 - [ ] Get utilization metrics for each algorithm at size 4, 16 and 64.
 
@@ -14,7 +14,7 @@
 
 - [x] Add paragraph to methods which explains which tools we used (Vivado 2020.1 and Vitis ++). (Anders)
 
-- [ ] Write introduction which explains the challange with hardware/software considerations and that we are setting out to explore benefits and disadvantages with different solutions. (Øzlem)
+- [ ] Write introduction which explains the challange with hardware/software considerations and that we are setting out to explore benefits and disadvantages with different solutions. (ØzOlem)
 
 > The introduction explains why this research is important or necessary or important. Begin by describing the problem or situation that motivates the research. Move to discussing the current state of research in the field; then reveal a “gap” or problem in the field. Finally, explain how the present research is a solution to that problem or gap. If the study has hypotheses, they are presented at the end of the introduction.
 
@@ -28,7 +28,7 @@
 	- [ ] Selection sort explanations and figures.
 	- [ ] Linear cell sort explanations and figures.
 
-- [x] Digitize FSMD and ASMD charts for odd-even sort. (Anders)
+- [x ] Digitize FSMD and ASMD charts for odd-even sort. (Anders)
 
 - [ ] Write discussion topics (Ole)
 	- [ ] Concrete comparison of our algoritms in terms of speed, size (space) and parallelization. Talk about why there was no parallelization in HW implementation of selection sort a lot of parallalization in linear sort.
@@ -45,3 +45,6 @@
 - [ ] Write abstract.
 
 - [ ] Write a small "whodidwhat" that will be appended as an appendix.
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNzA4NTMxMjIzXX0=
+-->
