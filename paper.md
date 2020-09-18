@@ -115,6 +115,9 @@ The implementation of the algorithm in software was quick to write, and certainl
 
 The code for the software implementation can be found in @lst:selection-code.
 
+~~~{#lst:selection-code .c include=listings/selection-sort-sw/selection-sort.c caption="Code for software implementation of selection sort"}
+~~~
+
 ### IP Implementation
 
 In the IP-implementation, we followed the “Vivado Quick Start Tutorial” and made some necessary changes in some files. We declared some output ports and port mapped those in the “selection_sort_IP_v1_0.vhd”. Next, we made a component declaration and created some signals for inputs and outputs in the “selection_sort_IP_v1_0_S00_AXI.vhd” file. The VHDL description files created for the hardware implementation of the selection sort algorithm we copied those files into the IP directory and created a new AXI4 Peripheral for IP.
@@ -129,6 +132,33 @@ The IP block diagram including the selection sort block, sort controller and mem
 Finally, after putting together the different IP blocks, we generated a bitstream to see if there was any error and also we needed to export hardware design  to the Vitis IDE. In Vitis IDE we first created a project platform for the (XSA) file extension which exported from the Vivado and generated multiple domains. We built the project and created a new application project for the software application to test our IP implementation.
 
 To be able to display the sorted values in the serial terminal, we need to communicate with the sort controller from the Zynq prossessing unit through the AXI interface. The code that has to run on the prosessing unit can be found in listing @lst:sort-controller-code. The function ~Xil_In32~, provided by the platform, reads a value from the AXI interface. By reading slave register 2 of the sort controller, we can tell if the sorting is done, as the first bit represents the ~sort_done~ signal. Further by then repeatedly reading slave register 1 we will get the contents of the memory block. Sort controller continuously updates the RAM address and reads the data into the slave register.
+
+~~~{#lst:sort-controller-code .c caption="Code for communicating with the sort controller"}
+include "xparameters.h"
+include "xuartps_hw.h"
+
+int main(){
+	xil_printf("Start selection sort\n\n\r");
+
+	xil_printf("Sorting");
+	u32 slave_reg_2;
+	do {
+		slave_reg_2 = Xil_In32(XPAR_SORT_CONTROLLER_0_S00_AXI_BASEADDR + 8);
+		xil_printf(".");
+	} while ((slave_reg_2 & 0x1) == 0);
+	xil_printf("\n\r");
+
+	xil_printf("Printing\n\r");
+	u32 slave_reg_1;
+	do {
+		slave_reg_2 = Xil_In32(XPAR_SORT_CONTROLLER_0_S00_AXI_BASEADDR + 8);
+		slave_reg_1 = Xil_In32(XPAR_SORT_CONTROLLER_0_S00_AXI_BASEADDR + 4);
+		xil_printf("%lx ", slave_reg_1);
+	} while ((slave_reg_2 & 0x1) == 1);
+
+	return 0;
+}
+~~~
 
 ## Linear cell sort
 
@@ -165,6 +195,9 @@ Result from inspecting the serial monitor
 
 The code for the software implementation of linear cell sort can be found in @lst:linear-cell-code.
 
+~~~{#lst:linear-cell-code .c include=listings/linear-cell-sort-sw/linear-cell-sort.c caption="Code for software implementation of linear cell sort"}
+~~~
+
 ## Odd-even sort
 
 Based on the book by Nvidia which details sorting using networks and parallel comparisions [@gpugems2; chapter 46].
@@ -176,6 +209,9 @@ Based on the book by Nvidia which details sorting using networks and parallel co
 The main challange of this algorithm is calculating the correct neighbouring indicies for comparisions. As this is already a solved problem, we simply translated the code shared by Bekbolatov [@bekbolatov15] into C to be usable for our purpose. The function simply takes the current signal index, the current layer and the internal layer index.
 
 The code for our software implementation can be found in @lst:odd-even-code.
+
+~~~{#lst:odd-even-code .c include=listings/odd-even-merge-sw/odd-even-merge-sort.c caption="Code for software implementation of Batcher's odd-even merge sort"}
+~~~
 
 # Discussion
 
