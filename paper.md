@@ -17,6 +17,8 @@ header-includes: |
 
 Explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
 
+ehllo
+
 # Abstract
 
 TODO write abstract
@@ -194,5 +196,5 @@ TODO
 \clearpage
 \appendix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzE5MTQ2NzBdfQ==
+eyJoaXN0b3J5IjpbLTQzMDgyNzI2OCwtMTY3MTkxNDY3MF19
 -->
