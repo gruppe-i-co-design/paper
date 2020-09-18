@@ -103,11 +103,7 @@ TODO make these images appear nicly on page...
 
 ![FSMD chart for selection sort](figures/selection-sort/fsmd.png){#fig:selection-fsmd}
 
-![Schematic of elaborated design for selection sort](figures/selection-sort/schematic.png){#fig:selection-schematic}elaborated schematic
-
-Schematic of Elaborated design
-
-
+![Schematic of elaborated design for selection sort](figures/selection-sort/schematic.png){#fig:selection-schematic}
 
 TODO add image of synthesized report
 
@@ -259,6 +255,7 @@ TODO
 \clearpage
 \appendix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzNTE2MDQzMiwtNDA1MDcxMTkxLDY3OD
-c1Mjc4NSwtMTY3MTkxNDY3MCwtMTY3MTkxNDY3MF19
+eyJoaXN0b3J5IjpbMTczNTA1MTM5LC02MzUxNjA0MzIsLTQwNT
+A3MTE5MSw2Nzg3NTI3ODUsLTE2NzE5MTQ2NzAsLTE2NzE5MTQ2
+NzBdfQ==
 -->
