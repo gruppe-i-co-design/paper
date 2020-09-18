@@ -73,7 +73,7 @@ After going through our architectures / chars and verifying that it should work 
 
 # Results
 
-In this section, we are going to presenting the results we gathered through to applying our methods. The suggested methods were synthesized and simulated using Vivado 2020.1 and Vitis 2020.1 and located on a Digilent Zynq-7000 Development Board with a Digilent Zybo Z7 ARM/ FPGA. The array sorting algorithms used were Selection Sor, Linear Cell Sort, and Odd-even Sort algorithm. The results were measured by simulating and outputting the data on the simulation waveform. 
+In this section, we are going to presenting the results we gathered through to applying our methods. The suggested methods were synthesized and simulated using Vivado 2020.1 and Vitis 2020.1 and located on a Digilent Zynq-7000 Development Board with a Digilent Zybo Z7 ARM/ FPGA. The array sorting algorithms used were Selection Sort, Linear Cell Sort, and Odd-even Sort algorithm. The results were measured by simulating and outputting the data on the simulation waveform. 
 
 
 
@@ -175,7 +175,7 @@ Since we decided to make the algorithm generic, it will let the user decide the 
 
 -- NEW  (OVERVIEW) 
 
-The unsorted array on the left side is ready to be sorted in serially;  on the right, our "Register cells" and the cells' size are the same as the unsorted array. We are storing the elements in the register cell in increasing size from top to bottom.  Our main objective is to place each new element in the right position based on what is currently inside the register cell. 
+The unsorted array on the left side is ready to be sorted in serially;  on the right, our "Register cells" and the cells' size are the same as the unsorted array. We are storing the elements in the register cell and  increasing size from top to bottom.  Our main objective is to place each new element in the right position based on what is currently inside the register cell. 
 
 
 Step 1
@@ -272,8 +272,8 @@ TODO
 \clearpage
 \appendix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg3MDY4MDU0OSwtMTUxMTMyNzI4Nyw0Nj
-EwNTA1NzUsLTUwMjM1NDA3MCwtNjM1MTYwNDMyLC00MDUwNzEx
-OTEsNjc4NzUyNzg1LC0xNjcxOTE0NjcwLC0xNjcxOTE0NjcwXX
-0=
+eyJoaXN0b3J5IjpbNjc0NDg0MTEsLTg3MDY4MDU0OSwtMTUxMT
+MyNzI4Nyw0NjEwNTA1NzUsLTUwMjM1NDA3MCwtNjM1MTYwNDMy
+LC00MDUwNzExOTEsNjc4NzUyNzg1LC0xNjcxOTE0NjcwLC0xNj
+cxOTE0NjcwXX0=
 -->
