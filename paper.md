@@ -187,10 +187,7 @@ TODO make these images nicly sized..
 
 ![FSMD chart for single cell in linear cell sort](figures/linear-cell-sort/fsmd_cell.png){#fig:linear-cell-fsmd-cell}
 
-![Schematic of elaborated design for linear cell sort](figures/linear-cell-sort/schematic.png){#fig:linear-cell-schematic}add image of schematic
-
-Schematic of elaborated design
-
+![Schematic of elaborated design for linear cell sort](figures/linear-cell-sort/schematic.png){#fig:linear-cell-schematic}
 
 TODO add image of synth report
 
@@ -255,7 +252,7 @@ TODO
 \clearpage
 \appendix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTczNTA1MTM5LC02MzUxNjA0MzIsLTQwNT
-A3MTE5MSw2Nzg3NTI3ODUsLTE2NzE5MTQ2NzAsLTE2NzE5MTQ2
-NzBdfQ==
+eyJoaXN0b3J5IjpbLTUwMjM1NDA3MCwtNjM1MTYwNDMyLC00MD
+UwNzExOTEsNjc4NzUyNzg1LC0xNjcxOTE0NjcwLC0xNjcxOTE0
+NjcwXX0=
 -->
