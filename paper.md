@@ -173,7 +173,7 @@ Linear cell sort, as detailed by Vasquez's article [@vasquez16], receives data o
 
 Since we decided to make the algorithm generic, it will let the user decide the array's size and length. Figure 2.1 (Top FSMD architecture), the number of cells will be the same as the array size. New incoming data will be placed to the cell from top to bottom with increasing size. So when all cells are empty, the first element will automatically take the first place. Second incoming data will be compared with the first element; if it is smaller than the first element, then the first element will be moved to the second cell, and the new data will be placed to the first cell. Third incoming data will be compared with the other cells; if the incoming data is smaller than the first cell, we have a full and pushed. The first cell's data will be pushed to the second cell, and the data in the second cell will be pushed to the third cell, and the new incoming data will be placed to the first cell. The sorting algorithm will continue like this until the whole array is sorted.
 
--- NEW 
+-- NEW  (OVERVIEW) 
 The unsorted array on the left side is ready to be sorted in serially;  on the right, our "Register cells" and the cells' size are the same as the unsorted array. We are storing the elements in the register cell in increasing size from top to bottom.  Our main objective is to place each new element in the right position based on what is currently inside the register cell. 
 
 
@@ -183,7 +183,6 @@ in this step, all cells are empty, and we are beginning by inserting a new eleme
 Step 2
 In this case, we are inserting the second element, and we need to think about where this should go.  This element is smaller than the first, then inserting this in the first cell and the first cell kicking its element to the next empty cell, and rule No. 4 applying here. 
 
-
 Step 3
 Now the element, 6, roll in to be sorted, and we insert this in the 3rd position in the register cell. This element is larger than the two others we inserted so far in our cells, and we are applying rule No. 2 and 3 here. 
 
@@ -191,7 +190,7 @@ Step 4
 In this step, we apply to rule No. 2 and insert the element, 2,  at the top cell, and each cell kicking its value to the next cell. 
 
 Step 5
-In this step, we insert the last from the unsorted array. Now we have two elements that are the same, and to insert this into the sorted cell, we apply rule No. 2 and 3. 
+In this step, we insert the last from the unsorted array. Now we have two elements that are the same, and to insert this into the sorted cell, we apply rule No. 2 and 3. Our unsorted array are now sorted in parallel. 
 
 ### Hardware implementation
 
@@ -272,7 +271,7 @@ TODO
 \clearpage
 \appendix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDYxMDUwNTc1LC01MDIzNTQwNzAsLTYzNT
-E2MDQzMiwtNDA1MDcxMTkxLDY3ODc1Mjc4NSwtMTY3MTkxNDY3
-MCwtMTY3MTkxNDY3MF19
+eyJoaXN0b3J5IjpbLTE1MTEzMjcyODcsNDYxMDUwNTc1LC01MD
+IzNTQwNzAsLTYzNTE2MDQzMiwtNDA1MDcxMTkxLDY3ODc1Mjc4
+NSwtMTY3MTkxNDY3MCwtMTY3MTkxNDY3MF19
 -->
