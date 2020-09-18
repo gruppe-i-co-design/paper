@@ -174,6 +174,7 @@ Linear cell sort, as detailed by Vasquez's article [@vasquez16], receives data o
 Since we decided to make the algorithm generic, it will let the user decide the array's size and length. Figure 2.1 (Top FSMD architecture), the number of cells will be the same as the array size. New incoming data will be placed to the cell from top to bottom with increasing size. So when all cells are empty, the first element will automatically take the first place. Second incoming data will be compared with the first element; if it is smaller than the first element, then the first element will be moved to the second cell, and the new data will be placed to the first cell. Third incoming data will be compared with the other cells; if the incoming data is smaller than the first cell, we have a full and pushed. The first cell's data will be pushed to the second cell, and the data in the second cell will be pushed to the third cell, and the new incoming data will be placed to the first cell. The sorting algorithm will continue like this until the whole array is sorted.
 
 -- NEW  (OVERVIEW) 
+
 The unsorted array on the left side is ready to be sorted in serially;  on the right, our "Register cells" and the cells' size are the same as the unsorted array. We are storing the elements in the register cell in increasing size from top to bottom.  Our main objective is to place each new element in the right position based on what is currently inside the register cell. 
 
 
@@ -271,7 +272,8 @@ TODO
 \clearpage
 \appendix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MTEzMjcyODcsNDYxMDUwNTc1LC01MD
-IzNTQwNzAsLTYzNTE2MDQzMiwtNDA1MDcxMTkxLDY3ODc1Mjc4
-NSwtMTY3MTkxNDY3MCwtMTY3MTkxNDY3MF19
+eyJoaXN0b3J5IjpbLTg3MDY4MDU0OSwtMTUxMTMyNzI4Nyw0Nj
+EwNTA1NzUsLTUwMjM1NDA3MCwtNjM1MTYwNDMyLC00MDUwNzEx
+OTEsNjc4NzUyNzg1LC0xNjcxOTE0NjcwLC0xNjcxOTE0NjcwXX
+0=
 -->
