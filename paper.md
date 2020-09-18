@@ -89,22 +89,21 @@ We have created a generic counter and register in the hardware implementation, w
 
 TODO add image of synth report
 
-Synthesized report (Shows the power consumption) 
-
-
-TODO add image of elaborated schematic
-
-Schematic of Elaborated design
-
-
+Synthesized report (Shows the power consumption)
 
 TODO add image of synthesized report
 
 Summary of synthesized report
 
+TODO make these images appear nicly on page...
 
-The picture below shows an unsorted array in the ram when the program starts. 
+![ASMD chart for selection sort](figures/selection-sort/asmd.png){#fig:selection-asmd}
 
+![FSMD chart for selection sort](figures/selection-sort/fsmd.png){#fig:selection-fsmd}
+
+![Schematic of elaborated design for selection sort](figures/selection-sort/schematic.png){#fig:selection-schematic}
+
+The picture below shows an unsorted array in the ram when the program starts.
 
 TODO add images of waveform diagrams
 
@@ -170,10 +169,17 @@ Since we decided to make the algorithm generic, it will let the user decide the 
 
 The implementation of linear cell sort algorithms was more complicated than Selection sort.  We needed to draw multi FSMD and ASMD charts to implement this in hardware. Since this algorithm uses cells and to implement this in hardware we needed to draw a FSMD and ASMD chart for this to control each cell. Then we draw another FSMD and ASMD chart to control all cells and plus other components. In our implementation we neither use RAM or ROM.
 
-TODO add image of schematic
+TODO make these images nicly sized..
 
-Schematic of elaborated design
+![ASMD chart for linear cell sort](figures/linear-cell-sort/asmd.png){#fig:linear-cell-asmd}
 
+![FSMD chart for linear cell sort](figures/linear-cell-sort/fsmd.png){#fig:linear-cell-fsmd}
+
+![ASMD chart for single cell in linear cell sort](figures/linear-cell-sort/asmd_cell.png){#fig:linear-cell-asmd-cell}
+
+![FSMD chart for single cell in linear cell sort](figures/linear-cell-sort/fsmd_cell.png){#fig:linear-cell-fsmd-cell}
+
+![Schematic of elaborated design for linear cell sort](figures/linear-cell-sort/schematic.png){#fig:linear-cell-schematic}
 
 TODO add image of synth report
 
@@ -203,6 +209,14 @@ The code for the software implementation of linear cell sort can be found in @ls
 Based on the book by Nvidia which details sorting using networks and parallel comparisions [@gpugems2; chapter 46].
 
 ### Hardware implementation
+
+TODO make these images appear nicly on page
+
+![ASMD chart for odd-even sort](figures/odd-even-sort/asmd.png){#fig:odd-even-asmd}
+
+![FSMD chart for odd-even sort](figures/odd-even-sort/fsmd.png){#fig:odd-even-fsmd}
+
+![Schematic of elaborated design for odd-even sort](figures/odd-even-sort/schematic.png){#fig:odd-even-schematic}
 
 ### Software implementation
 
