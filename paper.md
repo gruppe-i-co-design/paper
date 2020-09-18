@@ -79,7 +79,7 @@ In this section, we are going to presenting the results we gathered through to a
 
 ## Selection sort
 
-The selection sort is the most straightforward sorting algorithm. Our implementation will identify the minimum element in the array and swap it with the element in the primary position. Then it will identify the second position minimum element and swap it with the element in the second location, and it will continue executing this until the entire array is sorted. It has an $O(n^2)$ time complexity, and this is inefficient on large arrays. The input array divides into two subarrays, a sorted subarray of elements built up from top to bottom, and the remaining unsorted elements occupy the rest of the array.
+The Selection Sort is the most straightforward sorting algorithm. Our implementation will identify the minimum element in the array and swap it with the element in the primary position. Then it will identify the second position minimum element and swap it with the element in the second location, and it will continue executing this until the entire array is sorted. It has an $O(n^2)$ time complexity, and this is inefficient on large arrays. The input array divides into two subarrays, a sorted subarray of elements built up from top to bottom, and the remaining unsorted elements occupy the rest of the array.
 
 See appendix \ref{} for a visual explanation of the algorithm.
 
@@ -272,8 +272,8 @@ TODO
 \clearpage
 \appendix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjc0NDg0MTEsLTg3MDY4MDU0OSwtMTUxMT
-MyNzI4Nyw0NjEwNTA1NzUsLTUwMjM1NDA3MCwtNjM1MTYwNDMy
-LC00MDUwNzExOTEsNjc4NzUyNzg1LC0xNjcxOTE0NjcwLC0xNj
-cxOTE0NjcwXX0=
+eyJoaXN0b3J5IjpbMjA4MjAxMDY1MSwtODcwNjgwNTQ5LC0xNT
+ExMzI3Mjg3LDQ2MTA1MDU3NSwtNTAyMzU0MDcwLC02MzUxNjA0
+MzIsLTQwNTA3MTE5MSw2Nzg3NTI3ODUsLTE2NzE5MTQ2NzAsLT
+E2NzE5MTQ2NzBdfQ==
 -->
