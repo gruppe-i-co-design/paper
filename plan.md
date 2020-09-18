@@ -25,8 +25,8 @@
 - [ ] Write results from odd-even sort. (Rahmat)
 
 - [ ] Cleanup results chapter (each subchapter should have similar structure).(Rahmat)
-	- [ ] Selection sort explanations and figures.
-	- [ ] Linear cell sort explanations and figures.
+	- [x] Selection sort explanations and figures.
+	- [x] Linear cell sort explanations and figures.
 
 - [x] Digitize FSMD and ASMD charts for odd-even sort. (Anders)
 
@@ -46,5 +46,6 @@
 
 - [ ] Write a small "whodidwhat" that will be appended as an appendix.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDM4MjUzMTRdfQ==
+eyJoaXN0b3J5IjpbLTIxNDE3Nzk2OTgsLTEzNDM4MjUzMTRdfQ
+==
 -->
