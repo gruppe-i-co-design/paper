@@ -89,7 +89,8 @@ We have created a generic counter and register in the hardware implementation, w
 
 TODO add image of synth report
 
-Synthesized report (Shows the power consumption)
+Synthesized report (Shows the power consumption) 
+
 
 TODO add image of synthesized report
 
@@ -101,9 +102,19 @@ TODO make these images appear nicly on page...
 
 ![FSMD chart for selection sort](figures/selection-sort/fsmd.png){#fig:selection-fsmd}
 
-![Schematic of elaborated design for selection sort](figures/selection-sort/schematic.png){#fig:selection-schematic}
+![Schematic of elaborated design for selection sort](figures/selection-sort/schematic.png){#fig:selection-schematic}elaborated schematic
 
-The picture below shows an unsorted array in the ram when the program starts.
+Schematic of Elaborated design
+
+
+
+TODO add image of synthesized report
+
+Summary of synthesized report
+
+
+The picture below shows an unsorted array in the ram when the program starts. 
+
 
 TODO add images of waveform diagrams
 
@@ -179,7 +190,10 @@ TODO make these images nicly sized..
 
 ![FSMD chart for single cell in linear cell sort](figures/linear-cell-sort/fsmd_cell.png){#fig:linear-cell-fsmd-cell}
 
-![Schematic of elaborated design for linear cell sort](figures/linear-cell-sort/schematic.png){#fig:linear-cell-schematic}
+![Schematic of elaborated design for linear cell sort](figures/linear-cell-sort/schematic.png){#fig:linear-cell-schematic}add image of schematic
+
+Schematic of elaborated design
+
 
 TODO add image of synth report
 
@@ -244,6 +258,6 @@ TODO
 \clearpage
 \appendix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjc4NzUyNzg1LC0xNjcxOTE0NjcwLC0xNj
-cxOTE0NjcwXX0=
+eyJoaXN0b3J5IjpbLTQwNTA3MTE5MSw2Nzg3NTI3ODUsLTE2Nz
+E5MTQ2NzAsLTE2NzE5MTQ2NzBdfQ==
 -->
