@@ -309,7 +309,31 @@ TODO
 \clearpage
 \appendix
 
-# The code
+# Visual explanations of the sorting algorithms
+
+## Selection sort {#sec:visual-selection-sort}
+
+\includegraphics[page=1]{./resources/visual-explanation-selection-sort}
+
+\includegraphics[page=2]{./resources/visual-explanation-selection-sort}
+
+\includegraphics[page=3]{./resources/visual-explanation-selection-sort}
+
+\clearpage
+
+## Linear cell sort {#sec:visual-linear-cell-sort}
+
+\includegraphics[page=1]{./resources/visual-explanation-linear-cell-sort}
+
+\includegraphics[page=2]{./resources/visual-explanation-linear-cell-sort}
+
+\clearpage
+
+## Odd-even transposition and merge sort {#sec:visual-odd-even-sort}
+
+\includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
+
+# The code for the software implementations
 
 ## Selection sort
 
@@ -343,40 +367,20 @@ int main(){
 }
 ~~~
 
+\clearpage
 
 ## Linear cell sort
 
 ~~~{#lst:linear-cell-code .c include=listings/linear-cell-sort-sw/linear-cell-sort.c caption="Code for software implementation of linear cell sort"}
 ~~~
 
+\clearpage
+
 ## Odd-even sort
 
 ~~~{#lst:odd-even-code .c include=listings/odd-even-merge-sw/odd-even-merge-sort.c caption="Code for software implementation of Batcher's odd-even merge sort"}
 ~~~
 
-# Visual explanations of the sorting algorithms
-
-## Selection sort {#sec:visual-selection-sort}
-
-\includegraphics[page=1]{./resources/visual-explanation-selection-sort}
-
-\includegraphics[page=2]{./resources/visual-explanation-selection-sort}
-
-\includegraphics[page=3]{./resources/visual-explanation-selection-sort}
-
-\clearpage
-
-## Linear cell sort {#sec:visual-linear-cell-sort}
-
-\includegraphics[page=1]{./resources/visual-explanation-linear-cell-sort}
-
-\includegraphics[page=2]{./resources/visual-explanation-linear-cell-sort}
-
-\clearpage
-
-## Odd-even transposition and merge sort {#sec:visual-odd-even-sort}
-
-\includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
 <!--stackedit_data:
 eyJkaXNjdXNzaW9ucyI6eyJSYlRmRzUwOUpTRllTSmRHIjp7In
 RleHQiOiJXZSB1c2VkIFZpdmFkbyBmb3IgdGhlIEhhcmR3YXJl
