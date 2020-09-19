@@ -27,7 +27,7 @@ TODO write introduction
 
 Our goal for this paper was to explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
 
-The tools used in this paper was Vivado 2020.1, Vitis and the Zybo Zynq-7000 board [@zybozynq7000].  used Vivado for the Hardware implementation of our paper, to be able to program the Zybo board. For the software and IP implementation, we took in use the Vitis IDE.
+The tools used in this paper was Vivado 2020.1, Vitis and the Zybo Zynq-7000 board [@zybozynq7000]. We used Vivado for the Hardware implementation of our paper, to be able to program the Zy board. For the software and IP implementation, we took in use the Vitis IDE, where we also used the Zynq-700 board for testing the S.
 
 For all of our algorithms, we followed the same steps. We started by creating an FSMD architecture of the overall algorithm we were currently building; we did this to get an overview of what components and signals were needed. Based on the FSMD architecture created, we then designed the ASMD chart, this was done to easily convert the chart into code when implementing the algorithm, while also having a good overview of the states needed.
 
@@ -237,7 +237,7 @@ Through our exploration, we managed to get all three algoritms working in both h
 
 The effort required by hardware and software development wereirst differenciated. As an example we spent nearly two full days of collaboration and pair programming to implement selection sort in VHDL. On the contrary it took only about an hour to write the software implementation in C and running it on the Zybo board. We believe there are several reasons for this gap in development time.
 
-did on average not have a long track record with VHDL and hardware development. Hence we spent extra time during hardware development to ensure we were all learning and developing our own knowledge next to the actual work. Fo
+did on average not have a long track record with VHDL and hardware development. Hence e spent extra time during hardware development to ensure we were all learning and developing our own knowledge next to the actual work. Fodid spend some extra time to ensu
 
 # Conclusion
 
@@ -277,11 +277,11 @@ TODO
 \includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODk1MjcxNDAzLC0xNTYwMTc1NDg3LDEwNj
-U0NDU5MTQsLTE3NzA0Mzc2NDMsNzEzNzc4NTM0LDY3NDg0ODAs
-MTg5NzA0NTgxLC0yMDU5NzA4ODYyLC0xMDAzOTYzODE2LC0xNj
-YwNTgyNzQ4LC0xMTM1NTA3Mjg0LDIwODIwMTA2NTEsLTg3MDY4
-MDU0OSwtMTUxMTMyNzI4Nyw0NjEwNTA1NzUsLTUwMjM1NDA3MC
-wtNjM1MTYwNDMyLC00MDUwNzExOTEsNjc4NzUyNzg1LC0xNjcx
-OTE0NjcwXX0=
+eyJoaXN0b3J5IjpbLTE5MzI3MjQ3NTgsODk1MjcxNDAzLC0xNT
+YwMTc1NDg3LDEwNjU0NDU5MTQsLTE3NzA0Mzc2NDMsNzEzNzc4
+NTM0LDY3NDg0ODAsMTg5NzA0NTgxLC0yMDU5NzA4ODYyLC0xMD
+AzOTYzODE2LC0xNjYwNTgyNzQ4LC0xMTM1NTA3Mjg0LDIwODIw
+MTA2NTEsLTg3MDY4MDU0OSwtMTUxMTMyNzI4Nyw0NjEwNTA1Nz
+UsLTUwMjM1NDA3MCwtNjM1MTYwNDMyLC00MDUwNzExOTEsNjc4
+NzUyNzg1XX0=
 -->
