@@ -231,7 +231,7 @@ The code for our software implementation can be found in @lst:odd-even-code.
 
 # Discussion
 
-Through our exploration, we managed to g
+Through our exploration, we managed to get all three algoritms working in both hardware and software, and has 
 
 # Conclusion
 
@@ -271,9 +271,9 @@ TODO
 \includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2MDAxMDA0MywtMjA1OTcwODg2MiwtMT
-AwMzk2MzgxNiwtMTY2MDU4Mjc0OCwtMTEzNTUwNzI4NCwyMDgy
-MDEwNjUxLC04NzA2ODA1NDksLTE1MTEzMjcyODcsNDYxMDUwNT
-c1LC01MDIzNTQwNzAsLTYzNTE2MDQzMiwtNDA1MDcxMTkxLDY3
-ODc1Mjc4NSwtMTY3MTkxNDY3MCwtMTY3MTkxNDY3MF19
+eyJoaXN0b3J5IjpbMTg5NzA0NTgxLC0yMDU5NzA4ODYyLC0xMD
+AzOTYzODE2LC0xNjYwNTgyNzQ4LC0xMTM1NTA3Mjg0LDIwODIw
+MTA2NTEsLTg3MDY4MDU0OSwtMTUxMTMyNzI4Nyw0NjEwNTA1Nz
+UsLTUwMjM1NDA3MCwtNjM1MTYwNDMyLC00MDUwNzExOTEsNjc4
+NzUyNzg1LC0xNjcxOTE0NjcwLC0xNjcxOTE0NjcwXX0=
 -->
