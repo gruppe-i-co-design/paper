@@ -235,7 +235,7 @@ Through our exploration, we managed to get all three algoritms working in both h
 
 ## Differing development effort
 
-The effort required by hardware and software development were quite differing. As an example we spent nearly two full days of collaboration and pair programming to implement selection sort in VHDL. On the contrary it took only about an hour to write the software implementation in C and running it on the Zybo board. We believe there are several reasons for this gap in development time.
+The effort required by hardware and software development were quite differ. As an example we spent nearly two full days of collaboration and pair programming to implement selection sort in VHDL. On the contrary it took only about an hour to write the software implementation in C and running it on the Zybo board. We believe there are several reasons for this gap in development time.
 
 The group did on average not have a long track record with VHDL and hardware development. Hence e spent time learning and developing our own knowledgeduring next to the actual implementation work.
 
@@ -277,11 +277,19 @@ TODO
 \includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1MjI5MjczNyw2NDE0MDY0NjEsLTE5Mz
-I3MjQ3NTgsLTE1NjAxNzU0ODcsMTA2NTQ0NTkxNCwtMTc3MDQz
-NzY0Myw3MTM3Nzg1MzQsNjc0ODQ4MCwxODk3MDQ1ODEsLTIwNT
-k3MDg4NjIsLTEwMDM5NjM4MTYsLTE2NjA1ODI3NDgsLTExMzU1
-MDcyODQsMjA4MjAxMDY1MSwtODcwNjgwNTQ5LC0xNTExMzI3Mj
-g3LDQ2MTA1MDU3NSwtNTAyMzU0MDcwLC02MzUxNjA0MzIsLTQw
-NTA3MTE5MV19
+eyJkaXNjdXNzaW9ucyI6eyJSYlRmRzUwOUpTRllTSmRHIjp7In
+RleHQiOiJXZSB1c2VkIFZpdmFkbyBmb3IgdGhlIEhhcmR3YXJl
+IGltcGxlbWVudGF0aW9uIG9mIG91ciBwYXBlciwgdG8gYmUgYW
+JsZSB0byBwcm9n4oCmIiwic3RhcnQiOjEwOTYsImVuZCI6MTM1
+NX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
+Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
+OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
+UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
+ODgxfX0sImhpc3RvcnkiOlstMTgzMDMwNTI0LC0yNTIyOTI3Mz
+csLTE5MzI3MjQ3NTgsLTE1NjAxNzU0ODcsMTA2NTQ0NTkxNCwt
+MTc3MDQzNzY0Myw3MTM3Nzg1MzQsNjc0ODQ4MCwxODk3MDQ1OD
+EsLTIwNTk3MDg4NjIsLTEwMDM5NjM4MTYsLTE2NjA1ODI3NDgs
+LTExMzU1MDcyODQsMjA4MjAxMDY1MSwtODcwNjgwNTQ5LC0xNT
+ExMzI3Mjg3LDQ2MTA1MDU3NSwtNTAyMzU0MDcwLC02MzUxNjA0
+MzIsLTQwNTA3MTE5MV19
 -->
