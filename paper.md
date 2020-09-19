@@ -245,7 +245,7 @@ The code for our software implementation can be found in @lst:odd-even-code.
 ~~~{#lst:odd-even-code .c include=listings/odd-even-merge-sw/odd-even-merge-sort.c caption="Code for software implementation of Batcher's odd-even merge sort"}
 ~~~
 
-# Discussionndting algorithlte eve
+# Discussion
 
 Through our exploration, we managed to get all three algoritms working in both hardware and software. Further we also found some clear distinctions between algorithms in terms of complexity, speed, size and parallelization. We will now discuss and compare the different algorithms and implementations.
 
@@ -329,11 +329,11 @@ OX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
 Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
 OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
 UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
-ODgxfX0sImhpc3RvcnkiOlstMTcxMDc3NzU2OSwyMDUzOTgxMz
-MxLDczMTQ0ODQ0MSwtMTgzMDMwNTI0LC0yNTIyOTI3MzcsLTE5
-MzI3MjQ3NTgsLTE1NjAxNzU0ODcsMTA2NTQ0NTkxNCwtMTc3MD
-QzNzY0Myw3MTM3Nzg1MzQsNjc0ODQ4MCwxODk3MDQ1ODEsLTIw
-NTk3MDg4NjIsLTEwMDM5NjM4MTYsLTE2NjA1ODI3NDgsLTExMz
-U1MDcyODQsMjA4MjAxMDY1MSwtODcwNjgwNTQ5LC0xNTExMzI3
-Mjg3LDQ2MTA1MDU3NV19
+ODgxfX0sImhpc3RvcnkiOlstMjI4ODMyODc0LDIwNTM5ODEzMz
+EsNzMxNDQ4NDQxLC0xODMwMzA1MjQsLTI1MjI5MjczNywtMTkz
+MjcyNDc1OCwtMTU2MDE3NTQ4NywxMDY1NDQ1OTE0LC0xNzcwND
+M3NjQzLDcxMzc3ODUzNCw2NzQ4NDgwLDE4OTcwNDU4MSwtMjA1
+OTcwODg2MiwtMTAwMzk2MzgxNiwtMTY2MDU4Mjc0OCwtMTEzNT
+UwNzI4NCwyMDgyMDEwNjUxLC04NzA2ODA1NDksLTE1MTEzMjcy
+ODcsNDYxMDUwNTc1XX0=
 -->
