@@ -6,7 +6,7 @@
 
 - [x] Format and cleanup VHDL and C code. (Ole)
 
-- [ ] Get utilization metrics for each algorithm at size 4, 16 and 64.
+- [x] Get utilization metrics for each algorithm at size 4, 16 and 64. (Rahmat)
 
 - [x] Rewrite methods to explain more our approach to the project as a whole instead of individual algoritms. (Anders)
 
@@ -46,6 +46,7 @@
 
 - [ ] Write a small "whodidwhat" that will be appended as an appendix.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwMjY5NjUyMiwtNDk3MzcwMjc0LC0xMD
-I1NTQ3NzYyLC0yMTQxNzc5Njk4LC0xMzQzODI1MzE0XX0=
+eyJoaXN0b3J5IjpbNDExMzg4NjA4LC05MDI2OTY1MjIsLTQ5Nz
+M3MDI3NCwtMTAyNTU0Nzc2MiwtMjE0MTc3OTY5OCwtMTM0Mzgy
+NTMxNF19
 -->
