@@ -27,7 +27,7 @@ TODO write introduction
 
 Our goal for this paper was to explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
 
-The tools used in this paper was Vivado 2020.1 and Vitis. Vivado was used for the Hardware implementation of our paper, to be able to program our boards. For the software and IP implementation, we took in use the Vitis IDE.
+The tools used in this paper was Vivado 2020.1, Vitis and the Zybo Zynq-7000 board. Vivado was used for the Hardware implementation of our paper, to be able to program the Zybo board. For the software and IP implementation, we took in use the Vitis IDE.
 
 For all of our algorithms, we followed the same steps. We started by creating an FSMD architecture of the overall algorithm we were currently building; we did this to get an overview of what components and signals were needed. Based on the FSMD architecture created, we then designed the ASMD chart, this was done to easily convert the chart into code when implementing the algorithm, while also having a good overview of the states needed.
 
@@ -275,10 +275,11 @@ TODO
 \includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDU1ODA2NjI1LC0xNzcwNDM3NjQzLDcxMz
-c3ODUzNCw2NzQ4NDgwLDE4OTcwNDU4MSwtMjA1OTcwODg2Miwt
-MTAwMzk2MzgxNiwtMTY2MDU4Mjc0OCwtMTEzNTUwNzI4NCwyMD
-gyMDEwNjUxLC04NzA2ODA1NDksLTE1MTEzMjcyODcsNDYxMDUw
-NTc1LC01MDIzNTQwNzAsLTYzNTE2MDQzMiwtNDA1MDcxMTkxLD
-Y3ODc1Mjc4NSwtMTY3MTkxNDY3MCwtMTY3MTkxNDY3MF19
+eyJoaXN0b3J5IjpbMTQxODg3MDEzNCwtMTc3MDQzNzY0Myw3MT
+M3Nzg1MzQsNjc0ODQ4MCwxODk3MDQ1ODEsLTIwNTk3MDg4NjIs
+LTEwMDM5NjM4MTYsLTE2NjA1ODI3NDgsLTExMzU1MDcyODQsMj
+A4MjAxMDY1MSwtODcwNjgwNTQ5LC0xNTExMzI3Mjg3LDQ2MTA1
+MDU3NSwtNTAyMzU0MDcwLC02MzUxNjA0MzIsLTQwNTA3MTE5MS
+w2Nzg3NTI3ODUsLTE2NzE5MTQ2NzAsLTE2NzE5MTQ2NzBdfQ==
+
 -->
