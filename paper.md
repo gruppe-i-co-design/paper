@@ -235,9 +235,21 @@ Through our exploration, we managed to get all three algoritms working in both h
 
 ## Differing development effort
 
-The effort required by hardware and software development were quite differ. As an example we spent nearly two full days of collaboration and pair programming to implement selection sort in VHDL. On the contrary it took only about an hour to write the software implementation in C and running it on the Zybo board. We believe there are several reasons for this gap in development time.
+The effort required by hardware and software development were quite differing. As an example we spent nearly two full days of collaboration and pair programming to implement selection sort in VHDL. On the contrary it took only about an hour to write the software implementation in C and running it on the Zybo board. We believe there are several reasons for this gap in development time.
 
-The group did on average not have a long track record with VHDL and hardware development. Hence e spent time learning and developing our own knowledgeduring next to the actual implementation work.ODO
+The entire group did not have a long track record with VHDL and hardware development. Hence we spent time learning and developing our own knowledge next to the actual implementation work. As we got more experienced with hardware development the work got more focused and hence more effective. This can be clearly seen as our implementation of our last algorithm, odd-even sort, is both quite complex and modular, especially compared to our first implementation of selection sort. In the software domain the group is quite well versed, hence the implementations were quickly developed by individuals.
+
+Another aspect that affected development time for hardware was the extensive development activities conducted prior to writing a single line of code. We followed a lower level approach, hence we firstly created a FSMD chart, then an ASMD chart and finally converting them into code. Further, in accordance with the development technique, we created separated files and entities for each component in the FSMD chart, hence there was quite a bit of work for each component. We did not conduct similar activities when implementing the algorithm in software, because it's at a much higher level of abstraction. It is also possible to work at a higher level of abstraction when implementing in hardware, however we did not explore this possibility because (TODO hvorfor gjorde vi ikke dette?).
+
+One aspect that might have impacted development effort is that we consequently did the hardware implementation prior to the software implementation. As the course has been mostly focused on hardware and VHDL, we wanted to prioritize completing the hardware implementations as a group. By doing it as a group we could take advantage of discussions and collaboration to learn optimally. As we started out each new algorithm by working together as a group, we naturally also started with the hardware implementation. After implementing the algorithm in hardware one can argue that we had a much better understanding of the algorithm which would mean that the following implementation in software would be easier. However since the algorithms are fairly trivial the knowledge gained from implementing it in hardware is minuscule, and therefore it is unlikely that this had a big impact on development effort.
+
+Lastly, despite gaining proficiency in using the tools for hardware development, we spent a lot of time figuring out cryptic error messages. One would think that this would improve with experience, however as we started to used more complex features we also consistently hit new errors. As an example we started using generics in our second algorithm to make it more reusable.
+
+In conclusion, the development efforts between software and hardware were particularly highlighted in our project due to lack of knowledge, however the extensive development activities are still the major differencing factor.
+
+## Speed
+
+TODO
 
 # Conclusion
 
@@ -286,11 +298,11 @@ NX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
 Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
 OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
 UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
-ODgxfX0sImhpc3RvcnkiOlstOTkwNzc4Mzc1LC0xNjg3MjAyMz
-c1LC0xODMwMzA1MjQsLTI1MjI5MjczNywtMTkzMjcyNDc1OCwt
-MTU2MDE3NTQ4NywxMDY1NDQ1OTE0LC0xNzcwNDM3NjQzLDcxMz
-c3ODUzNCw2NzQ4NDgwLDE4OTcwNDU4MSwtMjA1OTcwODg2Miwt
-MTAwMzk2MzgxNiwtMTY2MDU4Mjc0OCwtMTEzNTUwNzI4NCwyMD
-gyMDEwNjUxLC04NzA2ODA1NDksLTE1MTEzMjcyODcsNDYxMDUw
-NTc1LC01MDIzNTQwNzBdfQ==
+ODgxfX0sImhpc3RvcnkiOlstMTgzMDMwNTI0LC0yNTIyOTI3Mz
+csLTE5MzI3MjQ3NTgsLTE1NjAxNzU0ODcsMTA2NTQ0NTkxNCwt
+MTc3MDQzNzY0Myw3MTM3Nzg1MzQsNjc0ODQ4MCwxODk3MDQ1OD
+EsLTIwNTk3MDg4NjIsLTEwMDM5NjM4MTYsLTE2NjA1ODI3NDgs
+LTExMzU1MDcyODQsMjA4MjAxMDY1MSwtODcwNjgwNTQ5LC0xNT
+ExMzI3Mjg3LDQ2MTA1MDU3NSwtNTAyMzU0MDcwLC02MzUxNjA0
+MzIsLTQwNTA3MTE5MV19
 -->
