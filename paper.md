@@ -175,7 +175,7 @@ Since we decided to make the algorithm generic, it will let the user decide the 
 
 -- NEW  (OVERVIEW) 
 
-The unsorted array on the left side is ready to be sorted in serially;  on the right, our "Register cells" and the cells' size are the same as the unsorted array. We are storing the elements in the register cell and  increasing size from top to bottom.  Our main objective is to place each new element in the right position based on what is currently inside the register cell. The sorting algorithm uses cells / registers to sort the incoming data. It has only four rules: 
+The unsorted array on the left side is ready to be sorted in serially;  on the right, our "Register cells" and the cells' size are the same as the unsorted array. We are storing the elements in the register cell and  increasing size from top to bottom.  Our main objective is to place each new element in the right position based on what is currently inside the register cell. To make sure that The sorting algorithm uses cells  registers to sort the incoming data. It has only four rules: 
 
 1.  If a cell is empty, it will only be populated if the cell above is full.
 2.  If a cell is full, the cell data will be replaced if both the incoming data is less than the stored data, and the cell above is not pushing its data.
@@ -277,8 +277,8 @@ TODO
 \clearpage
 \appendix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIyODE4MDMwMiwyMDgyMDEwNjUxLC04Nz
-A2ODA1NDksLTE1MTEzMjcyODcsNDYxMDUwNTc1LC01MDIzNTQw
-NzAsLTYzNTE2MDQzMiwtNDA1MDcxMTkxLDY3ODc1Mjc4NSwtMT
-Y3MTkxNDY3MCwtMTY3MTkxNDY3MF19
+eyJoaXN0b3J5IjpbMzgwNDc1MzcyLDIwODIwMTA2NTEsLTg3MD
+Y4MDU0OSwtMTUxMTMyNzI4Nyw0NjEwNTA1NzUsLTUwMjM1NDA3
+MCwtNjM1MTYwNDMyLC00MDUwNzExOTEsNjc4NzUyNzg1LC0xNj
+cxOTE0NjcwLC0xNjcxOTE0NjcwXX0=
 -->
