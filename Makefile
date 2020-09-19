@@ -12,10 +12,10 @@ PANDOC_FLAGS= \
 	--filter pandoc-crossref \
 	--filter pandoc-citeproc
 
-%.pdf: %.md metadata.yaml
+%.pdf: %.md metadata.yaml paper.bib
 	pandoc $(PANDOC_FLAGS) $< -o $@
 
-%.latex: %.md metadata.yaml
+%.latex: %.md metadata.yaml paper.bib
 	pandoc $(PANDOC_FLAGS) $< -o $@
 
 default: paper.pdf

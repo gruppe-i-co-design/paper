@@ -105,13 +105,7 @@ Summary of synthesized report
 Design charts for selection sort
 </div>
 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=.90\linewidth]{figures/selection-sort/schematic.png}
-	\caption{Schematic of elaborated design for selection sort}
-	\label{fig:selection-schematic}
-\end{figure}
-
+![Schematic of elaborated design for selection sort](figures/selection-sort/schematic.png){#fig:selection-schematic width=95%}
 
 TODO add image of synthesized report
 
@@ -126,25 +120,25 @@ TODO add images of waveform diagrams
 
 ### Software Implementation
 
-The implementation of the algorithm in software was quick to write, and certainly inspired by the hardware implementation. To keep it consistent, we decided to stick with similar names for the different components (in particular index_counter and comparing_tindex_counter). This means that it should be easy to compare the implementations. We have tested the software implementation on Zybo board and worked perfectly.
+The implementation of the algorithm in software was quick to write, and certainly inspired by the hardware implementation. To keep it consistent, we decided to stick with similar names for the different components (in particular `index_counter` and `comparing_tindex_counter`). This means that it should be easy to compare the implementations. We have tested the software implementation on Zybo board and worked perfectly.
+
+TODO add image from serial terminal
 
 The code for the software implementation can be found in @lst:selection-code.
 
-
 ### IP Implementation
 
-In the IP-implementation, we followed the “Vivado Quick Start Tutorial” and made some necessary changes in some files. We declared some output ports and port mapped those in the “selection_sort_IP_v1_0.vhd”. Next, we made a component declaration and created some signals for inputs and outputs in the “selection_sort_IP_v1_0_S00_AXI.vhd” file. The VHDL description files created for the hardware implementation of the selection sort algorithm we copied those files into the IP directory and created a new AXI4 Peripheral for IP.
- Comment
-After this, we created a new block design to integrate our IP, added, and customized the “ZYNQ7 Processing System”. Our next step was that we added “selection_sort_IP_v1.0” into our design and created HDL Wrapper. Further, we added the Sort Controller and the block memory IP blocks into our design. The block memory generator is the previously explained external RAM, while the Sort Controller enables us to inspect the memory after it has been sorted (simply enabling our software running on the ZYNQ processor to read the memory through AXI). 
+In the IP-implementation, we followed the _Vivado Quick Start Tutorial_ [@gericota2020] and made some necessary changes in some files. We declared some output ports and port mapped those in the `selection_sort_IP_v1_0.vhd`. Next, we made a component declaration and created some signals for inputs and outputs in `selection_sort_IP_v1_0_S00_AXI.vhd`. The VHDL description files created for the hardware implementation of the selection sort algorithm we copied those files into the IP directory and created a new AXI4 Peripheral for IP.
 
+After this, we created a new block design to integrate our IP, added, and customized the `ZYNQ7 Processing System`. Our next step was that we added `selection_sort_IP_v1_0.vhd` into our design and created HDL Wrapper. Further, we added the sort controller and the block memory IP blocks into our design. The block memory generator is the previously explained external RAM and the sort controller enables us to inspect the memory after it has been sorted. This is done by simply enabling our software running on the ZYNQ processor to read the memory through AXI.
 
-TODO add image of IP block diagram
+TODO add image of the IP block diagram including the selection sort block, sort controller and memory
 
-The IP block diagram including the selection sort block, sort controller and memory
+Finally, after putting together the different IP blocks, we generated a bitstream to see if there was any error and also to enable us to export the hardware design to Vitis IDE. In Vitis IDE we first created a project platform using the XSA-file, which was exported from the Vivado. After building the platform, we created a new application project to test our IP implementation using software.
 
-Finally, after putting together the different IP blocks, we generated a bitstream to see if there was any error and also we needed to export hardware design  to the Vitis IDE. In Vitis IDE we first created a project platform for the (XSA) file extension which exported from the Vivado and generated multiple domains. We built the project and created a new application project for the software application to test our IP implementation.
+To be able to display the sorted values in the serial terminal, we need to communicate with the sort controller from the ZYNQ prossessing unit through the AXI interface. The code that has to run on the prosessing unit can be found in @lst:sort-controller-code. The function `Xil_In32`, provided by the platform, reads a value from the AXI interface. By reading slave register 2 of the sort controller, we can tell if the sorting is done, as the first bit represents the `sort_done` signal. Further by then repeatedly reading slave register 1 we will get the contents of the memory block as the sort controller continuously updates the RAM address and reads the data into the slave register.
 
-To be able to display the sorted values in the serial terminal, we need to communicate with the sort controller from the Zynq prossessing unit through the AXI interface. The code that has to run on the prosessing unit can be found in listing @lst:sort-controller-code. The function Xil_In32, provided by the platform, reads a value from the AXI interface. By reading slave register 2 of the sort controller, we can tell if the sorting is done, as the first bit represents the sort_done signal. Further by then repeatedly reading slave register 1 we will get the contents of the memory block. Sort controller continuously updates the RAM address and reads the data into the slave register.
+TODO this did not work so we should reword this a bit
 
 ## Linear cell sort
 
@@ -182,22 +176,24 @@ In this step, we insert the last from the unsorted array. Now we have two elemen
 
 The implementation of linear cell sort algorithms was more complicated than Selection sort.  We needed to draw multi FSMD and ASMD charts to implement this in hardware. Since this algorithm uses cells and to implement this in hardware we needed to draw a FSMD and ASMD chart for this to control each cell. Then we draw another FSMD and ASMD chart to control all cells and plus other components. In our implementation we neither use RAM or ROM.
 
-TODO make these images nicly sized..
+<div id="fig:design-charts-linear" class="subfigures">
+![FSMD chart](figures/linear-cell-sort/fsmd.png){#fig:linear-cell-fsmd width=85%}
 
-![ASMD chart for linear cell sort](figures/linear-cell-sort/asmd.png){#fig:linear-cell-asmd}
+![FSMD chart for single cell](figures/linear-cell-sort/fsmd_cell.png){#fig:linear-cell-fsmd-cell width=85%}
 
-![FSMD chart for linear cell sort](figures/linear-cell-sort/fsmd.png){#fig:linear-cell-fsmd}
+![ASMD chart](figures/linear-cell-sort/asmd.png){#fig:linear-cell-asmd width=45%}
+![ASMD chart for single cell](figures/linear-cell-sort/asmd_cell.png){#fig:linear-cell-asmd-cell width=45%}
 
-![ASMD chart for single cell in linear cell sort](figures/linear-cell-sort/asmd_cell.png){#fig:linear-cell-asmd-cell}
+Design charts for linear cell sort
+</div>
 
-![FSMD chart for single cell in linear cell sort](figures/linear-cell-sort/fsmd_cell.png){#fig:linear-cell-fsmd-cell}
+![Schematic of elaborated design for linear cell sort](figures/linear-cell-sort/schematic.png){#fig:linear-cell-schematic width=95%}
 
-![Schematic of elaborated design for linear cell sort](figures/linear-cell-sort/schematic.png){#fig:linear-cell-schematic}
+TODO remember to address mega-mux!
 
 TODO add image of synth report
 
 Synthesized report of On-Chip Power
-
 
 TODO add image of utilization report
 
@@ -215,28 +211,46 @@ Result from inspecting the serial monitor
 The code for the software implementation of linear cell sort can be found in @lst:linear-cell-code.
 
 ## Odd-even sort
+
 The intended algorithm is inspired from the Bubble Sort and is a relatively uncomplicated sorting algorithm. Bubble sort functioning by comparing adjacent elements; if the array elements are sorted, no swapping is terminated. Contrarily, the elements need to be switched.  The even-odd transposition sort algorithm operates by comparing all odd/even listed pairs of neighboring elements in the array if the match is in incorrect order; in other words, the primary element is bigger than the second the elements are swapped. The second step is to compare all even/odd listed matches of adjoining elements. These two steps are repeating until the array is sorted. 
 Based on the book by Nvidia which details sorting using networks and parallel comparisions [@gpugems2; chapter 46].
 
 ### Hardware implementation
+
 The hardware implementation of this algorithm was more comfortable than we thought, and the time complexity of this is O(N). We parallelized our approach since it was easy and compared swap functions performed simultaneously on each element's match. We implemented this to use a generic model, which is more natural to resize the input (N). The depth is the length of the input data, and it takes (N) stages that data is sorted. Furthermore, odd-even sort using more comparators, and we can calculate that straightforward. Let's take an example.
 
 We say that we want to sort an array of N elements.
 
-N = 10
-depth = d
-comparators = c
+$$
+\begin{split}
+N &= 10 \\
+d &= \text{depth / amount of layers} \\
+c &= \text{comparators}
+\end{split}
+$$
+
 We want to know what is the depth and how many comparators we are using.
-d(N) = N
-d(10) = 10
-c(N) = N * (N - 1)/ 2
-c(10) = 10 * (10 - 1) / 2 = 45
-To sort an array of 10 elements, we need 45 comparators, and the depth is 10 and 10 stages required for this to be completed.
-TODO make these images appear nicly on page
 
-![ASMD chart for odd-even sort](figures/odd-even-sort/asmd.png){#fig:odd-even-asmd}
+TODO find references for these formulas (think i saw it in gpu gems?)
 
-![FSMD chart for odd-even sort](figures/odd-even-sort/fsmd.png){#fig:odd-even-fsmd}
+$$
+\begin{split}
+d(N) &= N \\
+d(10) &= 10 \\
+c(N) &= N * (N - 1)/ 2 \\
+c(10) &= 10 * (10 - 1) / 2 = 45
+\end{split}
+$$
+
+To sort an array of 10 elements, we hence need 45 comparators distributed over 10 layers.
+
+<div id="fig:design-charts-odd-even" class="subfigures">
+![ASMD chart](figures/odd-even-sort/asmd.png){#fig:odd-even-asmd width=95%}
+
+![FSMD chart](figures/odd-even-sort/fsmd.png){#fig:odd-even-fsmd width=95%}
+
+Design charts for odd-even sort
+</div>
 
 ![Schematic of elaborated design for odd-even sort](figures/odd-even-sort/schematic.png){#fig:odd-even-schematic}
 
