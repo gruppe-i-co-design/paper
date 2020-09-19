@@ -245,9 +245,9 @@ $$
 To sort an array of 10 elements, we hence need 45 comparators distributed over 10 layers.
 
 <div id="fig:design-charts-odd-even" class="subfigures">
-![ASMD chart](figures/odd-even-sort/asmd.png){#fig:odd-even-asmd width=95%}
-
 ![FSMD chart](figures/odd-even-sort/fsmd.png){#fig:odd-even-fsmd width=95%}
+
+![ASMD chart](figures/odd-even-sort/asmd.png){#fig:odd-even-asmd width=95%}
 
 Design charts for odd-even sort
 </div>
@@ -375,11 +375,11 @@ OX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
 Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
 OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
 UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
-ODgxfX0sImhpc3RvcnkiOls5NTQzNjI4NTIsLTIwMDk5NzQyMT
-MsLTIwODk4MDA5ODQsLTIwMDk5NzQyMTMsMTk1OTk0ODAzNSwx
-ODg2OTgyODI1LDIwNTM5ODEzMzEsNzMxNDQ4NDQxLC0xODMwMz
-A1MjQsLTI1MjI5MjczNywtMTkzMjcyNDc1OCwtMTU2MDE3NTQ4
-NywxMDY1NDQ1OTE0LC0xNzcwNDM3NjQzLDcxMzc3ODUzNCw2Nz
-Q4NDgwLDE4OTcwNDU4MSwtMjA1OTcwODg2MiwtMTAwMzk2Mzgx
-NiwtMTY2MDU4Mjc0OF19
+ODgxfX0sImhpc3RvcnkiOlsxNDEzMjU0NjI0LDk1NDM2Mjg1Mi
+wtMjAwOTk3NDIxMywtMjA4OTgwMDk4NCwtMjAwOTk3NDIxMywx
+OTU5OTQ4MDM1LDE4ODY5ODI4MjUsMjA1Mzk4MTMzMSw3MzE0ND
+g0NDEsLTE4MzAzMDUyNCwtMjUyMjkyNzM3LC0xOTMyNzI0NzU4
+LC0xNTYwMTc1NDg3LDEwNjU0NDU5MTQsLTE3NzA0Mzc2NDMsNz
+EzNzc4NTM0LDY3NDg0ODAsMTg5NzA0NTgxLC0yMDU5NzA4ODYy
+LC0xMDAzOTYzODE2XX0=
 -->
