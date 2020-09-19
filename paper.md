@@ -9,8 +9,6 @@ institute: University of South-Eastern Norway
 date: 21.09.2020
 lang: en-US
 bibliography: paper.bib
-header-includes: |
-    \usepackage[toc,page]{appendix}
 ...
 
 # Vision statement
@@ -277,6 +275,31 @@ TODO
 
 \clearpage
 \appendix
+
+# Visual explanations of the sorting algorithms
+
+## Selection sort
+
+\includegraphics[page=1]{./resources/visual-explanation-selection-sort}
+
+\includegraphics[page=2]{./resources/visual-explanation-selection-sort}
+
+\includegraphics[page=3]{./resources/visual-explanation-selection-sort}
+
+\clearpage
+
+## Linear cell sort
+
+\includegraphics[page=1]{./resources/visual-explanation-linear-cell-sort}
+
+\includegraphics[page=2]{./resources/visual-explanation-linear-cell-sort}
+
+\clearpage
+
+## Odd-even transition and merge sort
+
+\includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
+
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTE2NjA1ODI3NDgsLTExMzU1MDcyODQsMj
 A4MjAxMDY1MSwtODcwNjgwNTQ5LC0xNTExMzI3Mjg3LDQ2MTA1

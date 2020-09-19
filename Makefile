@@ -5,7 +5,7 @@ PANDOC_FLAGS= \
 	--pdf-engine=xelatex \
 	--standalone \
 	--listings \
-	--include-in-header listing-colors.latex \
+	--include-in-header header-includes.latex \
 	--filter pandoc-plot \
 	--filter pandoc-include-code \
 	--filter pandoc-crossref \

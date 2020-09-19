@@ -22,3 +22,6 @@
     linewidth=\textwidth,
     basewidth=0.5em,
 }
+
+\usepackage[toc,page]{appendix}
+\usepackage{pdfpages}
