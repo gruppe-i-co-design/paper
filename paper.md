@@ -90,6 +90,8 @@ See appendix \ref{} for a visual explanation of the algorithm.
 
 ### Hardware Implementation
 
+For the first hardware implentation we followed the _Vivado Quick Start Tutorial_ by Gericota for running VHDL code on the Zybo board using Vivado [@gericotahw2020].
+
 We have created a generic counter and register in the hardware implementation, which we want to reuse as much code as possible. The comparing counter is set to 1 as a default value, and the output of the ram will be the first element in the array when we run the program. We temporarily store this index value of this element in a register and increment the index counter to compare the elements to find the smallest element in the array. Again we temporarily store the index and the value of the smallest element in registers, then we swap those elements till the array is sorted. We have removed the ram from the design file into the test bench file, which we wanted an external ram instead of an internal ram.
 
 TODO add image of synth report
@@ -123,6 +125,8 @@ TODO add images of waveform diagrams
 
 ### Software Implementation
 
+For the first software implentation we followed the _Vivado Quick Start Tutorial_ by Gericota for using the micro prossessor on the Zybo board [@gericotasw2020].
+
 The implementation of the algorithm in software was quick to write, and certainly inspired by the hardware implementation. To keep it consistent, we decided to stick with similar names for the different components (in particular `index_counter` and `comparing_tindex_counter`). This means that it should be easy to compare the implementations. We have tested the software implementation on Zybo board and worked perfectly.
 
 TODO add image from serial terminal
@@ -131,7 +135,9 @@ The code for the software implementation can be found in @lst:selection-code.
 
 ### IP Implementation
 
-In the IP-implementation, we followed the _Vivado Quick Start Tutorial_ [@gericota2020] and made some necessary changes in some files. We declared some output ports and port mapped those in the `selection_sort_IP_v1_0.vhd`. Next, we made a component declaration and created some signals for inputs and outputs in `selection_sort_IP_v1_0_S00_AXI.vhd`. The VHDL description files created for the hardware implementation of the selection sort algorithm we copied those files into the IP directory and created a new AXI4 Peripheral for IP.
+In the IP-implementation, we followed the _Vivado Quick Start Tutorial_ by Gericota for creating, packaging and controlling an IP [@gericotaip2020].
+
+We declared some output ports and port mapped those in the `selection_sort_IP_v1_0.vhd`. Next, we made a component declaration and created some signals for inputs and outputs in `selection_sort_IP_v1_0_S00_AXI.vhd`. The VHDL description files created for the hardware implementation of the selection sort algorithm we copied those files into the IP directory and created a new AXI4 Peripheral for IP.
 
 After this, we created a new block design to integrate our IP, added, and customized the `ZYNQ7 Processing System`. Our next step was that we added `selection_sort_IP_v1_0.vhd` into our design and created HDL Wrapper. Further, we added the sort controller and the block memory IP blocks into our design. The block memory generator is the previously explained external RAM and the sort controller enables us to inspect the memory after it has been sorted. This is done by simply enabling our software running on the ZYNQ processor to read the memory through AXI.
 
