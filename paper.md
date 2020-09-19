@@ -59,6 +59,8 @@ In this section, we are going to presenting the results we gathered through to a
 
 Firstly we will give a quick overview of the different implementations. In @tbl:lines-of-code we can see the overview of amount of files and lines of code for each implementation. The amount of lines can be an indicator of complexity, but it must be used carefully as code can of course be optimized for size. In our case we have tried to follow a consistent formatting style in addition to not optimizing for size. Another important note is that we are only counting lines of code, not comments or blank lines, and also only code which is part of the implementation of the algorithm, so no testbenches or code for displaying arrays etc.
 
+\pagebreak[4]
+
 | Implementation   | Input size | Cells | IO ports | Nets |
 |------------------|-----------:|------:|---------:|-----:|
 | Selection sort   |          4 |    10 |       15 |   51 |
