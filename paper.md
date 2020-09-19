@@ -27,7 +27,7 @@ TODO write introduction
 
 Our goal for this paper was to explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
 
-The tools used in this paper was Vivado 2020.1 and Vitis. Vivado was used for the Hardware implementation of our paper, to be able to program our boards. For the software and IP implementation, we took in use Vitis. We used 
+The tools used in this paper was Vivado 2020.1 and Vitis. Vivado was used for the Hardware implementation of our paper, to be able to program our boards. For the software and IP implementation, we took in use Vitis. We used the Zybo board as the board of our choice 
 
 For all of our algorithms, we followed the same steps. We started by creating an FSMD architecture of the overall algorithm we were currently building; we did this to get an overview of what components and signals were needed. Based on the FSMD architecture created, we then designed the ASMD chart, this was done to easily convert the chart into code when implementing the algorithm, while also having a good overview of the states needed.
 
@@ -275,10 +275,10 @@ TODO
 \includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjc0ODQ4MCwxMjQzMjU1Nzk5LDE4OTcwND
-U4MSwtMjA1OTcwODg2MiwtMTAwMzk2MzgxNiwtMTY2MDU4Mjc0
-OCwtMTEzNTUwNzI4NCwyMDgyMDEwNjUxLC04NzA2ODA1NDksLT
-E1MTEzMjcyODcsNDYxMDUwNTc1LC01MDIzNTQwNzAsLTYzNTE2
-MDQzMiwtNDA1MDcxMTkxLDY3ODc1Mjc4NSwtMTY3MTkxNDY3MC
-wtMTY3MTkxNDY3MF19
+eyJoaXN0b3J5IjpbNzEzNzc4NTM0LDY3NDg0ODAsMTg5NzA0NT
+gxLC0yMDU5NzA4ODYyLC0xMDAzOTYzODE2LC0xNjYwNTgyNzQ4
+LC0xMTM1NTA3Mjg0LDIwODIwMTA2NTEsLTg3MDY4MDU0OSwtMT
+UxMTMyNzI4Nyw0NjEwNTA1NzUsLTUwMjM1NDA3MCwtNjM1MTYw
+NDMyLC00MDUwNzExOTEsNjc4NzUyNzg1LC0xNjcxOTE0NjcwLC
+0xNjcxOTE0NjcwXX0=
 -->
