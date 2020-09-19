@@ -14,14 +14,10 @@ keywords:
 	- array
 	- sorting
 abstract: |
-	This is an example abstract. Fill this out!
+	Explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs). TODO more of the abstract
 ...
 
 \listoflistings
-
-# Vision statement
-
-Explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
 
 # Introduction
 
