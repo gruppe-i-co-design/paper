@@ -18,9 +18,9 @@
 
 > The introduction explains why this research is important or necessary or important. Begin by describing the problem or situation that motivates the research. Move to discussing the current state of research in the field; then reveal a “gap” or problem in the field. Finally, explain how the present research is a solution to that problem or gap. If the study has hypotheses, they are presented at the end of the introduction.
 
-- [ ] Move images into GitHub repo for paper (from Google Drive). (Ole)
+- [x] Move images into GitHub repo for paper (from Google Drive). (Ole)
 
-- [ ] Sort and organize links/references used. (Ole)
+- [x] Sort and organize links/references used. (Ole)
 
 - [ ] Write results from odd-even sort. (Rahmat)
 
@@ -46,6 +46,6 @@
 
 - [ ] Write a small "whodidwhat" that will be appended as an appendix.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNDE3Nzk2OTgsLTEzNDM4MjUzMTRdfQ
-==
+eyJoaXN0b3J5IjpbLTEwMjU1NDc3NjIsLTIxNDE3Nzk2OTgsLT
+EzNDM4MjUzMTRdfQ==
 -->
