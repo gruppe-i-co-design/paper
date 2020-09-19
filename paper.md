@@ -207,7 +207,7 @@ The code for the software implementation of linear cell sort can be found in @ls
 ~~~
 
 ## Odd-even sort
-
+The intended algorithm is inspired from the Bubble Sort and is a relatively uncomplicated sorting algorithm. Bubble sort functioning by comparing adjacent elements; if the array elements are sorted, no swapping is terminated. Contrarily, the elements need to be switched.  The even-odd transposition sort algorithm operates by comparing all odd/even listed pairs of neighboring elements in the array if the match is in incorrect order; in other words, the primary element is bigger than the second the elements are swapped. The second step is to compare all even/odd listed matches of adjoining elements. These two steps are repeating until the array is sorted. 
 Based on the book by Nvidia which details sorting using networks and parallel comparisions [@gpugems2; chapter 46].
 
 ### Hardware implementation
@@ -273,7 +273,7 @@ TODO
 \clearpage
 
 ## Odd-even transposition and merge sort
-The intended algorithm is inspired from the Bubble Sort and is a relatively uncomplicated sorting algorithm. Bubble sort functioning by comparing adjacent elements; if the array elements are sorted, no swapping is terminated. Contrarily, the elements need to be switched.  The even-odd transposition sort algorithm operates by comparing all odd/even listed pairs of neighboring elements in the array if the match is in incorrect order; in other words, the primary element is bigger than the second the elements are swapped. The second step is to compare all even/odd listed matches of adjoining elements. These two steps are repeating until the array is sorted. 
+
 
 \includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
 
@@ -286,11 +286,11 @@ NX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
 Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
 OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
 UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
-ODgxfX0sImhpc3RvcnkiOlstMTY4NzIwMjM3NSwtMTgzMDMwNT
-I0LC0yNTIyOTI3MzcsLTE5MzI3MjQ3NTgsLTE1NjAxNzU0ODcs
-MTA2NTQ0NTkxNCwtMTc3MDQzNzY0Myw3MTM3Nzg1MzQsNjc0OD
-Q4MCwxODk3MDQ1ODEsLTIwNTk3MDg4NjIsLTEwMDM5NjM4MTYs
-LTE2NjA1ODI3NDgsLTExMzU1MDcyODQsMjA4MjAxMDY1MSwtOD
-cwNjgwNTQ5LC0xNTExMzI3Mjg3LDQ2MTA1MDU3NSwtNTAyMzU0
-MDcwLC02MzUxNjA0MzJdfQ==
+ODgxfX0sImhpc3RvcnkiOlstOTkwNzc4Mzc1LC0xNjg3MjAyMz
+c1LC0xODMwMzA1MjQsLTI1MjI5MjczNywtMTkzMjcyNDc1OCwt
+MTU2MDE3NTQ4NywxMDY1NDQ1OTE0LC0xNzcwNDM3NjQzLDcxMz
+c3ODUzNCw2NzQ4NDgwLDE4OTcwNDU4MSwtMjA1OTcwODg2Miwt
+MTAwMzk2MzgxNiwtMTY2MDU4Mjc0OCwtMTEzNTUwNzI4NCwyMD
+gyMDEwNjUxLC04NzA2ODA1NDksLTE1MTEzMjcyODcsNDYxMDUw
+NTc1LC01MDIzNTQwNzBdfQ==
 -->
