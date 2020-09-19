@@ -175,11 +175,12 @@ Since we decided to make the algorithm generic, it will let the user decide the 
 
 -- NEW  (OVERVIEW) 
 
-The unsorted array on the left side is ready to be sorted in serially;  on the right, our "Register cells" and the cells' size are the same as the unsorted array. We are storing the elements in the register cell and  increasing size from top to bottom.  Our main objective is to place each new element in the right position based on what is currently inside the register cell. To make sure our sorting algorithm works as it is expected we decided impleThe sorting algorithm uses cells  registers to sort the incoming data. It has only four rules: 
+The unsorted array on the left side is ready to be sorted in serially;  on the right, our "Register cells" and the cells' size are the same as the unsorted array. We are storing the elements in the register cell and  increasing size from top to bottom.  Our main objective is to place each new element in the right position based on what is currently inside the register cell. 
+ To make sure our sorting algorithm works as expected, we decided to make some basic rules. It has only four rules: 
 
-1.  If a cell is empty, it will only be populated if the cell above is full.
+1.  If a cell is unoccupied, it will only be populated if the cell above is full.
 2.  If a cell is full, the cell data will be replaced if both the incoming data is less than the stored data, and the cell above is not pushing its data.
-3.  If the cell above the current cell is pushing out its stored data, then the current cell has to replace the current data with the cell data above.
+3.  If the cell over the current cell is pushing out its stored data, then the current cell has to replace the current data with the cell data above.
 4.  If a cell is occupied and accepts new data either from the above cell or from the incoming data), it must push out the current data.
 
 
@@ -277,8 +278,9 @@ TODO
 \clearpage
 \appendix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMzU1MDcyODQsMjA4MjAxMDY1MSwtOD
-cwNjgwNTQ5LC0xNTExMzI3Mjg3LDQ2MTA1MDU3NSwtNTAyMzU0
-MDcwLC02MzUxNjA0MzIsLTQwNTA3MTE5MSw2Nzg3NTI3ODUsLT
-E2NzE5MTQ2NzAsLTE2NzE5MTQ2NzBdfQ==
+eyJoaXN0b3J5IjpbLTE2NjA1ODI3NDgsLTExMzU1MDcyODQsMj
+A4MjAxMDY1MSwtODcwNjgwNTQ5LC0xNTExMzI3Mjg3LDQ2MTA1
+MDU3NSwtNTAyMzU0MDcwLC02MzUxNjA0MzIsLTQwNTA3MTE5MS
+w2Nzg3NTI3ODUsLTE2NzE5MTQ2NzAsLTE2NzE5MTQ2NzBdfQ==
+
 -->
