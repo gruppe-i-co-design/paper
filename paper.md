@@ -85,7 +85,7 @@ TODO table of cells, IO ports and nets for 4, 16 and 64 impls of hw algorithms
 
 The Selection Sort is the most straightforward sorting algorithm. Our implementation will identify the minimum element in the array and swap it with the element in the primary position. Then it will identify the second position minimum element and swap it with the element in the second location, and it will continue executing this until the entire array is sorted. It has an $O(n^2)$ time complexity, and this is inefficient on large arrays. The input array divides into two subarrays, a sorted subarray of elements built up from top to bottom, and the remaining unsorted elements occupy the rest of the array.
 
-See appendix \ref{} for a visual explanation of the algorithm.
+See @sec:visual-selection-sort for a visual explanation of the algorithm.
 
 
 ### Hardware Implementation
@@ -155,6 +155,8 @@ Linear cell sort, as detailed by Vasquez's article [@vasquez16], receives data o
 
 Since we decided to make the algorithm generic, it will let the user decide the array's size and length. Figure 2.1 (Top FSMD architecture), the number of cells will be the same as the array size. New incoming data will be placed to the cell from top to bottom with increasing size. So when all cells are empty, the first element will automatically take the first place. Second incoming data will be compared with the first element; if it is smaller than the first element, then the first element will be moved to the second cell, and the new data will be placed to the first cell. Third incoming data will be compared with the other cells; if the incoming data is smaller than the first cell, we have a full and pushed. The first cell's data will be pushed to the second cell, and the data in the second cell will be pushed to the third cell, and the new incoming data will be placed to the first cell. The sorting algorithm will continue like this until the whole array is sorted.
 
+See @sec:visual-linear-cell-sort for a visual explanation of the algorithm.
+
 -- NEW  (OVERVIEW) 
 
 The unsorted array on the left side is ready to be sorted in serially;  on the right, our "Register cells" and the cells' size are the same as the unsorted array. We are storing the elements in the register cell and  increasing size from top to bottom.  Our main objective is to place each new element in the right position based on what is currently inside the register cell. 
@@ -221,8 +223,11 @@ The code for the software implementation of linear cell sort can be found in @ls
 
 ## Odd-even sort
 
-The intended algorithm is inspired from the Bubble Sort and is a relatively uncomplicated sorting algorithm. Bubble sort functioning by comparing adjacent elements; if the array elements are sorted, no swapping is terminated. Contrarily, the elements need to be switched.  The even-odd transposition sort algorithm operates by comparing all odd/even listed pairs of neighboring elements in the array if the match is in incorrect order; in other words, the primary element is bigger than the second the elements are swapped. The second step is to compare all even/odd listed matches of adjoining elements. These two steps are repeating until the array is sorted. 
-Based on the book by Nvidia which details sorting using networks and parallel comparisions [@gpugems2; chapter 46].
+The intended algorithm is inspired from the Bubble Sort and is a relatively uncomplicated sorting algorithm. Bubble sort functioning by comparing adjacent elements; if the array elements are sorted, no swapping is terminated. Contrarily, the elements need to be switched.  The even-odd transposition sort algorithm operates by comparing all odd/even listed pairs of neighboring elements in the array if the match is in incorrect order; in other words, the primary element is bigger than the second the elements are swapped. The second step is to compare all even/odd listed matches of adjoining elements. These two steps are repeating until the array is sorted.
+
+Further the parallelization of the algorithm is further explained in the book made by Nvidia, which details optimized sorting on GPUs using sorting networks and parallel comparisions [@gpugems2; chapter 46].
+
+See @sec:visual-odd-even-sort for a visual explanation of the algorithm.
 
 ### Hardware implementation
 
@@ -351,7 +356,7 @@ int main(){
 
 # Visual explanations of the sorting algorithms
 
-## Selection sort
+## Selection sort {#sec:visual-selection-sort}
 
 \includegraphics[page=1]{./resources/visual-explanation-selection-sort}
 
@@ -361,7 +366,7 @@ int main(){
 
 \clearpage
 
-## Linear cell sort
+## Linear cell sort {#sec:visual-linear-cell-sort}
 
 \includegraphics[page=1]{./resources/visual-explanation-linear-cell-sort}
 
@@ -369,7 +374,7 @@ int main(){
 
 \clearpage
 
-## Odd-even transposition and merge sort
+## Odd-even transposition and merge sort {#sec:visual-odd-even-sort}
 
 \includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
 
