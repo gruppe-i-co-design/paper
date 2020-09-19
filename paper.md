@@ -257,22 +257,7 @@ The entire group did not have a long track record with VHDL and hardware develop
 
 Another aspect that affected development time for hardware was the extensive development activities conducted prior to writing a single line of code. We followed a lower level approach, hence we firstly created a FSMD chart, then an ASMD chart and finally converting them into code. Further, in accordance with the development technique, we created separated files and entities for each component in the FSMD chart, hence there was quite a bit of work for each component. We did not conduct similar activities when implementing the algorithm in software, because it's at a much higher level of abstraction. It is also possible to work at a higher level of abstraction when implementing in hardware, however we did not explore this possibility because (TODO hvorfor gjorde vi ikke dette?).
 
-One aspect that might have impacted development effort is that we consequently did the hardware implementation prior to the software implementation. As the course has been mostly focused on hardware and VHDL, we wanted to prioritize completing the hardware implementations as a group. By doing it as a group we could take advantage of discuss}
-
-\includegraphics[page=2]{./resources/visual-explanation-selectionsortionan-sort}
-
-\clearpage
-
-## Linear cell sort
-
-\includegraphics[page=1]{./resources/visual-explanation-linear-cell-sort}
-
-\includegraphics[page=2]{./resources/visual-explanation-linear-cell-sort}
-
-\clearpage
-
-## Odd-even transpositions and collaboration to learn optimally. As we started out each new algorithm by working together as a group, we naturally also started with the hardware implementation. After implemenmerge sort
-The intended algorithm is inspired from the Bubble Sort and is a relatively uncomplicated sorting the algorithm in hardware one can argue that we had a much better understanding of the algorithm which would mean that the following implementation in software would be easier. However since the algorithms are fairly trivial the knowledge gained from implementing it in hardware is minuscule, and therefore it is unlike. Bubble sort functioning by comparing adjacent elements; if the array elements are sorted, no swapping is terminated. Contrarily, that this had a big impact on development effort.
+One aspect that might have impacted development effort is that we consequently did the hardware implementation prior to the software implementation. As the course has been mostly focused on hardware and VHDL, we wanted to prioritize completing the hardware implementations as a group. By doing it as a group we could take advantage of discuss and collaboration to learn optimally. As we started out each new algorithm by working together as a group, we naturally also started with the hardware implementation. Contrarily, that this had a big impact on development effort.
 
 Lastly, despite gaining proficiency in using the tools for hardware elements need to be switched.  The development, we spent a lot of time figuring out cryptic error messages. One would think that this would improve with experience, however as we started to used more complex features we also consistently hit new errors. As an example we started using generics in our second algorithm to make it more reusable.
 
@@ -330,7 +315,7 @@ OX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
 Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
 OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
 UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
-ODgxfX0sImhpc3RvcnkiOlsxODUyMjAzMTU1LDIwNTM5ODEzMz
+ODgxfX0sImhpc3RvcnkiOlsxODg2OTgyODI1LDIwNTM5ODEzMz
 EsNzMxNDQ4NDQxLC0xODMwMzA1MjQsLTI1MjI5MjczNywtMTkz
 MjcyNDc1OCwtMTU2MDE3NTQ4NywxMDY1NDQ1OTE0LC0xNzcwND
 M3NjQzLDcxMzc3ODUzNCw2NzQ4NDgwLDE4OTcwNDU4MSwtMjA1
