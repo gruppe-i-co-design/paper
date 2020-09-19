@@ -27,7 +27,7 @@ TODO write introduction
 
 Our goal for this paper was to explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
 
-The tools used in this paper was Vivado 2020.1, Vitis and the Zybo Zynq-7000 board [@zybozynq7000]. We used Vivado for the Hardware implementation of our paper, to be able to program the Zy board. For the software and IP implementation, we took in use the Vitis IDE, where we also used the Zynq-700 board for testing the S.
+The tools used in this paper was Vivado 2020.1, Vitis and the Zybo Zynq-7000 board [@zybozynq7000]. We used Vivado for the Hardware implementation of our paper, to be able to program the Zynq-7000 board. For the software and IP implementation, we took in use the Vitis IDE, where we also used the Zynq-700 board for testing the Software and IP implementation.
 
 For all of our algorithms, we followed the same steps. We started by creating an FSMD architecture of the overall algorithm we were currently building; we did this to get an overview of what components and signals were needed. Based on the FSMD architecture created, we then designed the ASMD chart, this was done to easily convert the chart into code when implementing the algorithm, while also having a good overview of the states needed.
 
@@ -277,11 +277,11 @@ TODO
 \includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MzI3MjQ3NTgsODk1MjcxNDAzLC0xNT
-YwMTc1NDg3LDEwNjU0NDU5MTQsLTE3NzA0Mzc2NDMsNzEzNzc4
-NTM0LDY3NDg0ODAsMTg5NzA0NTgxLC0yMDU5NzA4ODYyLC0xMD
-AzOTYzODE2LC0xNjYwNTgyNzQ4LC0xMTM1NTA3Mjg0LDIwODIw
-MTA2NTEsLTg3MDY4MDU0OSwtMTUxMTMyNzI4Nyw0NjEwNTA1Nz
-UsLTUwMjM1NDA3MCwtNjM1MTYwNDMyLC00MDUwNzExOTEsNjc4
-NzUyNzg1XX0=
+eyJoaXN0b3J5IjpbNjQxNDA2NDYxLC0xOTMyNzI0NzU4LDg5NT
+I3MTQwMywtMTU2MDE3NTQ4NywxMDY1NDQ1OTE0LC0xNzcwNDM3
+NjQzLDcxMzc3ODUzNCw2NzQ4NDgwLDE4OTcwNDU4MSwtMjA1OT
+cwODg2MiwtMTAwMzk2MzgxNiwtMTY2MDU4Mjc0OCwtMTEzNTUw
+NzI4NCwyMDgyMDEwNjUxLC04NzA2ODA1NDksLTE1MTEzMjcyOD
+csNDYxMDUwNTc1LC01MDIzNTQwNzAsLTYzNTE2MDQzMiwtNDA1
+MDcxMTkxXX0=
 -->
