@@ -1,23 +1,27 @@
 ---
 title: An Exploration of Array Sorting in Hardware and Software
 author:
-    - Anders Mæhlum Halvorsen
-    - Rahmat Mozafari
-    - Ole Martin Ruud
-    - Øzlem Tuzkaya
+	- Anders Mæhlum Halvorsen
+	- Rahmat Mozafari
+	- Ole Martin Ruud
+	- Øzlem Tuzkaya
 institute: University of South-Eastern Norway
 date: 21.09.2020
 lang: en-US
 bibliography: paper.bib
+keywords:
+	- fgpa
+	- array
+	- sorting
+abstract: |
+	This is an example abstract. Fill this out!
 ...
+
+\listoflistings
 
 # Vision statement
 
 Explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
-
-# Abstract
-
-TODO write abstract
 
 # Introduction
 
@@ -81,13 +85,20 @@ TODO add image of synthesized report
 
 Summary of synthesized report
 
-TODO make these images appear nicly on page...
+<div id="fig:design-charts-selection" class="subfigures">
+![FSMD chart](figures/selection-sort/fsmd.png){#fig:selection-fsmd width=45%}
+![ASMD chart](figures/selection-sort/asmd.png){#fig:selection-asmd width=45%}
 
-![ASMD chart for selection sort](figures/selection-sort/asmd.png){#fig:selection-asmd}
+Design charts for selection sort
+</div>
 
-![FSMD chart for selection sort](figures/selection-sort/fsmd.png){#fig:selection-fsmd}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.90\linewidth]{figures/selection-sort/schematic.png}
+	\caption{Schematic of elaborated design for selection sort}
+	\label{fig:selection-schematic}
+\end{figure}
 
-![Schematic of elaborated design for selection sort](figures/selection-sort/schematic.png){#fig:selection-schematic}
 
 TODO add image of synthesized report
 
@@ -106,8 +117,6 @@ The implementation of the algorithm in software was quick to write, and certainl
 
 The code for the software implementation can be found in @lst:selection-code.
 
-~~~{#lst:selection-code .c include=listings/selection-sort-sw/selection-sort.c caption="Code for software implementation of selection sort"}
-~~~
 
 ### IP Implementation
 
@@ -123,33 +132,6 @@ The IP block diagram including the selection sort block, sort controller and mem
 Finally, after putting together the different IP blocks, we generated a bitstream to see if there was any error and also we needed to export hardware design  to the Vitis IDE. In Vitis IDE we first created a project platform for the (XSA) file extension which exported from the Vivado and generated multiple domains. We built the project and created a new application project for the software application to test our IP implementation.
 
 To be able to display the sorted values in the serial terminal, we need to communicate with the sort controller from the Zynq prossessing unit through the AXI interface. The code that has to run on the prosessing unit can be found in listing @lst:sort-controller-code. The function Xil_In32, provided by the platform, reads a value from the AXI interface. By reading slave register 2 of the sort controller, we can tell if the sorting is done, as the first bit represents the sort_done signal. Further by then repeatedly reading slave register 1 we will get the contents of the memory block. Sort controller continuously updates the RAM address and reads the data into the slave register.
-
-~~~{#lst:sort-controller-code .c caption="Code for communicating with the sort controller"}
-include "xparameters.h"
-include "xuartps_hw.h"
-
-int main(){
-	xil_printf("Start selection sort\n\n\r");
-
-	xil_printf("Sorting");
-	u32 slave_reg_2;
-	do {
-		slave_reg_2 = Xil_In32(XPAR_SORT_CONTROLLER_0_S00_AXI_BASEADDR + 8);
-		xil_printf(".");
-	} while ((slave_reg_2 & 0x1) == 0);
-	xil_printf("\n\r");
-
-	xil_printf("Printing\n\r");
-	u32 slave_reg_1;
-	do {
-		slave_reg_2 = Xil_In32(XPAR_SORT_CONTROLLER_0_S00_AXI_BASEADDR + 8);
-		slave_reg_1 = Xil_In32(XPAR_SORT_CONTROLLER_0_S00_AXI_BASEADDR + 4);
-		xil_printf("%lx ", slave_reg_1);
-	} while ((slave_reg_2 & 0x1) == 1);
-
-	return 0;
-}
-~~~
 
 ## Linear cell sort
 
@@ -219,9 +201,6 @@ Result from inspecting the serial monitor
 
 The code for the software implementation of linear cell sort can be found in @lst:linear-cell-code.
 
-~~~{#lst:linear-cell-code .c include=listings/linear-cell-sort-sw/linear-cell-sort.c caption="Code for software implementation of linear cell sort"}
-~~~
-
 ## Odd-even sort
 The intended algorithm is inspired from the Bubble Sort and is a relatively uncomplicated sorting algorithm. Bubble sort functioning by comparing adjacent elements; if the array elements are sorted, no swapping is terminated. Contrarily, the elements need to be switched.  The even-odd transposition sort algorithm operates by comparing all odd/even listed pairs of neighboring elements in the array if the match is in incorrect order; in other words, the primary element is bigger than the second the elements are swapped. The second step is to compare all even/odd listed matches of adjoining elements. These two steps are repeating until the array is sorted. 
 Based on the book by Nvidia which details sorting using networks and parallel comparisions [@gpugems2; chapter 46].
@@ -253,9 +232,6 @@ TODO make these images appear nicly on page
 The main challange of this algorithm is calculating the correct neighbouring indicies for comparisions. As this is already a solved problem, we simply translated the code shared by Bekbolatov [@bekbolatov15] into C to be usable for our purpose. The function simply takes the current signal index, the current layer and the internal layer index.
 
 The code for our software implementation can be found in @lst:odd-even-code.
-
-~~~{#lst:odd-even-code .c include=listings/odd-even-merge-sw/odd-even-merge-sort.c caption="Code for software implementation of Batcher's odd-even merge sort"}
-~~~
 
 # Discussion
 
@@ -291,6 +267,51 @@ TODO
 
 \clearpage
 \appendix
+
+# The code
+
+## Selection sort
+
+~~~{#lst:selection-code .c include=listings/selection-sort-sw/selection-sort.c caption="Code for software implementation of selection sort"}
+~~~
+
+~~~{#lst:sort-controller-code .c caption="Code for communicating with the sort controller"}
+include "xparameters.h"
+include "xuartps_hw.h"
+
+int main(){
+	xil_printf("Start selection sort\n\n\r");
+
+	xil_printf("Sorting");
+	u32 slave_reg_2;
+	do {
+		slave_reg_2 = Xil_In32(XPAR_SORT_CONTROLLER_0_S00_AXI_BASEADDR + 8);
+		xil_printf(".");
+	} while ((slave_reg_2 & 0x1) == 0);
+	xil_printf("\n\r");
+
+	xil_printf("Printing\n\r");
+	u32 slave_reg_1;
+	do {
+		slave_reg_2 = Xil_In32(XPAR_SORT_CONTROLLER_0_S00_AXI_BASEADDR + 8);
+		slave_reg_1 = Xil_In32(XPAR_SORT_CONTROLLER_0_S00_AXI_BASEADDR + 4);
+		xil_printf("%lx ", slave_reg_1);
+	} while ((slave_reg_2 & 0x1) == 1);
+
+	return 0;
+}
+~~~
+
+
+## Linear cell sort
+
+~~~{#lst:linear-cell-code .c include=listings/linear-cell-sort-sw/linear-cell-sort.c caption="Code for software implementation of linear cell sort"}
+~~~
+
+## Odd-even sort
+
+~~~{#lst:odd-even-code .c include=listings/odd-even-merge-sw/odd-even-merge-sort.c caption="Code for software implementation of Batcher's odd-even merge sort"}
+~~~
 
 # Visual explanations of the sorting algorithms
 
