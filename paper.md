@@ -233,9 +233,9 @@ The code for our software implementation can be found in @lst:odd-even-code.
 
 Through our exploration, we managed to get all three algoritms working in both hardware and software. Further we also found some clear distinctions between algorithms in terms of complexity, speed, size and parallelization. We will now discuss and compare the different algorithms and implementations.
 
-## Code complexity and flexibility
+## Differing development effort
 
-Firstly the development effort required by the different algorithms, and especially for hardware, were quite differenciated. As an example we spent nearly two full days of collaboration and pair programming to implement selection sort in VHDL, while eit only took an hour to get the software implementation in C working and running on the Zybo board. 
+Firstly the development effort required by the different algorithms, and especially for hardware, were quite differenciated. As an example we spent nearly two full days of collaboration and pair programming to implement selection sort in VHDL On the contrary it took only about an hour to write the software implementation in C and running it on the Zybo board. We believe there are several reasons for this gap in development time.
 
 # Conclusion
 
@@ -275,10 +275,10 @@ TODO
 \includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzEzNzc4NTM0LDY3NDg0ODAsMTg5NzA0NT
-gxLC0yMDU5NzA4ODYyLC0xMDAzOTYzODE2LC0xNjYwNTgyNzQ4
-LC0xMTM1NTA3Mjg0LDIwODIwMTA2NTEsLTg3MDY4MDU0OSwtMT
-UxMTMyNzI4Nyw0NjEwNTA1NzUsLTUwMjM1NDA3MCwtNjM1MTYw
-NDMyLC00MDUwNzExOTEsNjc4NzUyNzg1LC0xNjcxOTE0NjcwLC
-0xNjcxOTE0NjcwXX0=
+eyJoaXN0b3J5IjpbLTE3NzA0Mzc2NDMsNzEzNzc4NTM0LDY3ND
+g0ODAsMTg5NzA0NTgxLC0yMDU5NzA4ODYyLC0xMDAzOTYzODE2
+LC0xNjYwNTgyNzQ4LC0xMTM1NTA3Mjg0LDIwODIwMTA2NTEsLT
+g3MDY4MDU0OSwtMTUxMTMyNzI4Nyw0NjEwNTA1NzUsLTUwMjM1
+NDA3MCwtNjM1MTYwNDMyLC00MDUwNzExOTEsNjc4NzUyNzg1LC
+0xNjcxOTE0NjcwLC0xNjcxOTE0NjcwXX0=
 -->
