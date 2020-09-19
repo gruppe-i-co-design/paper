@@ -70,6 +70,12 @@ TODO table of cells, IO ports and nets for 4, 16 and 64 impls of hw algorithms
 |Selection sort     |          8|    10|       27|   87|
 |Selection sort     |         16|    10|       51|  159|
 |                   |           |      |         |     |
+|Linear cell sort   |           |      |         |     |
+|Linear cell sort   |           |      |         |     |
+|Linear cell sort   |           |      |         |     |
+|                   |           |      |         |     |
+|                   |           |      |         |     |
+|                   |           |      |         |     |
 |                   |           |      |         |     |
 
 ## Selection sort
@@ -355,7 +361,7 @@ OX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
 Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
 OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
 UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
-ODgxfX0sImhpc3RvcnkiOls0MzYyMTE5MzEsLTIwMDk5NzQyMT
+ODgxfX0sImhpc3RvcnkiOls5NTQzNjI4NTIsLTIwMDk5NzQyMT
 MsLTIwODk4MDA5ODQsLTIwMDk5NzQyMTMsMTk1OTk0ODAzNSwx
 ODg2OTgyODI1LDIwNTM5ODEzMzEsNzMxNDQ4NDQxLC0xODMwMz
 A1MjQsLTI1MjI5MjczNywtMTkzMjcyNDc1OCwtMTU2MDE3NTQ4
