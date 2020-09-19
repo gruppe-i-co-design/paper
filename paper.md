@@ -24,7 +24,6 @@ TODO write abstract
 TODO write introduction
 
 # Methods
----------- new below ----------
 
 Our goal for this paper was to explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
 
@@ -39,35 +38,6 @@ To confirm that our sorting algorithms worked as expected we created a test benc
 The software implementation in contrast to the hardware implmentation was a much more straight forward process. We used Vitis ++ to connect our Zybo board to our computer and created a C file that would be used to implement the algorithm. For testing, we used the built-in Vitis console.
 
 For our first algorithm, we made an effort to implement an IP implementation. Troubleshooting and implementation turned out to be an immensely time-consuming process. Seeing that the implementation of the IP would not have had a significant impact on our vision or result for our paper, we chose to exclude it.
-
----------- new above ----------
-
----------- move or delete below ----------
-
-For our first sorting algorithm we decided to implement selection sort. The selection sort algorithm sorts an array by repeatedly finding the smallest element and swapping it with the first non-sorted element. If the first non-sorted element is the smallest, it will be “swapped” with itself. After swapping, we sort the remaining part of the array in similar fashion until the entire array is sorted. 
-
-We implemented the algorithm in three different ways, Hardware, Software and as an Intellectual Property (IP). We challenged ourselves by starting with an ASMD chart before creating the FSMD architecture. We soon realised that this approach made the process more complex seeing that we were not sure what signals were needed; resulting in a change of strategy. Our new approach was to begin with the FSMD architecture and then creating the ASMD chart based on the FSMD architecture. After finding a satisfactory solution to the FSMD and ASMD, we implemented the hardware by taking in account the FSMD architecture. When implementing the Hardware solution, we wanted the design to be as reusable and adaptable as possible, consequently we created different design files for the multiplexers, comparator, ram, register and the control. As for the counter, we chose to create a generic counter file to be used for all of the counters. These files were then connected using a top-level file. To test our implementation we made a simulation file to verify that the waveforms behaved as expected.
-
-After verifying that the hardware implementation worked as expected, we created a new project and started implementing the software in Vivado. Implementing the algorithm in software was quite simple as it is fairly straightforward to represent it using C. To verify that our implementation executed as expected, we used the terminal to print out an array before and after running the algorithm. 
-
-The IP implementation, unlike the hardware and software implementation, was not as straightforward. We tried to implement it, but soon bumped into some problems with generating the IP block.
-
-For our second algorithm we chose to implement a linear cell sorting algorithm based on an article by Vasquez [@vasquez16].
-
-The sorting algorithm uses cells / registers to sort the incoming data. It has only four rules: \
-
-1. If a cell is empty, it will only be populated if the cell above is full.
-2. If a cell is full, the cell data will be replaced if both the incoming data is less than the stored data, and the cell above is not pushing its data.
-3. If the cell above the current cell is pushing out its stored data, then the current cell has to replace the current data with the cell data above.
-4. If a cell is occupied and accepts new data either from the above cell or from the incoming data), it must push out the current data.
-
-After learning from our previous mistake by starting with the ASMD chart instead of the FSMD architecture; we started by implementing the FSMD architecture for the cell first. After finding a satisfactory solution we moved on to the ASMD chart of the cell then made the top level FSMD architecture and the top level ASMD chart.
-
-After going through our architectures / chars and verifying that it should work as expected, we started implementing the hardware implementation in Vivado. Similar to the previous sorting algorithm, the process was quite straightforward. We made sure to make the files as reusable as possible. Though, unlike the previous implementation, we made this implementation generic; meaning that we could define the length and size of the array in the top level file, instead of hard-coding the length inside the components.
-
----------- move or delete above ---------- 
-
-
 
 # Results
 
@@ -301,9 +271,9 @@ TODO
 \includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NjA1ODI3NDgsLTExMzU1MDcyODQsMj
-A4MjAxMDY1MSwtODcwNjgwNTQ5LC0xNTExMzI3Mjg3LDQ2MTA1
-MDU3NSwtNTAyMzU0MDcwLC02MzUxNjA0MzIsLTQwNTA3MTE5MS
-w2Nzg3NTI3ODUsLTE2NzE5MTQ2NzAsLTE2NzE5MTQ2NzBdfQ==
-
+eyJoaXN0b3J5IjpbLTEwMDM5NjM4MTYsLTE2NjA1ODI3NDgsLT
+ExMzU1MDcyODQsMjA4MjAxMDY1MSwtODcwNjgwNTQ5LC0xNTEx
+MzI3Mjg3LDQ2MTA1MDU3NSwtNTAyMzU0MDcwLC02MzUxNjA0Mz
+IsLTQwNTA3MTE5MSw2Nzg3NTI3ODUsLTE2NzE5MTQ2NzAsLTE2
+NzE5MTQ2NzBdfQ==
 -->
