@@ -21,7 +21,7 @@ abstract: |
 
 # Vision statement
 
-Explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).a
+Explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
 
 # Introduction
 
@@ -373,16 +373,16 @@ Odd-even transposition sort algorithm operates by comparing all odd/even listed 
 eyJkaXNjdXNzaW9ucyI6eyJSYlRmRzUwOUpTRllTSmRHIjp7In
 RleHQiOiJXZSB1c2VkIFZpdmFkbyBmb3IgdGhlIEhhcmR3YXJl
 IGltcGxlbWVudGF0aW9uIG9mIG91ciBwYXBlciwgdG8gYmUgYW
-JsZSB0byBwcm9n4oCmIiwic3RhcnQiOjExMDEsImVuZCI6MTM2
-MH19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
+JsZSB0byBwcm9n4oCmIiwic3RhcnQiOjExMDAsImVuZCI6MTM1
+OX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
 Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
 OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
 UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
-ODgxfX0sImhpc3RvcnkiOlsxOTc2OTA0MjcyLC01NDQ2NzA5NT
-MsLTE0MDQzNDk1NTcsMTQxMzI1NDYyNCw5NTQzNjI4NTIsLTIw
-MDk5NzQyMTMsLTIwODk4MDA5ODQsLTIwMDk5NzQyMTMsMTk1OT
-k0ODAzNSwxODg2OTgyODI1LDIwNTM5ODEzMzEsNzMxNDQ4NDQx
-LC0xODMwMzA1MjQsLTI1MjI5MjczNywtMTkzMjcyNDc1OCwtMT
-U2MDE3NTQ4NywxMDY1NDQ1OTE0LC0xNzcwNDM3NjQzLDcxMzc3
-ODUzNCw2NzQ4NDgwXX0=
+ODgxfX0sImhpc3RvcnkiOlstMTM5NTY0Nzc2NiwtNTQ0NjcwOT
+UzLC0xNDA0MzQ5NTU3LDE0MTMyNTQ2MjQsOTU0MzYyODUyLC0y
+MDA5OTc0MjEzLC0yMDg5ODAwOTg0LC0yMDA5OTc0MjEzLDE5NT
+k5NDgwMzUsMTg4Njk4MjgyNSwyMDUzOTgxMzMxLDczMTQ0ODQ0
+MSwtMTgzMDMwNTI0LC0yNTIyOTI3MzcsLTE5MzI3MjQ3NTgsLT
+E1NjAxNzU0ODcsMTA2NTQ0NTkxNCwtMTc3MDQzNzY0Myw3MTM3
+Nzg1MzQsNjc0ODQ4MF19
 -->
