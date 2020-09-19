@@ -27,7 +27,7 @@ TODO write introduction
 
 Our goal for this paper was to explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
 
-The tools used in this paper was Vivado 2020.1 and Vitis. Vivado was used for the Hardware implementation of our paper, to be able to program our boards. For the software and IP implementation, we took in use Vitis. We used the Zybo board as the board of our choice 
+The tools used in this paper was Vivado 2020.1 and Vitis. Vivado was used for the Hardware implementation of our paper, to be able to program our boards. For the software and IP implementation, we took in use the Vitis IDE.
 
 For all of our algorithms, we followed the same steps. We started by creating an FSMD architecture of the overall algorithm we were currently building; we did this to get an overview of what components and signals were needed. Based on the FSMD architecture created, we then designed the ASMD chart, this was done to easily convert the chart into code when implementing the algorithm, while also having a good overview of the states needed.
 
@@ -275,10 +275,10 @@ TODO
 \includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NzA0Mzc2NDMsNzEzNzc4NTM0LDY3ND
-g0ODAsMTg5NzA0NTgxLC0yMDU5NzA4ODYyLC0xMDAzOTYzODE2
-LC0xNjYwNTgyNzQ4LC0xMTM1NTA3Mjg0LDIwODIwMTA2NTEsLT
-g3MDY4MDU0OSwtMTUxMTMyNzI4Nyw0NjEwNTA1NzUsLTUwMjM1
-NDA3MCwtNjM1MTYwNDMyLC00MDUwNzExOTEsNjc4NzUyNzg1LC
-0xNjcxOTE0NjcwLC0xNjcxOTE0NjcwXX0=
+eyJoaXN0b3J5IjpbNDU1ODA2NjI1LC0xNzcwNDM3NjQzLDcxMz
+c3ODUzNCw2NzQ4NDgwLDE4OTcwNDU4MSwtMjA1OTcwODg2Miwt
+MTAwMzk2MzgxNiwtMTY2MDU4Mjc0OCwtMTEzNTUwNzI4NCwyMD
+gyMDEwNjUxLC04NzA2ODA1NDksLTE1MTEzMjcyODcsNDYxMDUw
+NTc1LC01MDIzNTQwNzAsLTYzNTE2MDQzMiwtNDA1MDcxMTkxLD
+Y3ODc1Mjc4NSwtMTY3MTkxNDY3MCwtMTY3MTkxNDY3MF19
 -->
