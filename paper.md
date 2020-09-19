@@ -237,7 +237,7 @@ Through our exploration, we managed to get all three algoritms working in both h
 
 The effort required by hardware and software development wereirst differenciated. As an example we spent nearly two full days of collaboration and pair programming to implement selection sort in VHDL. On the contrary it took only about an hour to write the software implementation in C and running it on the Zybo board. We believe there are several reasons for this gap in development time.
 
-did not have a long track record with VHDL and hardware development, hence the 
+did on average not have a long track record with VHDL and hardware development, hence he did spend some extra time to ensu
 
 # Conclusion
 
@@ -277,11 +277,11 @@ TODO
 \includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NjAxNzU0ODcsLTE5MTM2MjQzNDQsMT
-A2NTQ0NTkxNCwtMTc3MDQzNzY0Myw3MTM3Nzg1MzQsNjc0ODQ4
-MCwxODk3MDQ1ODEsLTIwNTk3MDg4NjIsLTEwMDM5NjM4MTYsLT
-E2NjA1ODI3NDgsLTExMzU1MDcyODQsMjA4MjAxMDY1MSwtODcw
-NjgwNTQ5LC0xNTExMzI3Mjg3LDQ2MTA1MDU3NSwtNTAyMzU0MD
-cwLC02MzUxNjA0MzIsLTQwNTA3MTE5MSw2Nzg3NTI3ODUsLTE2
-NzE5MTQ2NzBdfQ==
+eyJoaXN0b3J5IjpbNjI3MzY5MDI1LC0xNTYwMTc1NDg3LDEwNj
+U0NDU5MTQsLTE3NzA0Mzc2NDMsNzEzNzc4NTM0LDY3NDg0ODAs
+MTg5NzA0NTgxLC0yMDU5NzA4ODYyLC0xMDAzOTYzODE2LC0xNj
+YwNTgyNzQ4LC0xMTM1NTA3Mjg0LDIwODIwMTA2NTEsLTg3MDY4
+MDU0OSwtMTUxMTMyNzI4Nyw0NjEwNTA1NzUsLTUwMjM1NDA3MC
+wtNjM1MTYwNDMyLC00MDUwNzExOTEsNjc4NzUyNzg1LC0xNjcx
+OTE0NjcwXX0=
 -->
