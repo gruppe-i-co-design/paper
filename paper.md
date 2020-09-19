@@ -235,7 +235,7 @@ Through our exploration, we managed to get all three algoritms working in both h
 
 ## Code complexity and flexibility
 
-Firstly the development effe
+Firstly the development effort required by the different algorithms, and especially for hardware, were quite differenciated. As an example we spent nearly two full days of collaboration and pair programming to implement selection sort in VHDL while 
 
 # Conclusion
 
@@ -275,10 +275,10 @@ TODO
 \includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzE2Njc5NzIsMTg5NzA0NTgxLC0yMD
-U5NzA4ODYyLC0xMDAzOTYzODE2LC0xNjYwNTgyNzQ4LC0xMTM1
-NTA3Mjg0LDIwODIwMTA2NTEsLTg3MDY4MDU0OSwtMTUxMTMyNz
-I4Nyw0NjEwNTA1NzUsLTUwMjM1NDA3MCwtNjM1MTYwNDMyLC00
-MDUwNzExOTEsNjc4NzUyNzg1LC0xNjcxOTE0NjcwLC0xNjcxOT
-E0NjcwXX0=
+eyJoaXN0b3J5IjpbMTEwNDM5ODk5NSwxODk3MDQ1ODEsLTIwNT
+k3MDg4NjIsLTEwMDM5NjM4MTYsLTE2NjA1ODI3NDgsLTExMzU1
+MDcyODQsMjA4MjAxMDY1MSwtODcwNjgwNTQ5LC0xNTExMzI3Mj
+g3LDQ2MTA1MDU3NSwtNTAyMzU0MDcwLC02MzUxNjA0MzIsLTQw
+NTA3MTE5MSw2Nzg3NTI3ODUsLTE2NzE5MTQ2NzAsLTE2NzE5MT
+Q2NzBdfQ==
 -->
