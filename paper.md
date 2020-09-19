@@ -106,7 +106,7 @@ The IP block diagram including the selection sort block, sort controller and mem
 
 Finally, after putting together the different IP blocks, we generated a bitstream to see if there was any error and also we needed to export hardware design  to the Vitis IDE. In Vitis IDE we first created a project platform for the (XSA) file extension which exported from the Vivado and generated multiple domains. We built the project and created a new application project for the software application to test our IP implementation.
 
-To be able to display the sorted values in the serial terminal, we need to communicate with the sort controller from the Zynq prossessing unit through the AXI interface. The code that has to run on the prosessing unit can be found in listing @lst:sort-controller-code. The function `Xil_In32`, provided by the platform, reads a value from the AXI interface. By reading slave register 2 of the sort controller, we can tell if the sorting is done, as the first bit represents the `sort_done` signal. Further by then repeatedly reading slave register 1 we will get the contents of the memory block. Sort controller continuously updates the RAM address and reads the data into the slave register.
+To be able to display the sorted values in the serial terminal, we need to communicate with the sort controller from the Zynq prossessing unit through the AXI interface. The code that has to run on the prosessing unit can be found in listing @lst:sort-controller-code. The function Xil_In32, provided by the platform, reads a value from the AXI interface. By reading slave register 2 of the sort controller, we can tell if the sorting is done, as the first bit represents the sort_done signal. Further by then repeatedly reading slave register 1 we will get the contents of the memory block. Sort controller continuously updates the RAM address and reads the data into the slave register.
 
 ~~~{#lst:sort-controller-code .c caption="Code for communicating with the sort controller"}
 include "xparameters.h"
@@ -271,9 +271,9 @@ TODO
 \includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMDM5NjM4MTYsLTE2NjA1ODI3NDgsLT
-ExMzU1MDcyODQsMjA4MjAxMDY1MSwtODcwNjgwNTQ5LC0xNTEx
-MzI3Mjg3LDQ2MTA1MDU3NSwtNTAyMzU0MDcwLC02MzUxNjA0Mz
-IsLTQwNTA3MTE5MSw2Nzg3NTI3ODUsLTE2NzE5MTQ2NzAsLTE2
-NzE5MTQ2NzBdfQ==
+eyJoaXN0b3J5IjpbLTIwNTk3MDg4NjIsLTEwMDM5NjM4MTYsLT
+E2NjA1ODI3NDgsLTExMzU1MDcyODQsMjA4MjAxMDY1MSwtODcw
+NjgwNTQ5LC0xNTExMzI3Mjg3LDQ2MTA1MDU3NSwtNTAyMzU0MD
+cwLC02MzUxNjA0MzIsLTQwNTA3MTE5MSw2Nzg3NTI3ODUsLTE2
+NzE5MTQ2NzAsLTE2NzE5MTQ2NzBdfQ==
 -->
