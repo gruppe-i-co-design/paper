@@ -65,9 +65,9 @@ Firstly we will give a quick overview of the implementations. In @tbl:lines-of-c
 
 TODO table of cells, IO ports and nets for 4, 16 and 64 impls of hw algorithms
 |  Implementation | Bits size | Cells| IO ports|Nets |   
-|-----------------|-----------|------|---------|-----|
-|Selection sort   |          |   |      |  |
-|Selection sort   |          |   |      |  |
+|-----------------|----------:|-----:|--------:|----:|
+|Selection sort   |       4   |   |      |  |
+|Selection sort   |       8   |   |      |  |
 |Selection sort   |          |   |      |  |
 
 ## Selection sort
@@ -353,11 +353,11 @@ OX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
 Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
 OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
 UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
-ODgxfX0sImhpc3RvcnkiOlsyMTIyMzQ0Mjc1LC0yMDA5OTc0Mj
-EzLC0yMDg5ODAwOTg0LC0yMDA5OTc0MjEzLDE5NTk5NDgwMzUs
-MTg4Njk4MjgyNSwyMDUzOTgxMzMxLDczMTQ0ODQ0MSwtMTgzMD
-MwNTI0LC0yNTIyOTI3MzcsLTE5MzI3MjQ3NTgsLTE1NjAxNzU0
-ODcsMTA2NTQ0NTkxNCwtMTc3MDQzNzY0Myw3MTM3Nzg1MzQsNj
-c0ODQ4MCwxODk3MDQ1ODEsLTIwNTk3MDg4NjIsLTEwMDM5NjM4
-MTYsLTE2NjA1ODI3NDhdfQ==
+ODgxfX0sImhpc3RvcnkiOlstMTExNjk2MzE3MSwtMjAwOTk3ND
+IxMywtMjA4OTgwMDk4NCwtMjAwOTk3NDIxMywxOTU5OTQ4MDM1
+LDE4ODY5ODI4MjUsMjA1Mzk4MTMzMSw3MzE0NDg0NDEsLTE4Mz
+AzMDUyNCwtMjUyMjkyNzM3LC0xOTMyNzI0NzU4LC0xNTYwMTc1
+NDg3LDEwNjU0NDU5MTQsLTE3NzA0Mzc2NDMsNzEzNzc4NTM0LD
+Y3NDg0ODAsMTg5NzA0NTgxLC0yMDU5NzA4ODYyLC0xMDAzOTYz
+ODE2LC0xNjYwNTgyNzQ4XX0=
 -->
