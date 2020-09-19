@@ -33,9 +33,9 @@
 - [ ] Write discussion topics (Ole)
 	- [ ] Concrete comparison of our algoritms in terms of speed, size (space) and parallelization. Talk about why there was no parallelization in HW implementation of selection sort a lot of parallalization in linear sort.
 	- [ ] Comparison of HW and SW implementations in regards to code-, time- and space-complexity (1 paragraph each). Make sure to use concret examples and comparisons from selection, linear and odd-even. Highlight that there are many tradoffs.
-		- Code: HW a lot harder (generics, reusing, boilerplate, errors are unclear) and more time consuming. HW longer feedback cycle (syntesizing vs compiling).
-		- Time: HW can be parallelized with ease, thus more operations per clock cycle. Parallelization in SW is not trivial and was not attempted due to single core platform. Even though less cycles in HW, is clockspeed faster in SW on prosessor??
-		- Space: Parallelized HW can take a lot of space. SW uses fixed space on generic prosessor. HW can have extra memory/state in addition to RAM in circuitry.
+		- [x] Code: HW a lot harder (generics, reusing, boilerplate, errors are unclear) and more time consuming. HW longer feedback cycle (syntesizing vs compiling).
+		- [ ] Time: HW can be parallelized with ease, thus more operations per clock cycle. Parallelization in SW is not trivial and was not attempted due to single core platform. Even though less cycles in HW, is clockspeed faster in SW on prosessor??
+		- [ ] Space: Parallelized HW can take a lot of space. SW uses fixed space on generic prosessor. HW can have extra memory/state in addition to RAM in circuitry.
 	- [ ] The difficulty of IP implementation. Why was the implementation so hard? What issues did we face? What would be the benefit of an IP block?
 
 ### Blocked by other tasks
@@ -46,6 +46,6 @@
 
 - [ ] Write a small "whodidwhat" that will be appended as an appendix.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMjU1NDc3NjIsLTIxNDE3Nzk2OTgsLT
-EzNDM4MjUzMTRdfQ==
+eyJoaXN0b3J5IjpbLTQ5NzM3MDI3NCwtMTAyNTU0Nzc2MiwtMj
+E0MTc3OTY5OCwtMTM0MzgyNTMxNF19
 -->
