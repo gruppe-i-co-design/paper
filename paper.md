@@ -69,14 +69,14 @@ TODO table of cells, IO ports and nets for 4, 16 and 64 impls of hw algorithms
 |Selection sort     |          4|    10|       15|   51|
 |Selection sort     |          8|    10|       27|   87|
 |Selection sort     |         16|    10|       51|  159|
-|                   |      |          |
-|Linear cell sort   |            9|       12|   46|
-|Linear cell sort   |          8|    13  |       20|	112  |     |
-|Linear cell sort   |         16|    	21|       36  |  338   |
-|                   |		    |		 |    |       |      |
-|Odd-even sort      |          4|      25|       37|  120|
-|Odd-even sort      |          8|      81|      133|   712|
-|Odd-even sort		|         16| 289  | 517|4872 |
+|                   |      		|      |		 |	   |
+|Linear cell sort   |          9|    12|   46|
+|Linear cell sort   |          8|    13|       20|	112  |     |
+|Linear cell sort   |         16|    21|       36  |  338   |
+|                   |		    |	   |    |       |      |
+|Odd-even sort      |          4|    25|       37|  120|
+|Odd-even sort      |          8|    81|      133|   712|
+|Odd-even sort		|         16| 	289| 517|4872 |
 
 ## Selection sort
 
@@ -375,11 +375,11 @@ OX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
 Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
 OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
 UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
-ODgxfX0sImhpc3RvcnkiOlstMTU2NTAwODcxNywtMTQwNDM0OT
-U1NywxNDEzMjU0NjI0LDk1NDM2Mjg1MiwtMjAwOTk3NDIxMywt
-MjA4OTgwMDk4NCwtMjAwOTk3NDIxMywxOTU5OTQ4MDM1LDE4OD
-Y5ODI4MjUsMjA1Mzk4MTMzMSw3MzE0NDg0NDEsLTE4MzAzMDUy
-NCwtMjUyMjkyNzM3LC0xOTMyNzI0NzU4LC0xNTYwMTc1NDg3LD
-EwNjU0NDU5MTQsLTE3NzA0Mzc2NDMsNzEzNzc4NTM0LDY3NDg0
-ODAsMTg5NzA0NTgxXX0=
+ODgxfX0sImhpc3RvcnkiOlstMTg1MzAyMzgzLC0xNDA0MzQ5NT
+U3LDE0MTMyNTQ2MjQsOTU0MzYyODUyLC0yMDA5OTc0MjEzLC0y
+MDg5ODAwOTg0LC0yMDA5OTc0MjEzLDE5NTk5NDgwMzUsMTg4Nj
+k4MjgyNSwyMDUzOTgxMzMxLDczMTQ0ODQ0MSwtMTgzMDMwNTI0
+LC0yNTIyOTI3MzcsLTE5MzI3MjQ3NTgsLTE1NjAxNzU0ODcsMT
+A2NTQ0NTkxNCwtMTc3MDQzNzY0Myw3MTM3Nzg1MzQsNjc0ODQ4
+MCwxODk3MDQ1ODFdfQ==
 -->
