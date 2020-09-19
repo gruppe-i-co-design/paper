@@ -227,7 +227,7 @@ The code for the software implementation of linear cell sort can be found in @ls
 
 The intended algorithm is inspired from the Bubble Sort and is a relatively uncomplicated sorting algorithm. Bubble sort functioning by comparing adjacent elements; if the array elements are sorted, no swapping is terminated. Contrarily, the elements need to be switched.  The even-odd transposition sort algorithm operates by comparing all odd/even listed pairs of neighboring elements in the array if the match is in incorrect order; in other words, the primary element is bigger than the second the elements are swapped. The second step is to compare all even/odd listed matches of adjoining elements. These two steps are repeating until the array is sorted.
 
-Knuth goes deeply into the ways in which sorting networks kan be optimized and are created in his masterpiece; _The Art of Computer Programming_ [@knuthsortnetwork1998]. Further the parallelization of the algorithm is further explained in the book made by Nvidia, which details optimized sorting on GPUs using sorting networks and parallel comparisions [@gpugems2; chapter 46].
+Knuth goes deeply into the ways in which sorting networks kan be optimized and are created in his masterpiece; _The Art of Computer Programming_ [@knuthsortnetwork1998]. Further the parallelization of the algorithm is well explained in the book _GPU Gems 2_ from Nvidia [@gpugems2; chapter 46], which details optimized sorting on GPUs using sorting networks and parallel comparisions. The parallelization aspect is quite similar between GPUs and FPGAs.
 
 See @sec:visual-odd-even-sort for a visual explanation of the algorithm.
 
