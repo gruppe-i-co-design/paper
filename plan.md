@@ -22,7 +22,7 @@
 
 - [x] Sort and organize links/references used. (Ole)
 
-- [ ] Write results from odd-even sort. (Rahmat)
+- [x] Write results from odd-even sort. (Rahmat)
 
 - [ ] Cleanup results chapter (each subchapter should have similar structure).(Rahmat)
 	- [x] Selection sort explanations and figures.
@@ -46,6 +46,6 @@
 
 - [ ] Write a small "whodidwhat" that will be appended as an appendix.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5NzM3MDI3NCwtMTAyNTU0Nzc2MiwtMj
-E0MTc3OTY5OCwtMTM0MzgyNTMxNF19
+eyJoaXN0b3J5IjpbLTkwMjY5NjUyMiwtNDk3MzcwMjc0LC0xMD
+I1NTQ3NzYyLC0yMTQxNzc5Njk4LC0xMzQzODI1MzE0XX0=
 -->
