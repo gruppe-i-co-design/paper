@@ -59,11 +59,9 @@ In this section, we are going to presenting the results we gathered through to a
 | Linear cell sort (software)    |     1 |    21 |
 | Odd-even merge sort (software) |     1 |    40 |
 
-: Lines of code for implementations \label{tbl:lines-of-code}
+: Amount of source code for each implementation \label{tbl:lines-of-code}
 
-Firstly we will give a quick overview of the implementations. In @tbl:lines-of-code we can see the overview of amount of files and lines of code for each implementation. The amount of lines can be an indicator of complexity, but it must be used carefully as code can of course be optimized for size. In our case we have tried to follow a consistent formatting style in addition to not optimizing for size. Another important note is that we are only counting lines of code, not comments or blank lines, and also only code which is part of the implementation of the algorithm, so no testbenches or code for displaying arrays etc.
-
-TODO table of cells, IO ports and nets for 4, 16 and 64 impls of hw algorithms
+Firstly we will give a quick overview of the different implementations. In @tbl:lines-of-code we can see the overview of amount of files and lines of code for each implementation. The amount of lines can be an indicator of complexity, but it must be used carefully as code can of course be optimized for size. In our case we have tried to follow a consistent formatting style in addition to not optimizing for size. Another important note is that we are only counting lines of code, not comments or blank lines, and also only code which is part of the implementation of the algorithm, so no testbenches or code for displaying arrays etc.
 
 | Implementation   | Input size | Cells | IO ports | Nets |
 |------------------|-----------:|------:|---------:|-----:|
@@ -76,8 +74,12 @@ TODO table of cells, IO ports and nets for 4, 16 and 64 impls of hw algorithms
 |                  |         16 |    21 |       36 |  338 |
 |                  |            |       |          |      |
 | Odd-even sort    |          4 |    25 |       37 |  120 |
-|                  |          8 |    81 |      133 |  712 |
+| (N layers)       |          8 |    81 |      133 |  712 |
 |                  |         16 |   289 |      517 | 4872 |
+|                  |            |       |          |      |
+| Odd-even sort    |          4 |    24 |       37 |  104 |
+| (3 layers)       |          8 |    76 |      133 |  392 |
+|                  |         16 |   276 |      517 | 1544 |
 
 : Overview of cells, IO ports and nets used across multiple input sizes \label{tbl:overview-cells-io-nets}
 
