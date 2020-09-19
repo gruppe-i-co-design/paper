@@ -64,15 +64,15 @@ In this section, we are going to presenting the results we gathered through to a
 Firstly we will give a quick overview of the implementations. In @tbl:lines-of-code we can see the overview of amount of files and lines of code for each implementation. The amount of lines can be an indicator of complexity, but it must be used carefully as code can of course be optimized for size. In our case we have tried to follow a consistent formatting style in addition to not optimizing for size. Another important note is that we are only counting lines of code, not comments or blank lines, and also only code which is part of the implementation of the algorithm, so no testbenches or code for displaying arrays etc.
 
 TODO table of cells, IO ports and nets for 4, 16 and 64 impls of hw algorithms
-|  Algorithm   | Bits size | Cells| IO ports|Nets |   
+|  Algorithm   		| Bits size | Cells| IO ports|Nets |   
 |-------------------|----------:|-----:|--------:|----:|
 |Selection sort     |          4|    10|       15|   51|
 |Selection sort     |          8|    10|       27|   87|
 |Selection sort     |         16|    10|       51|  159|
 |                   |           |      |         |     |
-|Linear cell sort   |           |      |         |     |
-|Linear cell sort   |           |      |         |     |
-|Linear cell sort   |           |      |         |     |
+|Linear cell sort   |          4|     9|       12|   46|
+|Linear cell sort   |          8|      |         |     |
+|Linear cell sort   |         16|     |         |     |
 |                   |           |      |         |     |
 |                   |           |      |         |     |
 |                   |           |      |         |     |
@@ -375,11 +375,11 @@ OX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
 Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
 OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
 UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
-ODgxfX0sImhpc3RvcnkiOlsxNDEzMjU0NjI0LDk1NDM2Mjg1Mi
-wtMjAwOTk3NDIxMywtMjA4OTgwMDk4NCwtMjAwOTk3NDIxMywx
-OTU5OTQ4MDM1LDE4ODY5ODI4MjUsMjA1Mzk4MTMzMSw3MzE0ND
-g0NDEsLTE4MzAzMDUyNCwtMjUyMjkyNzM3LC0xOTMyNzI0NzU4
-LC0xNTYwMTc1NDg3LDEwNjU0NDU5MTQsLTE3NzA0Mzc2NDMsNz
-EzNzc4NTM0LDY3NDg0ODAsMTg5NzA0NTgxLC0yMDU5NzA4ODYy
-LC0xMDAzOTYzODE2XX0=
+ODgxfX0sImhpc3RvcnkiOlstMTAwNjI1NjUxOSwxNDEzMjU0Nj
+I0LDk1NDM2Mjg1MiwtMjAwOTk3NDIxMywtMjA4OTgwMDk4NCwt
+MjAwOTk3NDIxMywxOTU5OTQ4MDM1LDE4ODY5ODI4MjUsMjA1Mz
+k4MTMzMSw3MzE0NDg0NDEsLTE4MzAzMDUyNCwtMjUyMjkyNzM3
+LC0xOTMyNzI0NzU4LC0xNTYwMTc1NDg3LDEwNjU0NDU5MTQsLT
+E3NzA0Mzc2NDMsNzEzNzc4NTM0LDY3NDg0ODAsMTg5NzA0NTgx
+LC0yMDU5NzA4ODYyXX0=
 -->
