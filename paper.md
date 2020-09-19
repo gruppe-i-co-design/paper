@@ -232,20 +232,13 @@ The hardware implementation of this algorithm was more comfortable than we thoug
 We say that we want to sort an array of N elements.
 
 N = 10
-
 depth = d
-
 comparators = c
-
 We want to know what is the depth and how many comparators we are using.
-
 d(N) = N
 d(10) = 10
-
 c(N) = N * (N - 1)/ 2
-
 c(10) = 10 * (10 - 1) / 2 = 45
-
 To sort an array of 10 elements, we need 45 comparators, and the depth is 10 and 10 stages required for this to be completed.
 TODO make these images appear nicly on page
 
@@ -334,11 +327,11 @@ OX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
 Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
 OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
 UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
-ODgxfX0sImhpc3RvcnkiOlsyMTMxMzU0MDI1LDE5NTk5NDgwMz
-UsMTg4Njk4MjgyNSwyMDUzOTgxMzMxLDczMTQ0ODQ0MSwtMTgz
-MDMwNTI0LC0yNTIyOTI3MzcsLTE5MzI3MjQ3NTgsLTE1NjAxNz
-U0ODcsMTA2NTQ0NTkxNCwtMTc3MDQzNzY0Myw3MTM3Nzg1MzQs
-Njc0ODQ4MCwxODk3MDQ1ODEsLTIwNTk3MDg4NjIsLTEwMDM5Nj
-M4MTYsLTE2NjA1ODI3NDgsLTExMzU1MDcyODQsMjA4MjAxMDY1
-MSwtODcwNjgwNTQ5XX0=
+ODgxfX0sImhpc3RvcnkiOlstMjAwOTk3NDIxMywxOTU5OTQ4MD
+M1LDE4ODY5ODI4MjUsMjA1Mzk4MTMzMSw3MzE0NDg0NDEsLTE4
+MzAzMDUyNCwtMjUyMjkyNzM3LC0xOTMyNzI0NzU4LC0xNTYwMT
+c1NDg3LDEwNjU0NDU5MTQsLTE3NzA0Mzc2NDMsNzEzNzc4NTM0
+LDY3NDg0ODAsMTg5NzA0NTgxLC0yMDU5NzA4ODYyLC0xMDAzOT
+YzODE2LC0xNjYwNTgyNzQ4LC0xMTM1NTA3Mjg0LDIwODIwMTA2
+NTEsLTg3MDY4MDU0OV19
 -->
