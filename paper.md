@@ -272,7 +272,8 @@ TODO
 
 \clearpage
 
-## Odd-even transition and merge sort
+## Odd-even transposition and merge sort
+The intended algorithm is inspired from the Bubble Sort and is a relatively uncomplicated sorting algorithm. Bubble sort functioning by comparing adjacent elements; if the array elements are sorted, no swapping is terminated. Contrarily, the elements need to be switched.  The even-odd transposition sort algorithm operates by comparing all odd/even listed pairs of neighboring elements in the array if the match is in incorrect order; in other words, the primary element is bigger than the second the elements are swapped. The second step is to compare all even/odd listed matches of adjoining elements. These two steps are repeating until the array is sorted. 
 
 \includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
 
@@ -285,11 +286,11 @@ NX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
 Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
 OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
 UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
-ODgxfX0sImhpc3RvcnkiOlsyMzc2OTY1OTMsLTE4MzAzMDUyNC
-wtMjUyMjkyNzM3LC0xOTMyNzI0NzU4LC0xNTYwMTc1NDg3LDEw
-NjU0NDU5MTQsLTE3NzA0Mzc2NDMsNzEzNzc4NTM0LDY3NDg0OD
-AsMTg5NzA0NTgxLC0yMDU5NzA4ODYyLC0xMDAzOTYzODE2LC0x
-NjYwNTgyNzQ4LC0xMTM1NTA3Mjg0LDIwODIwMTA2NTEsLTg3MD
-Y4MDU0OSwtMTUxMTMyNzI4Nyw0NjEwNTA1NzUsLTUwMjM1NDA3
-MCwtNjM1MTYwNDMyXX0=
+ODgxfX0sImhpc3RvcnkiOlstMTY4NzIwMjM3NSwtMTgzMDMwNT
+I0LC0yNTIyOTI3MzcsLTE5MzI3MjQ3NTgsLTE1NjAxNzU0ODcs
+MTA2NTQ0NTkxNCwtMTc3MDQzNzY0Myw3MTM3Nzg1MzQsNjc0OD
+Q4MCwxODk3MDQ1ODEsLTIwNTk3MDg4NjIsLTEwMDM5NjM4MTYs
+LTE2NjA1ODI3NDgsLTExMzU1MDcyODQsMjA4MjAxMDY1MSwtOD
+cwNjgwNTQ5LC0xNTExMzI3Mjg3LDQ2MTA1MDU3NSwtNTAyMzU0
+MDcwLC02MzUxNjA0MzJdfQ==
 -->
