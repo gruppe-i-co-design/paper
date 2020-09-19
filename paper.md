@@ -235,9 +235,9 @@ Through our exploration, we managed to get all three algoritms working in both h
 
 ## Differing development effort
 
-The effort required by hardware and software development wereirst differenciated. As an example we spent nearly two full days of collaboration and pair programming to implement selection sort in VHDL. On the contrary it took only about an hour to write the software implementation in C and running it on the Zybo board. We believe there are several reasons for this gap in development time.
+The effort required by hardware and software development were quite differing. As an example we spent nearly two full days of collaboration and pair programming to implement selection sort in VHDL. On the contrary it took only about an hour to write the software implementation in C and running it on the Zybo board. We believe there are several reasons for this gap in development time.
 
-did on average not have a long track record with VHDL and hardware development. Hence e spent extra time during hardware development to ensure we were all learning and developing our own knowledge next to the actual work. Fodid spend some extra time to ensu
+did on average not have a long track record with VHDL and hardware development. Hence e spent time  learning and developing our own knowledgeduring next to the actual did spend some extra time to ensuimplementation work. This difference 
 
 # Conclusion
 
@@ -277,11 +277,11 @@ TODO
 \includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQxNDA2NDYxLC0xOTMyNzI0NzU4LDg5NT
-I3MTQwMywtMTU2MDE3NTQ4NywxMDY1NDQ1OTE0LC0xNzcwNDM3
-NjQzLDcxMzc3ODUzNCw2NzQ4NDgwLDE4OTcwNDU4MSwtMjA1OT
-cwODg2MiwtMTAwMzk2MzgxNiwtMTY2MDU4Mjc0OCwtMTEzNTUw
-NzI4NCwyMDgyMDEwNjUxLC04NzA2ODA1NDksLTE1MTEzMjcyOD
-csNDYxMDUwNTc1LC01MDIzNTQwNzAsLTYzNTE2MDQzMiwtNDA1
-MDcxMTkxXX0=
+eyJoaXN0b3J5IjpbMTU0Njg5OTY0OCw2NDE0MDY0NjEsLTE5Mz
+I3MjQ3NTgsLTE1NjAxNzU0ODcsMTA2NTQ0NTkxNCwtMTc3MDQz
+NzY0Myw3MTM3Nzg1MzQsNjc0ODQ4MCwxODk3MDQ1ODEsLTIwNT
+k3MDg4NjIsLTEwMDM5NjM4MTYsLTE2NjA1ODI3NDgsLTExMzU1
+MDcyODQsMjA4MjAxMDY1MSwtODcwNjgwNTQ5LC0xNTExMzI3Mj
+g3LDQ2MTA1MDU3NSwtNTAyMzU0MDcwLC02MzUxNjA0MzIsLTQw
+NTA3MTE5MV19
 -->
