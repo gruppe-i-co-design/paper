@@ -64,11 +64,7 @@ In this section, we are going to presenting the results we gathered through to a
 Firstly we will give a quick overview of the implementations. In @tbl:lines-of-code we can see the overview of amount of files and lines of code for each implementation. The amount of lines can be an indicator of complexity, but it must be used carefully as code can of course be optimized for size. In our case we have tried to follow a consistent formatting style in addition to not optimizing for size. Another important note is that we are only counting lines of code, not comments or blank lines, and also only code which is part of the implementation of the algorithm, so no testbenches or code for displaying arrays etc.
 
 TODO table of cells, IO ports and nets for 4, 16 and 64 impls of hw algorithms
-|  Implementation | Bits (size) |
-|  |  |
-|--|--|
-|  |  |
-
+|  Implementation | Bits size | Cells| |  
 |--|--|
 |  |  |
 
@@ -355,11 +351,11 @@ OX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
 Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
 OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
 UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
-ODgxfX0sImhpc3RvcnkiOlsxNDAyNjI5ODc5LC0yMDA5OTc0Mj
-EzLC0yMDg5ODAwOTg0LC0yMDA5OTc0MjEzLDE5NTk5NDgwMzUs
-MTg4Njk4MjgyNSwyMDUzOTgxMzMxLDczMTQ0ODQ0MSwtMTgzMD
-MwNTI0LC0yNTIyOTI3MzcsLTE5MzI3MjQ3NTgsLTE1NjAxNzU0
-ODcsMTA2NTQ0NTkxNCwtMTc3MDQzNzY0Myw3MTM3Nzg1MzQsNj
-c0ODQ4MCwxODk3MDQ1ODEsLTIwNTk3MDg4NjIsLTEwMDM5NjM4
-MTYsLTE2NjA1ODI3NDhdfQ==
+ODgxfX0sImhpc3RvcnkiOlstMTE3MTU1ODQ5NSwtMjAwOTk3ND
+IxMywtMjA4OTgwMDk4NCwtMjAwOTk3NDIxMywxOTU5OTQ4MDM1
+LDE4ODY5ODI4MjUsMjA1Mzk4MTMzMSw3MzE0NDg0NDEsLTE4Mz
+AzMDUyNCwtMjUyMjkyNzM3LC0xOTMyNzI0NzU4LC0xNTYwMTc1
+NDg3LDEwNjU0NDU5MTQsLTE3NzA0Mzc2NDMsNzEzNzc4NTM0LD
+Y3NDg0ODAsMTg5NzA0NTgxLC0yMDU5NzA4ODYyLC0xMDAzOTYz
+ODE2LC0xNjYwNTgyNzQ4XX0=
 -->
