@@ -227,7 +227,27 @@ The intended algorithm is inspired from the Bubble Sort and is a relatively unco
 Based on the book by Nvidia which details sorting using networks and parallel comparisions [@gpugems2; chapter 46].
 
 ### Hardware implementation
+The hardware implementation of this algorithm was more comfortable than we thought, and the time complexity of this is O(N). We parallelized our approach since it was easy and compared swap functions performed simultaneously on each element's match. We implemented this to use a generic model, which is more natural to resize the input (N). The depth is the length of the input data, and it takes (N) stages that data is sorted. Furthermore, odd-even sort using more comparators, and we can calculate that straightforward. Let's take an example.
 
+We say that we want to sort an array of N elements.
+
+N = 10
+
+depth = d
+
+comparators = c
+
+We want to know what is the depth and how many comparators we are using.
+
+d(N) = N
+
+d(10) = 10
+
+c(N) = N * (N - 1)/ 2
+
+c(10) = 10 * (10 - 1) / 2 = 45
+
+To sort an array of 10 elements, we need 45 comparators, and the depth is 10 and 10 stages required for this to be completed.
 TODO make these images appear nicly on page
 
 ![ASMD chart for odd-even sort](figures/odd-even-sort/asmd.png){#fig:odd-even-asmd}
@@ -315,11 +335,11 @@ OX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
 Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
 OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
 UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
-ODgxfX0sImhpc3RvcnkiOlsxOTU5OTQ4MDM1LDE4ODY5ODI4Mj
-UsMjA1Mzk4MTMzMSw3MzE0NDg0NDEsLTE4MzAzMDUyNCwtMjUy
-MjkyNzM3LC0xOTMyNzI0NzU4LC0xNTYwMTc1NDg3LDEwNjU0ND
-U5MTQsLTE3NzA0Mzc2NDMsNzEzNzc4NTM0LDY3NDg0ODAsMTg5
-NzA0NTgxLC0yMDU5NzA4ODYyLC0xMDAzOTYzODE2LC0xNjYwNT
-gyNzQ4LC0xMTM1NTA3Mjg0LDIwODIwMTA2NTEsLTg3MDY4MDU0
-OSwtMTUxMTMyNzI4N119
+ODgxfX0sImhpc3RvcnkiOlsyNzAxOTcwMTUsMTk1OTk0ODAzNS
+wxODg2OTgyODI1LDIwNTM5ODEzMzEsNzMxNDQ4NDQxLC0xODMw
+MzA1MjQsLTI1MjI5MjczNywtMTkzMjcyNDc1OCwtMTU2MDE3NT
+Q4NywxMDY1NDQ1OTE0LC0xNzcwNDM3NjQzLDcxMzc3ODUzNCw2
+NzQ4NDgwLDE4OTcwNDU4MSwtMjA1OTcwODg2MiwtMTAwMzk2Mz
+gxNiwtMTY2MDU4Mjc0OCwtMTEzNTUwNzI4NCwyMDgyMDEwNjUx
+LC04NzA2ODA1NDldfQ==
 -->
