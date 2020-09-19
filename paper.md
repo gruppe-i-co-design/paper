@@ -27,7 +27,7 @@ TODO write introduction
 
 Our goal for this paper was to explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
 
-The tools used in this paper was Vivado 2020.1 and Vitis ++. Vivado was used for the Hardware implementation of our paper, to be able to program our boards. For the software and IP implementation, we took in use Vitis ++.
+The tools used in this paper was Vivado 2020.1 and Vitis. Vivado was used for the Hardware implementation of our paper, to be able to program our boards. For the software and IP implementation, we took in use Vitis. We used 
 
 For all of our algorithms, we followed the same steps. We started by creating an FSMD architecture of the overall algorithm we were currently building; we did this to get an overview of what components and signals were needed. Based on the FSMD architecture created, we then designed the ASMD chart, this was done to easily convert the chart into code when implementing the algorithm, while also having a good overview of the states needed.
 
@@ -235,7 +235,7 @@ Through our exploration, we managed to get all three algoritms working in both h
 
 ## Code complexity and flexibility
 
-Firstly the development effort required by the different algorithms, and especially for hardware, were quite differenciated. As an example we spent nearly two full days of collaboration and pair programming to implement selection sort in VHDL while 
+Firstly the development effort required by the different algorithms, and especially for hardware, were quite differenciated. As an example we spent nearly two full days of collaboration and pair programming to implement selection sort in VHDL while e
 
 # Conclusion
 
@@ -275,10 +275,10 @@ TODO
 \includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwNDM5ODk5NSwxODk3MDQ1ODEsLTIwNT
-k3MDg4NjIsLTEwMDM5NjM4MTYsLTE2NjA1ODI3NDgsLTExMzU1
-MDcyODQsMjA4MjAxMDY1MSwtODcwNjgwNTQ5LC0xNTExMzI3Mj
-g3LDQ2MTA1MDU3NSwtNTAyMzU0MDcwLC02MzUxNjA0MzIsLTQw
-NTA3MTE5MSw2Nzg3NTI3ODUsLTE2NzE5MTQ2NzAsLTE2NzE5MT
-Q2NzBdfQ==
+eyJoaXN0b3J5IjpbMTI0MzI1NTc5OSwxMTA0Mzk4OTk1LDE4OT
+cwNDU4MSwtMjA1OTcwODg2MiwtMTAwMzk2MzgxNiwtMTY2MDU4
+Mjc0OCwtMTEzNTUwNzI4NCwyMDgyMDEwNjUxLC04NzA2ODA1ND
+ksLTE1MTEzMjcyODcsNDYxMDUwNTc1LC01MDIzNTQwNzAsLTYz
+NTE2MDQzMiwtNDA1MDcxMTkxLDY3ODc1Mjc4NSwtMTY3MTkxND
+Y3MCwtMTY3MTkxNDY3MF19
 -->
