@@ -70,7 +70,7 @@ TODO table of cells, IO ports and nets for 4, 16 and 64 impls of hw algorithms
 |Selection sort     |          8|    10|       27|   87|
 |Selection sort     |         16|    10|       51|  159|
 |                   |      		|      |		 |	   |
-|Linear cell sort   |          9|    12|   	   46|
+|Linear cell sort   |          4|     9|   	   12|	 46|
 |Linear cell sort   |          8|    13|       20|	112|
 |Linear cell sort   |         16|    21|       36|  338|
 |                   |		    |	   |    	 |     |
@@ -375,11 +375,11 @@ OX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
 Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
 OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
 UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
-ODgxfX0sImhpc3RvcnkiOlstNTQ0NjcwOTUzLC0xNDA0MzQ5NT
-U3LDE0MTMyNTQ2MjQsOTU0MzYyODUyLC0yMDA5OTc0MjEzLC0y
-MDg5ODAwOTg0LC0yMDA5OTc0MjEzLDE5NTk5NDgwMzUsMTg4Nj
-k4MjgyNSwyMDUzOTgxMzMxLDczMTQ0ODQ0MSwtMTgzMDMwNTI0
-LC0yNTIyOTI3MzcsLTE5MzI3MjQ3NTgsLTE1NjAxNzU0ODcsMT
-A2NTQ0NTkxNCwtMTc3MDQzNzY0Myw3MTM3Nzg1MzQsNjc0ODQ4
-MCwxODk3MDQ1ODFdfQ==
+ODgxfX0sImhpc3RvcnkiOlstMTc0MzE0MDQ0MSwtNTQ0NjcwOT
+UzLC0xNDA0MzQ5NTU3LDE0MTMyNTQ2MjQsOTU0MzYyODUyLC0y
+MDA5OTc0MjEzLC0yMDg5ODAwOTg0LC0yMDA5OTc0MjEzLDE5NT
+k5NDgwMzUsMTg4Njk4MjgyNSwyMDUzOTgxMzMxLDczMTQ0ODQ0
+MSwtMTgzMDMwNTI0LC0yNTIyOTI3MzcsLTE5MzI3MjQ3NTgsLT
+E1NjAxNzU0ODcsMTA2NTQ0NTkxNCwtMTc3MDQzNzY0Myw3MTM3
+Nzg1MzQsNjc0ODQ4MF19
 -->
