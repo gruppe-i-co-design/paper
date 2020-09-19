@@ -64,19 +64,22 @@ In this section, we are going to presenting the results we gathered through to a
 Firstly we will give a quick overview of the implementations. In @tbl:lines-of-code we can see the overview of amount of files and lines of code for each implementation. The amount of lines can be an indicator of complexity, but it must be used carefully as code can of course be optimized for size. In our case we have tried to follow a consistent formatting style in addition to not optimizing for size. Another important note is that we are only counting lines of code, not comments or blank lines, and also only code which is part of the implementation of the algorithm, so no testbenches or code for displaying arrays etc.
 
 TODO table of cells, IO ports and nets for 4, 16 and 64 impls of hw algorithms
-|  Algorithm   		| Bits size | Cells| IO ports|Nets |   
-|-------------------|----------:|-----:|--------:|----:|
-|Selection sort     |          4|    10|       15|   51|
-|Selection sort     |          8|    10|       27|   87|
-|Selection sort     |         16|    10|       51|  159|
-|                   |      		|      |		 |	   |
-|Linear cell sort   |          4|     9|   	   12|	 46|
-|Linear cell sort   |          8|    13|       20|	112|
-|Linear cell sort   |         16|    21|       36|  338|
-|                   |		    |	   |    	 |     |
-|Odd-even sort      |          4|    25|       37|  120|
-|Odd-even sort      |          8|    81|      133|  712|
-|Odd-even sort		|         16| 	289| 	  517| 4872|
+
+| Implementation   | Input size | Cells | IO ports | Nets |
+|------------------|-----------:|------:|---------:|-----:|
+| Selection sort   |          4 |    10 |       15 |   51 |
+|                  |          8 |    10 |       27 |   87 |
+|                  |         16 |    10 |       51 |  159 |
+|                  |            |       |          |      |
+| Linear cell sort |          4 |     9 |       12 |   46 |
+|                  |          8 |    13 |       20 |  112 |
+|                  |         16 |    21 |       36 |  338 |
+|                  |            |       |          |      |
+| Odd-even sort    |          4 |    25 |       37 |  120 |
+|                  |          8 |    81 |      133 |  712 |
+|                  |         16 |   289 |      517 | 4872 |
+
+: Overview of cells, IO ports and nets used across multiple input sizes \label{tbl:overview-cells-io-nets}
 
 ## Selection sort
 
@@ -375,11 +378,11 @@ OX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
 Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
 OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
 UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
-ODgxfX0sImhpc3RvcnkiOlstMTc0MzE0MDQ0MSwtNTQ0NjcwOT
-UzLC0xNDA0MzQ5NTU3LDE0MTMyNTQ2MjQsOTU0MzYyODUyLC0y
-MDA5OTc0MjEzLC0yMDg5ODAwOTg0LC0yMDA5OTc0MjEzLDE5NT
-k5NDgwMzUsMTg4Njk4MjgyNSwyMDUzOTgxMzMxLDczMTQ0ODQ0
-MSwtMTgzMDMwNTI0LC0yNTIyOTI3MzcsLTE5MzI3MjQ3NTgsLT
-E1NjAxNzU0ODcsMTA2NTQ0NTkxNCwtMTc3MDQzNzY0Myw3MTM3
-Nzg1MzQsNjc0ODQ4MF19
+ODgxfX0sImhpc3RvcnkiOlstNTQ0NjcwOTUzLC0xNDA0MzQ5NT
+U3LDE0MTMyNTQ2MjQsOTU0MzYyODUyLC0yMDA5OTc0MjEzLC0y
+MDg5ODAwOTg0LC0yMDA5OTc0MjEzLDE5NTk5NDgwMzUsMTg4Nj
+k4MjgyNSwyMDUzOTgxMzMxLDczMTQ0ODQ0MSwtMTgzMDMwNTI0
+LC0yNTIyOTI3MzcsLTE5MzI3MjQ3NTgsLTE1NjAxNzU0ODcsMT
+A2NTQ0NTkxNCwtMTc3MDQzNzY0Myw3MTM3Nzg1MzQsNjc0ODQ4
+MCwxODk3MDQ1ODFdfQ==
 -->
