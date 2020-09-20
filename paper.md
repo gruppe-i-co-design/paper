@@ -325,10 +325,9 @@ TODO
 
 ## Space
 
-In hardware, everything is running concurrently unlike in software, where the code is executed in sequence. There are ways to make code concurrent in software, but it comes with some restrictions we do not have in hardware. By being able to run everything concurrently in the hardware, we can implement some sorting algorithms a bit differently then we would in software. By doing this we could make the algorithm execute/finish faster. This is a good thing, making some hardware implementations considerably faster than in software. Although concurrency is a good thing, it comes with a high cost with regards to the resources needed. We can see in figure.x that the resources needed for the odd-even sort are immensely larger compared to the other sorting algorithms that are not utilising the concurrency as significantly. The question then becomes whether the resources need are worth the time efficiency we get by utilising the concurrency. 
+In hardware, everything is running concurrently, in contrast to software, where the code is executed in sequence. There are ways to make code concurrent in software, but it comes with some restrictions we do not have in hardware. By being able to run everything concurrently in the hardware, we can implement some sorting algorithms a bit differently then we would in software. By doing this we could make the algorithm execute/finish faster. This is a good thing, making some hardware implementations considerably faster than in software. Although concurrency is a good thing, it comes with a high cost with regards to the resources needed. We can see in figure.x that the resources needed for the odd-even sort are immensely larger compared to the other sorting algorithms that are not utilising the concurrency as significantly. The question then becomes whether the resources need are worth the time efficiency we get by utilising the concurrency. 
 
-
-In conclusion, ...
+In conclusion, utilizing concurrency is usually a good thing. Although if the resources need are immense, and the time complexity is not that important, an software implementation should be considered.
 
 
 # Conclusion
