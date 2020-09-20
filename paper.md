@@ -23,11 +23,11 @@ abstract: |
 
 TODO write introduction
 
+Our goal for this paper is to explore and implement three different sorting algorithms in software, hardware and, if possible, package the hardware implementation as an Intellectual Property (IP) block. Furthermore we will compare the different implementations with regards to efficiency, performance, flexibility and complexity (in particular hardware vs software tradeoffs).
+
 # Methods
 
-Our goal for this paper was to explore and implement three different sorting algorithms in software, hardware and as an integrated circuit (Intellectual Property (IP)), furthermore compare the different implementations with regards to efficiency, performance and flexibility (in particular hardware vs software tradeoffs).
-
-The tools used in this paper was Vivado 2020.1, and Vitis and the Zybo Zynq-7000 board [@zybozynq7000]. We used Vivado for the Hardware implementation of our paper, to be able to program the Zynq-7000 board. For the software and IP implementation, we took in use the Vitis IDE, where we also used the Zynq-700 board for testing the Software and IP implementation.
+The tools used in this paper was Vivado 2020.1, and Vitis and the Zybo Zynq-7000 board [@zybozynq7000]. We used Vivado for the hardware implementation of our paper, to be able to program the Zynq-7000 board. For the software and IP implementation, we used the Vitis IDE, where we also used the Zynq-7000 board.
 
 For all of our algorithms, we followed the same steps. We started by creating an FSMD architecture of the overall algorithm we were currently building; we did this to get an overview of what components and signals were needed. Based on the FSMD architecture created, we then designed the ASMD chart, this was done to easily convert the chart into code when implementing the algorithm, while also having a good overview of the states needed.
 
