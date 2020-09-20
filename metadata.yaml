@@ -18,6 +18,7 @@ listings: true
 codeBlockCaptions: true
 chapters: true
 chaptersDepth: 2
+plot-configuration: pandoc-plot.yml
 header-includes: |
   \usepackage{xcolor}
   \lstset{

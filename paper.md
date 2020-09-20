@@ -79,7 +79,32 @@ Firstly we will give a quick overview of the different implementations. In @tbl:
 | (3 layers)       |          8 |    76 |      133 |  392 |
 |                  |         16 |   276 |      517 | 1544 |
 
-: Overview of cells, IO ports and nets used across multiple input sizes for hardware implementations \label{tbl:overview-cells-io-nets}
+: Overview of cells, IO-ports and nets used across multiple input sizes for hardware implementations \label{tbl:overview-cells-io-nets}
+
+
+~~~{.matplotlib caption="Graph of cells, IO-ports and nets used across multiple input sizes for hardware"}
+
+df = pd.read_csv("/home/oruud/Dokumenter/usn/codesign/paper/resources/hardware-resources.csv")
+colors = ['r', 'g', 'b', 'm']
+
+fig, axs = plt.subplots(1, 3, figsize=(10,3))
+
+for column, title, ax in zip(['cells', 'io-ports', 'nets'], ['Cells', 'IO-ports', 'Nets'], axs.flatten()):
+    for (name, group), color, offset in zip(df.groupby("implementation"), colors, np.linspace(-1, 2, 4)):
+        group.plot.bar(
+            x="input-size",
+            y=column,
+            ax=ax,
+            label=name,
+            color=color,
+            position=offset,
+            width=0.1,
+            title=title,
+            xlabel="Input size"
+        )
+
+plt.tight_layout()
+~~~
 
 ## Selection sort
 
