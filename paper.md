@@ -277,6 +277,8 @@ Design charts for linear cell sort
 
 ![Schematic of elaborated design for linear cell sort](figures/linear-cell-sort/schematic.png){#fig:linear-cell-schematic width=95%}
 
+![Waveform diagram for linear cell sort](figures/linear-cell-sort/waveform.png){#fig:linear-cell-waveform width=95%}
+
 TODO remember to address mega-mux!
 
 ### Software implementation
