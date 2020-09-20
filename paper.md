@@ -295,7 +295,7 @@ Design charts for odd-even sort
 
 ### Software implementation
 
-The main challange of this algorithm is calculating the correct neighbouring indicies for comparisions. As this is already a solved problem, we simply translated the code shared by Bekbolatov [@bekbolatov15] into C to be usable for our purpose. The function simply takes the current signal index, the current layer and the internal layer index and returnes the index for the signal to compare to, or itself if there is non for this layer.
+The main challange of this algorithm is calculating the correct neighbouring indicies for comparisions. As this is already a solved problem, we simply translated the code shared by Bekbolatov [@bekbolatov15] into C to be usable for our purpose. The function simply takes the current signal index, the current layer and the internal layer index.
 
 We have tested the software implementation on the Zybo board and it worked perfectly, as seen in @fig:odd-even-serial. The code can be found in @lst:odd-even-code.
 
@@ -321,9 +321,9 @@ In conclusion, the development efforts between software and hardware were partic
 
 ## The tradeoffs regarding concurrency
 
-In hardware, everything is running concurrently, in contrast to software, where the code is executed in sequence. There are ways to make code concurrent in software, but it comes with some restrictions we do not have in hardware. We can utilize the concurrent nature of hardware when we are implementing some sorting algorithms. This often leads to the implementation being faster in hardware than software. Although utilzing concurrency in hardware have many benefits, it also comes with the drawback of requiring more hardware resources and phsical space. We can see in @tbl:overview-cells-io-nets that the resources needed for odd-even sort, which is highly parallel, are immensely larger compared to selection sort and linear cell sort, which don't utilize concurrency to the same degree. The question then becomes whether the resources need are worth the time efficiency we get by utilising the concurrency.
+In hardware, everything runs concurrently. We still have some sort of sequential logic in the form of an FSMD, but we can for example generate multiple components that will handle some sort of data concurrently. In software, on the other hand, the code is executed in sequence. There are ways to make code concurrent in software, but it comes with some restrictions we do not have in hardware. We can utilize the concurrent nature of hardware when we are implementing some sorting algorithms. This often leads to the implementation being faster in hardware than software. Although utilizing concurrency in hardware has many benefits, it also comes with the drawback of requiring more hardware resources and physical space. We can see in @tbl:overview-cells-io-nets that the resources needed for odd-even sort, which is highly parallel, are immensely larger compared to selection sort and linear cell sort, which don't utilize concurrency to the same degree. The question then becomes whether the resources need are worth the time efficiency we get by utilising the concurrency.
 
-In conclusion, utilizing concurrency can lead to improved speed and efficiency, however concurrent implementations in hardware also require more hardware resources. This means that there is a tradeoff to be made between multiplexing in space or multiplexing in time.
+In conclusion, utilizing concurrency can lead to improved speed and efficiency, however, concurrent implementations in hardware also require more hardware resources. This means that there is a tradeoff to be made between multiplexing in space or multiplexing in time.
 
 # Conclusion
 
