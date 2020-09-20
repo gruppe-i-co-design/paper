@@ -2,6 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import rc
+from matplotlib.gridspec import GridSpec
 import pandas as pd
 
 rc("text", usetex=True)
@@ -12,10 +13,20 @@ rc("font", family="serif", weight=500, size=11)
 df = pd.read_csv("/home/oruud/Dokumenter/usn/codesign/paper/resources/hardware-resources.csv")
 colors = ['r', 'g', 'b', 'm']
 
-fig, axs = plt.subplots(2, 3, figsize=(10,6))
-fig.delaxes(axs[1][2])
+fig = plt.figure(figsize=(10, 7))
+gs = GridSpec(2, 6, figure=fig)
 
-for column, title, ax in zip(['cells', 'io-ports', 'nets', 'lut', 'ff'], ['Cells', 'IO-ports', 'Nets', 'LUT', 'FF'], axs.flatten()):
+axs = [fig.add_subplot(gs[0,0:2]),
+       fig.add_subplot(gs[0,2:4]),
+       fig.add_subplot(gs[0,4:]),
+       fig.add_subplot(gs[1,0:3]),
+       fig.add_subplot(gs[1,3:])
+      ]
+
+columns = ['cells', 'io-ports', 'nets', 'lut', 'ff']
+column_titles = ['Cells', 'IO-ports', 'Nets', 'LUT', 'FF']
+
+for column, title, ax in zip(columns, column_titles, axs):
     for (name, group), color, offset in zip(df.groupby("implementation"), colors, np.linspace(-1, 1.7, 4)):
         group.plot.bar(
             x="input-size",

@@ -89,10 +89,20 @@ Firstly we will give a quick overview of the different implementations. In @tbl:
 df = pd.read_csv("/home/oruud/Dokumenter/usn/codesign/paper/resources/hardware-resources.csv")
 colors = ['r', 'g', 'b', 'm']
 
-fig, axs = plt.subplots(2, 3, figsize=(10,6))
-fig.delaxes(axs[1][2])
+fig = plt.figure(figsize=(10, 7))
+gs = GridSpec(2, 6, figure=fig)
 
-for column, title, ax in zip(['cells', 'io-ports', 'nets', 'lut', 'ff'], ['Cells', 'IO-ports', 'Nets', 'LUT', 'FF'], axs.flatten()):
+axs = [fig.add_subplot(gs[0,0:2]),
+       fig.add_subplot(gs[0,2:4]),
+       fig.add_subplot(gs[0,4:]),
+       fig.add_subplot(gs[1,0:3]),
+       fig.add_subplot(gs[1,3:])
+      ]
+
+columns = ['cells', 'io-ports', 'nets', 'lut', 'ff']
+column_titles = ['Cells', 'IO-ports', 'Nets', 'LUT', 'FF']
+
+for column, title, ax in zip(columns, column_titles, axs):
     for (name, group), color, offset in zip(df.groupby("implementation"), colors, np.linspace(-1, 1.7, 4)):
         group.plot.bar(
             x="input-size",
@@ -105,6 +115,61 @@ for column, title, ax in zip(['cells', 'io-ports', 'nets', 'lut', 'ff'], ['Cells
             title=title,
             xlabel="Input size"
         )
+
+plt.tight_layout()
+~~~
+
+
+~~~{.matplotlib caption="Graph of power usage across multiple input sizes for hardware implementations" #fig:hardware-power}
+
+df = pd.read_csv("/home/oruud/Dokumenter/usn/codesign/paper/resources/hardware-resources.csv")
+colors = ['r', 'g', 'b', 'm']
+
+fig = plt.figure(figsize=(10, 7))
+gs = GridSpec(2, 2, figure=fig)
+
+axs = [fig.add_subplot(gs[0,0]), fig.add_subplot(gs[0,1])]
+
+columns = ['device-static', 'device-dynamic']
+column_titles = ['Device static', 'Device dynamic']
+
+for column, title, ax in zip(columns, column_titles, axs):
+    for (name, group), color, offset in zip(df.groupby("implementation"), colors, np.linspace(-1, 1.7, 4)):
+        group.plot.bar(
+            x="input-size",
+            y=column,
+            ax=ax,
+            label=name,
+            color=color,
+            position=offset,
+            width=0.1,
+            title=title,
+            xlabel="Input size"
+        )
+
+indx = 9
+labels= 3
+width = 0.2
+index = np.arange(indx)
+
+odd_3_Dd = [12, 6, 82     ,7, 8, 85,   7, 8, 85]  # inside dynamic
+          # 4   8    16
+odd_N_Dd = [10, 6, 84,    18, 24, 58    , 26, 36, 38]  # inside dynamic
+          # 4   8    16
+linear_Dd = [5, 5, 90     , 5, 6, 89      ,7,9,84]  # inside dynamic
+          # 4   8    16
+selection_Dd = [12, 5, 83   , 34, 8, 58  , 15, 4, 81]
+
+ax = fig.add_subplot(gs[1,:])
+ax.bar(index, odd_3_Dd, width, color='g', label='Odd-even sort-3 (signals, logic, I/O) ')
+ax.bar(index + width, odd_N_Dd, width, color='b',label='Odd-even sort-N (signals, logic, I/O) ')
+ax.bar(index + 2*width, linear_Dd, width, color='r',label='Linear cell sort (signals, logic, I/O) ')
+ax.bar(index + 3*width, selection_Dd, width, color='m',label='Selection sort (signals, logic, I/O) ')
+ax.set_xticks(index + width * 1.5)
+ax.set_xticklabels(('|-------------', '4', '-------------|', '|-------------', '8', '-------------|','|-------------', '16', '-------------|'))
+ax.legend(loc='best')
+ax.set_title('Inside dynamic device')
+ax.set_xlabel('Input size')
 
 plt.tight_layout()
 ~~~
