@@ -107,26 +107,28 @@ for column, title, ax in zip(['cells', 'io-ports', 'nets', 'lut', 'ff'], ['Cells
 plt.tight_layout()
 ~~~
 
-| Implementation                     | Time complexity   |
-|------------------------------------|-------------------|
-| Selection sort (hardware/software) | $O(n^2)$          |
-| Linear cell sort (hardware)        | $O(n)$            |
-| Linear cell sort (software)        | $O(n^2)$          |
-| Odd-even sort (hardware)[^1]       | $O(n - k)$        |
-| Odd-even merge sort (software)     | $O(n (\log n)^2)$ |
+\pagebreak[4]
+
+| Implementation                     | Worst             | Best              |
+|------------------------------------|-------------------|-------------------|
+| Selection sort (hardware/software) | $O(n^2)$          | $O(n^2)$          |
+| Linear cell sort (hardware)        | $O(n)$            | $O(n)$            |
+| Linear cell sort (software)        | $O(n^2)$          | $O(n^2)$          |
+| Odd-even sort (hardware)[^k]       | $O(n - k)$        | $O(1)$            |
+| Odd-even merge sort (software)     | $O(n (\log n)^2)$ | $O(n (\log n)^2)$ |
 
 : Overview of time complexity for the different implementations \label{tbl:time-complexity}
 
-| Implementation    | Worst                   | Best                    |
-|-------------------|-------------------------|-------------------------|
-| Selection sort    | $1 + N^2 + (N - 1) * 4$ | $1 + N^2 + (N - 1) * 4$ |
-| Linear cell sort  | $N$                     | $N$                     |
-| Odd-even sort[^1] | $N - k$                 | $1$                     |
+| Implementation    | Worst                | Best                  |
+|-------------------|----------------------|-----------------------|
+| Selection sort    | $1 + N^2 + 4(N - 1)$ | $1 + N^2 + 4(N - 1)$  |
+| Linear cell sort  | $N$                  | $N$                   |
+| Odd-even sort[^k] | $N - k$              | $1$                   |
 
 : Amount of clock cycles for hardware implementations, calculated based on ASMD charts \label{tbl:clock-cycles}
 
 
-[^1]: $k$ is the amount of layers in the initial sorting network, also referred
+[^k]: $k$ is the amount of layers in the initial sorting network, also referred
   to as `SORT_NETWORK_SIZE`.
 
 ## Selection sort
