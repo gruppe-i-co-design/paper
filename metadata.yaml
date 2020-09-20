@@ -9,6 +9,7 @@ papersize: a4
 pagestyle: headings
 secnumdepth: 2
 links-as-notes: true
+lot: true
 lof: true
 cref: true
 xnos-number-sections: true
