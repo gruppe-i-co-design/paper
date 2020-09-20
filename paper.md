@@ -21,9 +21,9 @@ abstract: |
 
 # Introduction
 
-Choosing the right implementation for an algorithm is an important task. It can help you save both time and resources. It is therefore important to consider the ups and downs for both hardware and software. Is the extra development effort worth it when planning to create a hardware implementation of an algorithm? Is the concurrent nature of hardware something that is worth exploiting, or would the sequential nature of software be good enough? 
+Choosing the right implementation for an algorithm is an important task. It can help you save both time and resources. It is therefore important to consider the ups and downs for both hardware and software. Is the extra development effort worth it when planning to create a hardware implementation of an algorithm? Is the concurrent nature of hardware something that is worth exploiting, or would the sequential nature of software be good enough?
 
-Our goal for this paper is to explore and implement three different sorting algorithms in software and hardware. Furthermore, we will compare the different implementations with regards to efficiency, performance, flexibility and complexity; in particular hardware contrary to software tradeoffs.
+Our goal for this paper is to explore and implement three different sorting algorithms in software and hardware. Furthermore, we will compare the different implementations with regards to efficiency, performance, flexibility and complexity; in particular hardware contrary to software trade-offs.
 
 # Methods
 
@@ -323,7 +323,7 @@ Although utilizing parallelism in hardware has many benefits, it also comes with
 
 # Conclusion
 
-We found that the development efforts between software and hardware were particularly highlighted in our project due to lack of knowledge. However the extensive development activities are still a major factor causing hardware development to be more labor-intensive than software development. Further utilizing parallelism in hardware can substantially increase the speed of the algorithm, however, such implementations also require more hardware resources. Hence one has to make a trade-off between multiplexing the algorithm in time or in space.
+We found that the development efforts between software and hardware were particularly highlighted in our project due to lack of knowledge. However the extensive development activities are still a major factor causing hardware development to be more labor-intensive than software development. Further utilizing parallelism in hardware can substantially increase the speed of the algorithm at the cost of requiring more hardware resources. Hence there is a trade-off to make between multiplexing the algorithm in time or in space depending on the context of the application.
 
 # References {-}
 
