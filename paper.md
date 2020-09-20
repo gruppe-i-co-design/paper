@@ -21,9 +21,9 @@ abstract: |
 
 # Introduction
 
-TODO write introduction
+Choosing the right implementation for an algorithm is an important task. It can help you save both time and resources. It is therefore important to consider the ups and downs for both hardware and software. Is the extra development effort worth it when planning to create a hardware implementation of the algorithm? Is the concurrent nature of hardware something that is worth exploiting, or would the sequential nature of software be good enough? 
 
-Our goal for this paper is to explore and implement three different sorting algorithms in software, hardware and, if possible, package the hardware implementation as an Intellectual Property (IP) block. Furthermore we will compare the different implementations with regards to efficiency, performance, flexibility and complexity (in particular hardware vs software tradeoffs).
+Our goal for this paper is to explore and implement three different sorting algorithms in software and hardware. Furthermore, we will compare the different implementations with regards to efficiency, performance, flexibility and complexity (in particular hardware vs software tradeoffs).
 
 # Methods
 
@@ -391,11 +391,6 @@ OX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
 Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
 OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
 UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
-<<<<<<< HEAD
 ODgxfX0sImhpc3RvcnkiOlstMTcxNTIzMzY2NSwxMTkzNDcyND
 M4LDk4Mzk1OTM2N119
-=======
-ODgxfX0sImhpc3RvcnkiOlstMTY4NjAyNzE2NiwtMTcxNTIzMz
-Y2NSwxMTkzNDcyNDM4LDk4Mzk1OTM2N119
->>>>>>> c748486... Update with LUT and FF
 -->
