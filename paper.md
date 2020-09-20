@@ -303,32 +303,26 @@ See @sec:visual-odd-even-sort for a visual explanation of the algorithm.
 
 ### Hardware implementation
 
-The hardware implementation of this algorithm was more comfortable than we thought, and the time complexity of this is O(N). We parallelized our approach since it was easy and compared swap functions performed simultaneously on each element's match. We implemented this to use a generic model, which is more natural to resize the input (N). The depth is the length of the input data, and it takes (N) stages that data is sorted. Furthermore, odd-even sort using more comparators, and we can calculate that straightforward. Let's take an example.
+The hardware implementation of this algorithm was more comfortable than we thought, and the time complexity of this is $O(N)$. We parallelized our approach since it was easy and compared swap functions performed simultaneously on each element's match. We implemented this to use a generic model, which is more natural to resize the input $N$. The depth is the length of the input data, and it takes $N$ stages that data is sorted. Furthermore, odd-even sort using more comparators, and we can calculate that straightforward. Let's take an example.
 
-We say that we want to sort an array of N elements.
-
-$$
-\begin{split}
-N &= 10 \\
-d &= \text{depth / amount of layers} \\
-c &= \text{comparators}
-\end{split}
-$$
-
-We want to know what is the depth and how many comparators we are using.
-
-TODO find references for these formulas (think I saw it in GPU gems?)
+If we want to sort an array of $N$ elements, we can calculate how deep and how many comparators we would need using the formulas from Skliarova's presentation [@skliarova2015; p. 8], seen in @eq:odd-even-comparators. As an example, for $10$ input signals, we would need $45$ comparators spread out over $10$ layers (@eq:odd-even-comparators-10).
 
 $$
 \begin{split}
-d(N) &= N \\
-d(10) &= 10 \\
-c(N) &= N * (N - 1)/ 2 \\
-c(10) &= 10 * (10 - 1) / 2 = 45
+D &= \text{depth / amount of layers} \\
+C &= \text{comparators}\\
+\\
+D(N) &= N \\
+C(N) &= \frac{N(N - 1)}{2}
 \end{split}
-$$
+$$ {#eq:odd-even-comparators}
 
-To sort an array of 10 elements, we hence need 45 comparators distributed over 10 layers.
+$$
+\begin{split}
+D(10) &= N = 10 \\
+C(10) &= \frac{N(N - 1)}{2} = \frac{10(10 - 1)}{2} = 45
+\end{split}
+$$ {#eq:odd-even-comparators-10}
 
 <div id="fig:design-charts-odd-even" class="subfigures">
 ![FSMD chart](figures/odd-even-sort/fsmd.png){#fig:odd-even-fsmd width=95%}
