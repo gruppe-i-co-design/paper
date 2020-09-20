@@ -120,15 +120,6 @@ For the first hardware implentation we followed the _Vivado Quick Start Tutorial
 
 We have created a generic counter and register in the hardware implementation, which we want to reuse as much code as possible. The comparing counter is set to 1 as a default value, and the output of the RAM will be the first element in the array when we run the program. We temporarily store this index value of this element in a register and increment the index counter to compare the elements to find the smallest element in the array. Again, we temporarily store the index and the value of the smallest element in registers, then we swap those elements till the array is sorted. We have removed the RAM from the design file into the test bench file, which we wanted an external RAM instead of an internal RAM.
 
-TODO add image of synth report
-
-Synthesized report (Shows the power consumption) 
-
-
-TODO add image of synthesized report
-
-Summary of synthesized report
-
 <div id="fig:design-charts-selection" class="subfigures">
 ![FSMD chart](figures/selection-sort/fsmd.png){#fig:selection-fsmd width=45%}
 ![ASMD chart](figures/selection-sort/asmd.png){#fig:selection-asmd width=45%}
@@ -137,17 +128,6 @@ Design charts for selection sort
 </div>
 
 ![Schematic of elaborated design for selection sort](figures/selection-sort/schematic.png){#fig:selection-schematic width=95%}
-
-TODO add image of synthesized report
-
-Summary of synthesized report
-
-
-The picture below shows an unsorted array in the RAM when the program starts. 
-
-
-TODO add images of waveform diagrams
-
 
 ### Software Implementation
 
@@ -227,15 +207,6 @@ Design charts for linear cell sort
 ![Schematic of elaborated design for linear cell sort](figures/linear-cell-sort/schematic.png){#fig:linear-cell-schematic width=95%}
 
 TODO remember to address mega-mux!
-
-TODO add image of synth report
-
-Synthesized report of On-Chip Power
-
-TODO add image of utilization report
-
-Utilization synthesized report
-
 
 ### Software implementation
 
