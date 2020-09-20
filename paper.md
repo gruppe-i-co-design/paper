@@ -27,15 +27,15 @@ Our goal for this paper is to explore and implement three different sorting algo
 
 # Methods
 
-The tools used in this paper was Vivado 2020.1, and Vitis and the Zybo Zynq-7000 board [@zybozynq7000]. We used Vivado for the hardware implementation of our paper, to be able to program the Zynq-7000 board. For the software and IP implementation, we used the Vitis IDE, where we also used the Zynq-7000 board.
+The tools used in this paper was Vivado 2020.1, Vitis 2020.1 and the Zybo Zynq-7000 board [@zybozynq7000]. We used Vivado for the hardware implementation of our paper to be able to program the Zynq-7000 board. For the software and IP implementation, we used the Vitis IDE, where we also used the Zynq-7000 board to test the implementations.
 
-For all of our algorithms, we followed the same steps. We started by creating an FSMD architecture of the overall algorithm we were currently building; we did this to get an overview of what components and signals were needed. Based on the FSMD architecture created, we then designed the ASMD chart, this was done to easily convert the chart into code when implementing the algorithm, while also having a good overview of the states needed.
+For all of our algorithms, we followed the same steps. We started by creating an FSMD architecture of the overall algorithm we were currently building; we did this to get an overview of what components and signals were needed. Based on the FSMD architecture created, we designed the ASMD chart, this was done to easily convert the chart into code when implementing the algorithm, while also having a good overview of the states needed.
 
-After finishing making all of the necessary charts, we then started to implement the sorting algorithm into Vivado. To make the code as reusable as possible we made a new file for each of our components. We also made the last two algorithms generic, such that the inputs and sizes could be adjusted by the user. 
+After finishing making all of the necessary charts, we then started to implement the sorting algorithm into Vivado. To make the code as reusable as possible we create an individual file for each of our components. We also made the last two algorithms generic, such that the inputs and sizes could be adjusted by the user. 
 
-To confirm that our sorting algorithms worked as expected we created a test bench for the project and analysed the outputs to see whether we achieved to create the algorithm or not.
+To confirm that our sorting algorithms worked as expected, we created a test bench for the project and analysed the outputs to see whether we achieved to create the algorithm or not.
 
-The software implementation in contrast to the hardware implmentation was a much more straight forward process. We used Vitis ++ to connect our Zybo board to our computer and created a C file that would be used to implement the algorithm. For testing, we used the built-in Vitis console.
+The software implementation in contrast to the hardware implmentation was a much more straight forward process. We used Vitis 2020.1 to connect our Zybo board to our computer and created a C file that would be used to implement the algorithm. For testing, we used the built-in Vitis console.
 
 For our first algorithm, we made an effort to implement an IP implementation. Troubleshooting and implementation turned out to be an immensely time-consuming process. Seeing that the implementation of the IP would not have had a significant impact on our vision or result for our paper, we chose to exclude it.
 
@@ -83,7 +83,7 @@ Firstly we will give a quick overview of the different implementations. In @tbl:
 
 ## Selection sort
 
-The Selection Sort is the most straightforward sorting algorithm. Our implementation will identify the minimum element in the array and swap it with the element in the primary position. Then it will identify the second position minimum element and swap it with the element in the second location, and it will continue executing this until the entire array is sorted. It has an $O(n^2)$ time complexity, and this is inefficient on large arrays. The input array divides into two subarrays, a sorted subarray of elements built up from top to bottom, and the remaining unsorted elements occupy the rest of the array.
+The Selection Sort is the most straightforward sorting algorithm. Our implementation will identify the minimum element in the array and swap it with the element in the primary position. Then it will identify the second position minimum element and swap it with the element in the second location, and it will continue executing this until the entire array is sorted. It has an $O(n^2)$ time complexity, which means it is inefficient on larger arrays. The input array divides into two subarrays, a sorted subarray of elements built up from top to bottom, and the remaining unsorted elements occupy the rest of the array.
 
 See @sec:visual-selection-sort for a visual explanation of the algorithm.
 
@@ -92,7 +92,7 @@ See @sec:visual-selection-sort for a visual explanation of the algorithm.
 
 For the first hardware implentation we followed the _Vivado Quick Start Tutorial_ by Gericota for running VHDL code on the Zybo board using Vivado [@gericotahw2020].
 
-We have created a generic counter and register in the hardware implementation, which we want to reuse as much code as possible. The comparing counter is set to 1 as a default value, and the output of the ram will be the first element in the array when we run the program. We temporarily store this index value of this element in a register and increment the index counter to compare the elements to find the smallest element in the array. Again we temporarily store the index and the value of the smallest element in registers, then we swap those elements till the array is sorted. We have removed the ram from the design file into the test bench file, which we wanted an external ram instead of an internal ram.
+We have created a generic counter and register in the hardware implementation, which we want to reuse as much code as possible. The comparing counter is set to 1 as a default value, and the output of the RAM will be the first element in the array when we run the program. We temporarily store this index value of this element in a register and increment the index counter to compare the elements to find the smallest element in the array. Again, we temporarily store the index and the value of the smallest element in registers, then we swap those elements till the array is sorted. We have removed the RAM from the design file into the test bench file, which we wanted an external RAM instead of an internal RAM.
 
 TODO add image of synth report
 
@@ -117,7 +117,7 @@ TODO add image of synthesized report
 Summary of synthesized report
 
 
-The picture below shows an unsorted array in the ram when the program starts. 
+The picture below shows an unsorted array in the RAM when the program starts. 
 
 
 TODO add images of waveform diagrams
@@ -278,7 +278,7 @@ We have tested the software implementation on the Zybo board and it worked perfe
 
 # Discussion
 
-Through our exploration, we managed to get all three algoritms working in both hardware and software. Further we also found some clear distinctions between algorithms in terms of complexity, speed, size and parallelization. We will now discuss and compare the different algorithms and implementations.
+Through our exploration, we managed to get all three algoritms working in both hardware and software. Further, we also found some clear distinctions between the algorithms in terms of complexity, speed, size and parallelization. We will now discuss and compare the different algorithms and implementations.
 
 ## Differing development effort
 
