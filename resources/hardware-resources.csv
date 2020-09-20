@@ -1,13 +1,13 @@
-implementation,input-size,cells,io-ports,nets
-Selection sort,4,10,15,51
-Selection sort,8,10,27,87
-Selection sort,16,10,51,159
-Linear cell sort,4,9,12,46
-Linear cell sort,8,13,20,112
-Linear cell sort,16,21,36,338
-Odd-even sort N,4,25,37,120
-Odd-even sort N,8,81,133,712
-Odd-even sort N,16,289,517,4872
-Odd-even sort 3,4,24,37,104
-Odd-even sort 3,8,76,133,392
-Odd-even sort 3,16,276,517,1544
+implementation,input-size,cells,io-ports,nets,lut,ff
+Selection sort,4,10,15,51,18,25
+Selection sort,8,10,27,87,37,45
+Selection sort,16,10,51,159,72,85
+Linear cell sort,4,9,12,46,41,27
+Linear cell sort,8,13,20,112,119,81
+Linear cell sort,16,21,36,338,404,283
+Odd-even sort N,4,25,37,120,86,17
+Odd-even sort N,8,81,133,712,860,65
+Odd-even sort N,16,289,517,4872,6744,258
+Odd-even sort 3,4,24,37,104,78,17
+Odd-even sort 3,8,76,133,392,431,65
+Odd-even sort 3,16,276,517,1544,1583,257

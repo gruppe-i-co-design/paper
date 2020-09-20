@@ -82,14 +82,15 @@ Firstly we will give a quick overview of the different implementations. In @tbl:
 : Overview of cells, IO-ports and nets used across multiple input sizes for hardware implementations \label{tbl:overview-cells-io-nets}
 
 
-~~~{.matplotlib caption="Graph of cells, IO-ports and nets used across multiple input sizes for hardware"}
+~~~{.matplotlib caption="Graph of cells, IO-ports, nets, LUTs and FFs used across multiple input sizes for hardware implementations"}
 
 df = pd.read_csv("/home/oruud/Dokumenter/usn/codesign/paper/resources/hardware-resources.csv")
 colors = ['r', 'g', 'b', 'm']
 
-fig, axs = plt.subplots(1, 3, figsize=(10,3))
+fig, axs = plt.subplots(2, 3, figsize=(10,6))
+fig.delaxes(axs[1][2])
 
-for column, title, ax in zip(['cells', 'io-ports', 'nets'], ['Cells', 'IO-ports', 'Nets'], axs.flatten()):
+for column, title, ax in zip(['cells', 'io-ports', 'nets', 'lut', 'ff'], ['Cells', 'IO-ports', 'Nets', 'LUT', 'FF'], axs.flatten()):
     for (name, group), color, offset in zip(df.groupby("implementation"), colors, np.linspace(-1, 2, 4)):
         group.plot.bar(
             x="input-size",
@@ -419,6 +420,11 @@ OX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
 Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
 OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
 UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
+<<<<<<< HEAD
 ODgxfX0sImhpc3RvcnkiOlstMTcxNTIzMzY2NSwxMTkzNDcyND
 M4LDk4Mzk1OTM2N119
+=======
+ODgxfX0sImhpc3RvcnkiOlstMTY4NjAyNzE2NiwtMTcxNTIzMz
+Y2NSwxMTkzNDcyNDM4LDk4Mzk1OTM2N119
+>>>>>>> c748486... Update with LUT and FF
 -->
