@@ -79,7 +79,7 @@ Firstly we will give a quick overview of the different implementations. In @tbl:
 | (3 layers)       |          8 |    76 |      133 |  392 |
 |                  |         16 |   276 |      517 | 1544 |
 
-: Overview of cells, IO ports and nets used across multiple input sizes \label{tbl:overview-cells-io-nets}
+: Overview of cells, IO ports and nets used across multiple input sizes for hardware implementations \label{tbl:overview-cells-io-nets}
 
 ## Selection sort
 
