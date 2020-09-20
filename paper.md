@@ -21,9 +21,9 @@ abstract: |
 
 # Introduction
 
-The level of concurrency varies among array sorting algorithms. In some cases it is low, e.g. selection sorting, but in other cases it is higher, e.g. odd-even sorting. As Vasquez' shows in his Hackaday article [@vasquez16], we can utilize field-programmable gate arrays (FPGAs) as a platform to implement parallelized versions of concurrent sorting algorithms. Further Skliarova [@skliarova2015] shows an example of implementing a concurrent sorting network on a FPGA. In both cases one is able to take advantage of the parallel nature of hardware to increase the performance of the algorithms.
+The level of concurrency varies among array sorting algorithms. In some cases it is low, e.g. selection sorting, but in other cases, it is higher, e.g. odd-even sorting. As Vasquez' shows in his Hackaday article [@vasquez16], we can utilize field-programmable gate arrays (FPGAs) as a platform to implement parallelized versions of concurrent sorting algorithms. Further Skliarova [@skliarova2015] shows an example of implementing a concurrent sorting network on an FPGA. In both cases, one can take advantage of the parallel nature of hardware to increase the performance of the algorithms.
 
-Depending on the context of the application, choosing the algorithm and it's implementation with care can be crucial to fulfil the given requirements. As different algorithms and implementations have widely different properties when it comes to performance, efficiency, flexibility, resource usage and code complexity. Understanding these trade-offs is valuable to develop highly effective and well engineered applications.
+Depending on the context of the application, choosing the algorithm and its implementation with care can be crucial to fulfil the given requirements. As different algorithms and implementations have widely different properties when it comes to performance, efficiency, flexibility, resource usage and code complexity. Understanding these trade-offs is valuable to develop highly effective and well-engineered applications.
 
 We will explore and implement three different sorting algorithms as software (single-thread C programs) and hardware (VHDL) implementations in FPGAs. Furthermore, we will compare the different implementations with regards to efficiency, performance, flexibility, resource usage and code complexity; in particular contrasting hardware and software trade-offs.
 
@@ -37,7 +37,7 @@ After finishing making all of the necessary charts, we then started to implement
 
 To confirm that our sorting algorithms worked as expected, we created a test bench for the project and analysed the outputs to see whether we achieved to create the algorithm or not.
 
-The software implementation in contrast to the hardware implmentation was a much more straight forward process. We used Vitis 2020.1 to connect our Zybo board to our computer and created a C file that would be used to implement the algorithm. For testing, we used the built-in Vitis console.
+The software implementation in contrast to the hardware implementation was a much more straight forward process. We used Vitis 2020.1 to connect our Zybo board to our computer and created a C file that would be used to implement the algorithm. For testing, we used the built-in Vitis console.
 
 For our first algorithm, we made an effort to implement an IP implementation. Troubleshooting and implementation turned out to be an immensely time-consuming process. Seeing that the implementation of the IP would not have had a significant impact on our vision or result for our paper, we chose to exclude it.
 
@@ -59,7 +59,7 @@ In this section, we are going to presenting the results we gathered through to a
 
 : Amount of source code for each implementation \label{tbl:lines-of-code}
 
-Firstly we will give a quick overview of the different implementations. In @tbl:lines-of-code we can see the overview of amount of files and lines of code for each implementation. The amount of lines can be an indicator of complexity, but it must be used carefully as code can of course be optimized for size. In our case we have tried to follow a consistent formatting style in addition to not optimizing for size. Another important note is that we are only counting lines of code, not comments or blank lines, and also only code which is part of the implementation of the algorithm, so no testbenches or code for displaying arrays etc.
+Firstly we will give a quick overview of the different implementations. In @tbl:lines-of-code we can see the overview of the number of files and lines of code for each implementation. The number of lines can be an indicator of complexity, but it must be used carefully as code can, of course, be optimized for size. In our case, we have tried to follow a consistent formatting style in addition to not optimizing for size. Another important note is that we are only counting lines of code, not comments or blank lines, and also only code which is part of the implementation of the algorithm, so no test benches or code for displaying arrays etc.
 
 \pagebreak[4]
 
@@ -130,7 +130,7 @@ plt.tight_layout()
 : Amount of clock cycles for hardware implementations, calculated based on ASMD charts \label{tbl:clock-cycles}
 
 
-[^k]: $k$ is the amount of layers in the initial sorting network, also referred
+[^k]: $k$ is the number of layers in the initial sorting network, also referred
   to as `SORT_NETWORK_SIZE`.
 
 ## Selection sort
@@ -142,7 +142,7 @@ See @sec:visual-selection-sort for a visual explanation of the algorithm.
 
 ### Hardware Implementation
 
-For the first hardware implentation we followed the _Vivado Quick Start Tutorial_ by Gericota for running VHDL code on the Zybo board using Vivado [@gericotahw2020].
+For the first hardware implementation, we followed the _Vivado Quick Start Tutorial_ by Gericota for running VHDL code on the Zybo board using Vivado [@gericotahw2020].
 
 We have created a generic counter and register in the hardware implementation, which we want to reuse as much code as possible. The comparing counter is set to 1 as a default value, and the output of the RAM will be the first element in the array when we run the program. We temporarily store this index value of this element in a register and increment the index counter to compare the elements to find the smallest element in the array. Again, we temporarily store the index and the value of the smallest element in registers, then we swap those elements till the array is sorted. We have removed the RAM from the design file into the test bench file, which we wanted an external RAM instead of an internal RAM.
 
@@ -159,9 +159,9 @@ Design charts for selection sort
 
 ### Software Implementation
 
-For the first software implentation we followed the _Vivado Quick Start Tutorial_ by Gericota for using the micro prossessor on the Zybo board [@gericotasw2020].
+For the first software implementation, we followed the _Vivado Quick Start Tutorial_ by Gericota for using the microprocessor on the Zybo board [@gericotasw2020].
 
-The implementation of the algorithm in software was quick to write, and certainly inspired by the hardware implementation. To keep it consistent, we decided to stick with similar names for the different components (in particular `index_counter` and `comparing_tindex_counter`). This means that it should be easy to compare the implementations.
+The implementation of the algorithm in software was quick to write and certainly inspired by the hardware implementation. To keep it consistent, we decided to stick with similar names for the different components (in particular `index_counter` and `comparing_tindex_counter`). This means that it should be easy to compare the implementations.
 
 We have tested the software implementation on the Zybo board and it worked perfectly, as seen in @fig:selection-serial. The code can be found in @lst:selection-code.
 
@@ -173,13 +173,13 @@ In the IP-implementation, we followed the _Vivado Quick Start Tutorial_ by Geric
 
 We declared some output ports and port mapped those in the `selection_sort_IP_v1_0.vhd`. Next, we made a component declaration and created some signals for inputs and outputs in `selection_sort_IP_v1_0_S00_AXI.vhd`. The VHDL description files created for the hardware implementation of the selection sort algorithm we copied those files into the IP directory and created a new AXI4 Peripheral for IP.
 
-After this, we created a new block design to integrate our IP, added, and customized the `ZYNQ7 Processing System`. Our next step was that we added `selection_sort_IP_v1_0.vhd` into our design and created HDL Wrapper. Further, we added the sort controller and the block memory IP blocks into our design. The block memory generator is the previously explained external RAM and the sort controller enables us to inspect the memory after it has been sorted. This is done by simply enabling our software running on the ZYNQ processor to read the memory through AXI.
+After this, we created a new block design to integrate our IP, added, and customized the `ZYNQ7 Processing System`. Our next step was that we added `selection_sort_IP_v1_0.vhd` into our design and created HDL Wrapper. Further, we added the sorting controller and the block memory IP blocks into our design. The block memory generator is the previously explained external RAM and the sorting controller enables us to inspect the memory after it has been sorted. This is done by simply enabling our software running on the ZYNQ processor to read the memory through AXI.
 
-TODO add image of the IP block diagram including the selection sort block, sort controller and memory
+TODO add an image of the IP block diagram including the selection sort block, sort controller and memory
 
 Finally, after putting together the different IP blocks, we generated a bitstream to see if there was any error and also to enable us to export the hardware design to Vitis IDE. In Vitis IDE we first created a project platform using the XSA-file, which was exported from the Vivado. After building the platform, we created a new application project to test our IP implementation using software.
 
-To be able to display the sorted values in the serial terminal, we need to communicate with the sort controller from the ZYNQ prossessing unit through the AXI interface. The code that has to run on the prosessing unit can be found in @lst:sort-controller-code. The function `Xil_In32`, provided by the platform, reads a value from the AXI interface. By reading slave register 2 of the sort controller, we can tell if the sorting is done, as the first bit represents the `sort_done` signal. Further by then repeatedly reading slave register 1 we will get the contents of the memory block as the sort controller continuously updates the RAM address and reads the data into the slave register.
+To be able to display the sorted values in the serial terminal, we need to communicate with the sorting controller from the ZYNQ processing unit through the AXI interface. The code that has to run on the processing unit can be found in @lst:sort-controller-code. The function `Xil_In32`, provided by the platform, reads a value from the AXI interface. By reading slave register 2 of the sorting controller, we can tell if the sorting is done, as the first bit represents the `sort_done` signal. Further, by then repeatedly reading slave register 1 we will get the contents of the memory block as the sorting controller continuously updates the RAM address and reads the data into the slave register.
 
 TODO this did not work so we should reword this a bit
 
@@ -224,11 +224,11 @@ We have tested the software implementation on the Zybo board and it worked perfe
 
 ## Odd-even sort
 
-The implementation and idea for the algortihm comes from Skilarova's presentation of sorting networks [@skliarova2015].
+The implementation and idea for the algorithm come from Skilarova's presentation of sorting networks [@skliarova2015].
 
-The algorithm is inspired by bubble sort, and is a relatively straight forward. Bubble sort functioning by comparing adjacent elements; if the array elements are sorted, no swapping is terminated. Contrarily, the elements need to be switched. The even-odd transposition sort algorithm operates by comparing all odd/even listed pairs of neighboring elements in the array if the match is in incorrect order; in other words, the primary element is bigger than the second the elements are swapped. The second step is to compare all even/odd listed matches of adjoining elements. These two steps are repeating until the array is sorted.
+The algorithm is inspired by bubble sort and is a relatively straight forward. Bubble sort functioning by comparing adjacent elements; if the array elements are sorted, no swapping is terminated. Contrarily, the elements need to be switched. The even-odd transposition sort algorithm operates by comparing all odd/even listed pairs of neighbouring elements in the array if the match is in incorrect order; in other words, the primary element is bigger than the second the elements are swapped. The second step is to compare all even/odd listed matches of adjoining elements. These two steps are repeating until the array is sorted.
 
-Knuth goes deeply into the ways in which sorting networks kan be optimized and are created in his masterpiece; _The Art of Computer Programming_ [@knuthsortnetwork1998]. Further the parallelization of the algorithm is well explained in the book from Nvidia called _GPU Gems 2_ [@gpugems2]. It details optimized sorting on GPUs using sorting networks and parallel comparisions. The parallelization aspect is quite similar between GPUs and FPGAs.
+Knuth goes deeply into how sorting networks can be optimized and are created in his masterpiece; _The Art of Computer Programming_ [@knuthsortnetwork1998]. Further, the parallelization of the algorithm is well explained in the book from Nvidia called _GPU Gems 2_ [@gpugems2]. It details optimized sorting on GPUs using sorting networks and parallel comparisons. The parallelization aspect is quite similar between GPUs and FPGAs.
 
 See @sec:visual-odd-even-sort for a visual explanation of the algorithm.
 
@@ -248,7 +248,7 @@ $$
 
 We want to know what is the depth and how many comparators we are using.
 
-TODO find references for these formulas (think i saw it in gpu gems?)
+TODO find references for these formulas (think I saw it in GPU gems?)
 
 $$
 \begin{split}
@@ -275,7 +275,7 @@ Design charts for odd-even sort
 
 ### Software implementation
 
-The main challange of this algorithm is calculating the correct neighbouring indicies for comparisions. As this is already a solved problem, we simply translated the code shared by Bekbolatov [@bekbolatov15] into C to be usable for our purpose. The function simply takes the current signal index, the current layer and the internal layer index and returnes the index for the signal to compare to, or itself if there is non for this layer.
+The main challenge of this algorithm is calculating the correct neighbouring indices for comparisons. As this is already a solved problem, we simply translated the code-shared by Bekbolatov [@bekbolatov15] into C to be usable for our purpose. The function simply takes the current signal index, the current layer and the internal layer index and returns the index for the signal to compare to, or itself if there is non for this layer.
 
 We have tested the software implementation on the Zybo board and it worked perfectly, as seen in @fig:odd-even-serial. The code can be found in @lst:odd-even-code.
 
@@ -287,15 +287,15 @@ Through our exploration, we managed to get all three algorithms working in both 
 
 ## Differing development effort
 
-The effort required by hardware and software development were quite differing. As an example we spent nearly two full days of collaboration and pair programming to implement selection sort in VHDL. On the contrary it took only about an hour to write the software implementation in C and running it on the Zybo board. We believe there are several reasons for this gap in development time.
+The effort required by hardware and software development were quite differing. As an example, we spent nearly two full days of collaboration and pair programming to implement selection sort in VHDL. On the contrary, it took only about an hour to write the software implementation in C and running it on the Zybo board. We believe there are several reasons for this gap in development time.
 
-The entire group did not have a long track record with VHDL and hardware development. Hence we spent time learning and developing our own knowledge next to the actual implementation work. As we got more experienced with hardware development the work got more focused and hence more effective. This can be clearly seen as our implementation of our last algorithm, odd-even sort, is both quite complex and modular, especially compared to our first implementation of selection sort. In the software domain the group is quite well versed, hence the implementations were quickly developed by individuals.
+The entire group did not have a long track record with VHDL and hardware development. Hence we spent time learning and developing our knowledge next to the actual implementation work. As we got more experienced with hardware development the work got more focused and hence more effective. This can be seen as the implementation of our last algorithm, odd-even sort, is both quite complex and modular, especially compared to our first implementation of selection sort. In the software domain, the group is quite well versed, hence the implementations were quickly developed by individuals.
 
-Another aspect that affected development time for hardware was the extensive development activities conducted prior to writing a single line of code. We followed a lower level approach, hence we firstly created a FSMD chart, then an ASMD chart and finally converting them into code. Further, in accordance with the development technique, we created separated files and entities for each component in the FSMD chart, hence there was quite a bit of work for each component. This is further emphasized by the difference in amount of code for each implementation in hardware and software, as can be seen in @tbl:lines-of-code. We did not conduct similar development activities when implementing the algorithm in software, because it's at a much higher level of abstraction. It is also possible to work at a higher level of abstraction when implementing in hardware, however we did not explore this possibility because (TODO hvorfor gjorde vi ikke dette?).
+Another aspect that affected development time for hardware was the extensive development activities conducted before writing a single line of code. We followed a lower-level approach, hence we firstly created an FSMD chart, then an ASMD chart and finally converting them into code. Further, per the development technique, we created separated files and entities for each component in the FSMD chart, hence there was quite a bit of work for each component. This is further emphasized by the difference in the amount of code for each implementation in hardware and software, as can be seen in @tbl:lines-of-code. We did not conduct similar development activities when implementing the algorithm in software, because it's at a much higher level of abstraction. It is also possible to work at a higher level of abstraction when implementing in hardware, however, we did not explore this possibility because (TODO hvorfor gjorde vi ikke dette?).
 
-One aspect that might have impacted development effort is that we consequently did the hardware implementation prior to the software implementation. As the course has been mostly focused on hardware and VHDL, we wanted to prioritize completing the hardware implementations as a group. By doing it as a group we could take advantage of discussions and collaboration to learn optimally. As we started out each new algorithm by working together as a group, we naturally also started with the hardware implementation. After implementing the algorithm in hardware one can argue that we had a much better understanding of the algorithm which would mean that the following implementation in software would be easier. However since the algorithms are fairly trivial the knowledge gained from implementing it in hardware is minuscule, and therefore it is unlikely that this had a big impact on development effort.
+One aspect that might have impacted development effort is that we consequently did the hardware implementation before the software implementation. As the course has been mostly focused on hardware and VHDL, we wanted to prioritize completing the hardware implementations as a group. By doing it as a group we could take advantage of discussions and collaboration to learn optimally. As we started each new algorithm by working together as a group, we naturally also started with the hardware implementation. After implementing the algorithm in hardware one can argue that we had a much better understanding of the algorithm which would mean that the following implementation in software would be easier. However, since the algorithms are fairly trivial the knowledge gained from implementing it in hardware is minuscule, and therefore it is unlikely that this had a big impact on the development effort.
 
-Lastly, despite gaining proficiency in using the tools for hardware development, we spent a lot of time figuring out cryptic error messages. One would think that this would improve with experience, however as we started to used more complex features we also consistently hit new errors. As an example we started using generics in our second algorithm to make it more reusable.
+Lastly, despite gaining proficiency in using the tools for hardware development, we spent a lot of time figuring out cryptic error messages. One would think that this would improve with experience, however, as we started to used more complex features we also consistently hit new errors. As an example, we started using generics in our second algorithm to make it more reusable.
 
 ## Multiplexing in time vs space
 
@@ -303,11 +303,11 @@ Hardware is by nature parallel, while software is, in general, sequential[^seq].
 
 [^seq]: A software program can be created to run tasks concurrently, either on separate processors or through time-slicing, however for our comparison we will consider a single-core computer running a sequential program.
 
-Although utilizing parallelism in hardware has many benefits, it also comes with the drawback of requiring specialized hardware resources. In @fig:hardware-utilization we can clearly see that the resources needed for odd-even sort, which is highly parallelized, are substantially larger than selection sort and linear cell sort, which don't utilize parallelism to the same degree. Further the pure software implementation of either algorithm requires no extra hardware resources besides the generic processor.
+Although utilizing parallelism in hardware has many benefits, it also comes with the drawback of requiring specialized hardware resources. In @fig:hardware-utilization we can see that the resources needed for odd-even sort, which is highly parallelized, are substantially larger than selection sort and linear cell sort, which don't utilize parallelism to the same degree. Further, the pure software implementation of either algorithm requires no extra hardware resources besides the generic processor.
 
 # Conclusion
 
-We found that the development efforts between software and hardware were particularly highlighted in our project due to lack of knowledge. However the extensive development activities are still a major factor causing hardware development to be more labor-intensive than software development. Further utilizing parallelism in hardware can substantially increase the speed of the algorithm at the cost of requiring more hardware resources. Hence there is a trade-off to make between multiplexing the algorithm in time or in space depending on the context of the application.
+We found that the development efforts between software and hardware were particularly highlighted in our project due to lack of knowledge. However, the extensive development activities are still a major factor causing hardware development to be more labour-intensive than software development. Further utilizing parallelism in hardware can substantially increase the speed of the algorithm at the cost of requiring more hardware resources. Hence there is a trade-off to make between multiplexing the algorithm in time or space depending on the context of the application.
 
 # References {-}
 
@@ -394,7 +394,7 @@ int main(){
 
 # Division of work
 
-In this project, we collaborated closely together as a group to maximize learning and discussion. Most of the tasks were done together at the University of South-Eastern Norway. This included discussions about which algorithms we would choose and why, and also the hardware implementation activities. Further we also completed two of the three software implementations together. The work on the report was done separately, but with close collaboration through Slack.
+In this project, we collaborated closely together as a group to maximize learning and discussion. Most of the tasks were done together at the University of South-Eastern Norway. This included discussions about which algorithms we would choose and why, and also the hardware implementation activities. Further, we also completed two of the three software implementations together. The work on the report was done separately, but with close collaboration through Slack.
 
 ASMD and FSMD diagrams were firstly drawn on a blackboard and then digitized by Rahmat and Anders. Everyone participated in the creation of the first and the second draft of the report, while Anders, Rahmat and Ole finalized the report. Anders implemented the software code for the linear cell sort algorithm. Ole worked on the IP implementation and structured the final report. Rahmat also worked on IP implementation, created a visual explanation for the algorithms and extracted the utilization data from the different implementations.
 
