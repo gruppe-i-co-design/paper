@@ -204,12 +204,13 @@ The Selection Sort is the most straightforward sorting algorithm. Our implementa
 
 See @sec:visual-selection-sort for a visual explanation of the algorithm.
 
-
 ### Hardware Implementation
 
 For the first hardware implementation, we followed the _Vivado Quick Start Tutorial_ by Gericota for running VHDL code on the Zybo board using Vivado [@gericotahw2020].
 
 We have created a generic counter and register in the hardware implementation, which we want to reuse as much code as possible. The comparing counter is set to 1 as a default value, and the output of the RAM will be the first element in the array when we run the program. We temporarily store this index value of this element in a register and increment the index counter to compare the elements to find the smallest element in the array. Again, we temporarily store the index and the value of the smallest element in registers, then we swap those elements till the array is sorted. We have removed the RAM from the design file into the test bench file, which we wanted an external RAM instead of an internal RAM.
+
+The design charts can be found in @fig:design-charts-selection, the schematic of the elaborated design in @fig:selection-schematic and finally a slice of the waveform diagram of simulating the implementation can be found in @fig:selection-waveform.
 
 <div id="fig:design-charts-selection" class="subfigures">
 ![FSMD chart](figures/selection-sort/fsmd.png){#fig:selection-fsmd width=45%}
@@ -237,7 +238,9 @@ We have tested the software implementation on the Zybo board and it worked perfe
 
 Linear cell sort, as detailed by Vasquez's article [@vasquez16], receives data once per clock cycle and sorts the data while it is being clocked in. This means that the algorithm only needs the $N$ clock cycles to sort the data, giving it a time complexity of $O(N)$.
 
-Since we decided to make the algorithm generic, it will let the user decide the array's size and length. Figure 2.1 (Top FSMD architecture), the number of cells will be the same as the array size. New incoming data will be placed to the cell from top to bottom with increasing size. When all cells are empty, the first element will automatically take the first place. Second incoming data will be compared with the first element; if it is smaller than the first element, then the first element will be moved to the second cell, and the new data will be placed to the first cell. Third incoming data will be compared with the other cells; if the incoming data is smaller than the first cell, we have a full and pushed. The first cell's data will be pushed to the second cell, and the data in the second cell will be pushed to the third cell, and the new incoming data will be placed to the first cell. The sorting algorithm will continue like this until the whole array is sorted. So in essence, the algorithm only has four rules:
+Since we decided to make the algorithm generic, it will let the user decide the array's size and length. The number of cells will be the same as the array size. New incoming data will be placed to the cell from top to bottom with increasing size. When all cells are empty, the first element will automatically take the first place. Second incoming data will be compared with the first element; if it is smaller than the first element, then the first element will be moved to the second cell, and the new data will be placed to the first cell. Third incoming data will be compared with the other cells; if the incoming data is smaller than the first cell, we have a full and pushed. The first cell's data will be pushed to the second cell, and the data in the second cell will be pushed to the third cell, and the new incoming data will be placed to the first cell. The sorting algorithm will continue like this until the whole array is sorted.
+
+So in essence, the algorithm only has four rules:
 
 1. If a cell is unoccupied, it will only be populated if the cell above is full.
 2. If a cell is full, the cell data will be replaced if both the incoming data is less than the stored data, and the cell above is not pushing its data.
@@ -248,7 +251,9 @@ See @sec:visual-linear-cell-sort for a visual explanation of the algorithm.
 
 ### Hardware implementation
 
-The implementation of linear cell sort algorithms was more complicated than Selection sort. We needed to draw multiple FSMDs and ASMDs charts to implement the sorting algorithm in hardware. Since the algorithm uses cells, we needed to draw an FSMD and ASMD chart for a general cell, then a top-level FSDM and ASMD for the cell connections.
+The implementation of linear cell sort algorithms was more complicated than selection sort. We needed to draw two FSMDs and ASMDs charts, first for a general cell and then for the top level connection of cells. This design charts can be found in @fig:design-charts-linear.
+
+The elaborated schematic can be found in @fig:linear-cell-schematic. The multiplexer in the schematic turned out to be quite large, this was a result of us having to use `std_logic`, and some other ugly workarounds, to make it work with generics. A waveform diagram of simulating the implementation can be found in @fig:linear-cell-waveform.
 
 <div id="fig:design-charts-linear" class="subfigures">
 ![FSMD chart](figures/linear-cell-sort/fsmd.png){#fig:linear-cell-fsmd width=85%}
@@ -263,14 +268,12 @@ Design charts for linear cell sort
 
 ![Schematic of elaborated design for linear cell sort](figures/linear-cell-sort/schematic.png){#fig:linear-cell-schematic width=95%}
 
-In @fig:linear-cell-schematic we can see that the size of the MUX turned out to be quite large. This was a result of us having to use `std_logic` to make it work with generics.
-
 ![Waveform diagram for linear cell sort](figures/linear-cell-sort/waveform.png){#fig:linear-cell-waveform width=95%}
 
 
 ### Software implementation
 
-Since this algorithm is parallel by nature, there are some tradeoffs to be made when implementing it in software. As we only have a single core to work with, we have chosen to simply transform it into a sequential algorithm. This means that instead of $O(N)$ time complexity, it will be $O(N^2)$ time complexity (as we have to iterate through every cell on every insertion). As such, we chose to handle the algorithm by having a ROM and a pointer to the “incoming” input, and instead of using cells, we chose to use an array to be simulated as multiple cells.
+Since this algorithm is parallel by nature, there are some trade-offs to be made when implementing it in software. As we only have a single core to work with, we have chosen to simply transform it into a sequential algorithm. This means that instead of $O(N)$ time complexity, it will be $O(N^2)$ time complexity (as we have to iterate through every cell on every insertion). As such, we chose to handle the algorithm by having a ROM and a pointer to the “incoming” input, and instead of using cells, we chose to use an array to be simulated as multiple cells.
 
 We have tested the software implementation on the Zybo board and it worked perfectly, as seen in @fig:linear-cell-serial. The code can be found in @lst:linear-cell-code.
 
@@ -308,6 +311,10 @@ D(10) &= N = 10 \\
 C(10) &= \frac{N(N - 1)}{2} = \frac{10(10 - 1)}{2} = 45
 \end{split}
 $$ {#eq:odd-even-comparators-10}
+
+In Skilarova's presentation she also talks about iterative sorting networks, which reuses a single sort layer with some registers [@skliarova2015; p. 24]. Seeing this, we decided to use a combination of a sorting network and iterative layer in our implementation. The benefit of this is that the user of the VHDL module could tune the sorting network to be as quick and small as desirable. By increasing the amount of sorting layers, the network gets faster, however it also uses more hardware resources.
+
+The design charts can be found in @fig:design-charts-odd-even and a schematic of the elaborated design can be found in @fig:odd-even-schematic. Lastly, a waveform diagram of simulating the implementation can be found in @fig:odd-even-waveform.
 
 <div id="fig:design-charts-odd-even" class="subfigures">
 ![FSMD chart](figures/odd-even-sort/fsmd.png){#fig:odd-even-fsmd width=95%}
