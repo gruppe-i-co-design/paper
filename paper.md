@@ -161,7 +161,7 @@ The implementation of the algorithm in software was quick to write, and certainl
 
 We have tested the software implementation on the Zybo board and it worked perfectly, as seen in @fig:selection-serial. The code can be found in @lst:selection-code.
 
-![Results in serial terminal from running selection sort](./figures/selection-sort/sw-serial.png){#fig:selection-serial width=50%}
+![Results in serial terminal from running selection sort](figures/selection-sort/sw-serial.png){#fig:selection-serial width=50%}
 
 ### IP Implementation
 
