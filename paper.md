@@ -39,13 +39,17 @@ To confirm that our sorting algorithms worked as expected, we created a test ben
 
 The software implementation in contrast to the hardware implementation was a much more straight forward process. We used Vitis 2020.1 to connect our Zybo board to our computer and created a C file that would be used to implement the algorithm. For testing, we used the built-in Vitis console.
 
-For our first algorithm, we made an effort to implement an IP implementation. Troubleshooting and implementation turned out to be an immensely time-consuming process. Seeing that the implementation of the IP would not have had a significant impact on our vision or result for our paper, we chose to exclude it.
+For our first algorithm, we made an effort to implement an IP implementation. Troubleshooting and implementation turned out to be an immensely time-consuming process. Seeing that the implementation of the IP would not have had a significant impact on our vision or result for our paper, we chose to exclude it from the final discussion and consideration, however we left the results for the particularly interested. See @sec:ip-implementation-appendix.
 
 # Results
 
-In this section, we are going to presenting the results we gathered through to applying our methods. The suggested methods were synthesized and simulated using Vivado 2020.1 and Vitis 2020.1 and located on a Digilent Zynq-7000 Development Board with a Digilent Zybo Z7 ARM/ FPGA. The array sorting algorithms used were Selection Sort, Linear Cell Sort, and Odd-even Sort algorithm. The results were measured by simulating and outputting the data on the simulation waveform. 
+In this section, we are going to presenting the results we gathered through to applying our methods. Firstly we will give a quick overview comparable results from Vivado, and then we will go into each algorithm and the corresponding software and hardware implementations.
 
 ## Overview of implementations
+
+The different implementations were synthesized and simulated using Vivado 2020.1. The most of the results here were gathered through the Vivado interface using the provided analysis tools.
+
+In @tbl:lines-of-code we can see the overview of the number of files and lines of code for each implementation. The number of lines can be an indicator of complexity, but it must be used carefully as code can, of course, be optimized for size. In our case, we have tried to follow a consistent formatting style in addition to not optimizing for size. Another important note is that we are only counting lines of code, not comments or blank lines, and also only code which is part of the implementation of the algorithm, so no test benches or code for displaying arrays etc.
 
 | Implementation                 | Files | Lines |
 |--------------------------------|------:|------:|
@@ -59,7 +63,7 @@ In this section, we are going to presenting the results we gathered through to a
 
 : Amount of source code for each implementation \label{tbl:lines-of-code}
 
-Firstly we will give a quick overview of the different implementations. In @tbl:lines-of-code we can see the overview of the number of files and lines of code for each implementation. The number of lines can be an indicator of complexity, but it must be used carefully as code can, of course, be optimized for size. In our case, we have tried to follow a consistent formatting style in addition to not optimizing for size. Another important note is that we are only counting lines of code, not comments or blank lines, and also only code which is part of the implementation of the algorithm, so no test benches or code for displaying arrays etc.
+In @tbl:hardware-utilization and @fig:hardware-utilization we can see the usage of hardware resources for each algorithm across multiple input sizes. This was done to enable us to see the increase in hardware resources as the amount of signals to be sorted was increased. It's worth noting that each measurement was done with a data size of $8$ bytes. Further in @fig:hardware-power we can see the on-chip power usage of each implementation.
 
 \pagebreak[4]
 
@@ -82,7 +86,6 @@ Firstly we will give a quick overview of the different implementations. In @tbl:
 |                  |         16 |   276 |      517 | 1544 | 1583 | 257 |
 
 : Overview of cells, IO-ports, nets, LUTs and FFs used across multiple input sizes for hardware implementations \label{tbl:hardware-utilization}
-
 
 ~~~{.matplotlib caption="Graph of cells, IO-ports, nets, LUTs and FFs used across multiple input sizes for hardware implementations" #fig:hardware-utilization}
 
@@ -118,7 +121,6 @@ for column, title, ax in zip(columns, column_titles, axs):
 
 plt.tight_layout()
 ~~~
-
 
 ~~~{.matplotlib caption="Graph of power usage across multiple input sizes for hardware implementations" #fig:hardware-power}
 
@@ -174,14 +176,14 @@ ax.set_xlabel('Input size')
 plt.tight_layout()
 ~~~
 
-\pagebreak[4]
+In @tbl:time-complexity we can see the best and worst time complexity of each implementation. It's worth noting that the time complexity for an implementation isn't necessarily the same as the time complexity for the algorithm as a whole, because e.g. we used parallelization in the hardware implementations. On particular odd point is the hardware implementation of odd-even sort, which would normally have an $O(1)$, if it was a full sorting network. In our case, we have a combination of iterative and sorting network. This means that $k$, the amount of layers in the sorting network, is a part of determining the time complexity. Further in @tbl:clock-cycles we have calculated the exact amount of cycles each hardware implementation would need to fully sort the specified data.
 
 | Implementation                     | Worst             | Best              |
 |------------------------------------|-------------------|-------------------|
 | Selection sort (hardware/software) | $O(n^2)$          | $O(n^2)$          |
 | Linear cell sort (hardware)        | $O(n)$            | $O(n)$            |
 | Linear cell sort (software)        | $O(n^2)$          | $O(n^2)$          |
-| Odd-even sort (hardware)[^k]       | $O(n - k)$        | $O(1)$            |
+| Odd-even sort (hardware)           | $O(n - k)$        | $O(1)$            |
 | Odd-even merge sort (software)     | $O(n (\log n)^2)$ | $O(n (\log n)^2)$ |
 
 : Overview of time complexity for the different implementations \label{tbl:time-complexity}
@@ -190,13 +192,11 @@ plt.tight_layout()
 |-------------------|----------------------|-----------------------|
 | Selection sort    | $1 + N^2 + 4(N - 1)$ | $1 + N^2 + 4(N - 1)$  |
 | Linear cell sort  | $N$                  | $N$                   |
-| Odd-even sort[^k] | $N - k$              | $1$                   |
+| Odd-even sort     | $N - k$              | $1$                   |
 
 : Amount of clock cycles for hardware implementations, calculated based on ASMD charts \label{tbl:clock-cycles}
 
-
-[^k]: $k$ is the number of layers in the initial sorting network, also referred
-  to as `SORT_NETWORK_SIZE`.
+\pagebreak[4]
 
 ## Selection sort
 
@@ -232,21 +232,6 @@ We have tested the software implementation on the Zybo board and it worked perfe
 
 ![Results in serial terminal from running selection sort](figures/selection-sort/sw-serial.png){#fig:selection-serial width=50%}
 
-### IP Implementation
-
-In the IP-implementation, we followed the _Vivado Quick Start Tutorial_ by Gericota for creating, packaging and controlling an IP [@gericotaip2020].
-
-We declared some output ports and port mapped those in the `selection_sort_IP_v1_0.vhd`. Next, we made a component declaration and created some signals for inputs and outputs in `selection_sort_IP_v1_0_S00_AXI.vhd`. The VHDL description files created for the hardware implementation of the selection sort algorithm we copied those files into the IP directory and created a new AXI4 Peripheral for IP.
-
-After this, we created a new block design to integrate our IP, added, and customized the `ZYNQ7 Processing System`. Our next step was that we added `selection_sort_IP_v1_0.vhd` into our design and created HDL Wrapper. Further, we added the sorting controller and the block memory IP blocks into our design. The block memory generator is the previously explained external RAM and the sorting controller enables us to inspect the memory after it has been sorted. This is done by simply enabling our software running on the ZYNQ processor to read the memory through AXI.
-
-![IP block design for selection sort](./figures/selection-sort/ip-block-diagram.png){#fig:ip-block-diagram width=95%}
-
-Finally, after putting together the different IP blocks and having the block diagram in @fig:ip-block-diagram, we generated a bitstream. Then we exported the hardware design to Vitis IDE. In Vitis IDE we first created a project platform using the XSA-file, which was exported from the Vivado. After building the platform, we created a new application project to test our IP implementation using software.
-
-To be able to display the sorted values in the serial terminal, we need to communicate with the sorting controller from the ZYNQ processing unit through the AXI interface. The code that has to run on the processing unit can be found in @lst:sort-controller-code. The function `Xil_In32`, provided by the platform, reads a value from the AXI interface. By reading slave register 2 of the sorting controller, we can tell if the sorting is done, as the first bit represents the `sort_done` signal. Further, by then repeatedly reading slave register 1 we will get the contents of the memory block as the sorting controller continuously updates the RAM address and reads the data into the slave register.
-
-However, despite the promise of this solution in theory, we could not get it working in pratice. Our best guess as to why it wasn't working was that since the sort controller updated the slave register with the RAM data value too quickly, as it's updated every clock cycle in hardware. Another possible reason for the error was that we could be reading from the wrong register at the AXI interface. Nonetheless, getting to the current non-working solution took us a considerable amount of effort, and we concluded that it was too time consuming to continue. If we were to continue trying, I think we would have redesign the sort controller to rather read an address from the AXI interface, which was then used to fetch a value from RAM. This would allow the software on the Zynq processor to iterate over the RAM positions and allow the data values to stay longer in the slave register.
 
 ## Linear cell sort
 
@@ -460,6 +445,22 @@ int main(){
 In this project, we collaborated closely together as a group to maximize learning and discussion. Most of the tasks were done together at the University of South-Eastern Norway. This included discussions about which algorithms we would choose and why, and also the hardware implementation activities. Further, we also completed two of the three software implementations together. The work on the report was done separately, but with close collaboration through Slack.
 
 ASMD and FSMD diagrams were firstly drawn on a blackboard and then digitized by Rahmat and Anders. Everyone participated in the creation of the first and the second draft of the report, while Anders, Rahmat and Ole finalized the report. Anders implemented the software code for the linear cell sort algorithm. Ole worked on the IP implementation and structured the final report. Rahmat also worked on IP implementation, created a visual explanation for the algorithms and extracted the utilization data from the different implementations.
+
+# Results from attempting IP creation {#sec:ip-implementation-appendix}
+
+In the IP implementation, we followed the _Vivado Quick Start Tutorial_ by Gericota for creating, packaging and controlling an IP [@gericotaip2020].
+
+We declared some output ports and port mapped those in the `selection_sort_IP_v1_0.vhd`. Next, we made a component declaration and created some signals for inputs and outputs in `selection_sort_IP_v1_0_S00_AXI.vhd`. The VHDL description files created for the hardware implementation of the selection sort algorithm we copied those files into the IP directory and created a new AXI4 Peripheral for IP.
+
+After this, we created a new block design to integrate our IP, added, and customized the `ZYNQ7 Processing System`. Our next step was that we added `selection_sort_IP_v1_0.vhd` into our design and created HDL Wrapper. Further, we added the sorting controller and the block memory IP blocks into our design. The block memory generator is the previously explained external RAM and the sorting controller enables us to inspect the memory after it has been sorted. This is done by simply enabling our software running on the ZYNQ processor to read the memory through AXI.
+
+![IP block design for selection sort](./figures/selection-sort/ip-block-diagram.png){#fig:ip-block-diagram width=95%}
+
+Finally, after putting together the different IP blocks and having the block diagram in @fig:ip-block-diagram, we generated a bitstream. Then we exported the hardware design to Vitis IDE. In Vitis IDE we first created a project platform using the XSA-file, which was exported from the Vivado. After building the platform, we created a new application project to test our IP implementation using software.
+
+To be able to display the sorted values in the serial terminal, we need to communicate with the sorting controller from the ZYNQ processing unit through the AXI interface. The code that has to run on the processing unit can be found in @lst:sort-controller-code. The function `Xil_In32`, provided by the platform, reads a value from the AXI interface. By reading slave register 2 of the sorting controller, we can tell if the sorting is done, as the first bit represents the `sort_done` signal. Further, by then repeatedly reading slave register 1 we will get the contents of the memory block as the sorting controller continuously updates the RAM address and reads the data into the slave register.
+
+However, despite the promise of this solution in theory, we could not get it working in pratice. Our best guess as to why it wasn't working was that since the sort controller updated the slave register with the RAM data value too quickly, as it's updated every clock cycle in hardware. Another possible reason for the error was that we could be reading from the wrong register at the AXI interface. Nonetheless, getting to the current non-working solution took us a considerable amount of effort, and we concluded that it was too time consuming to continue. If we were to continue trying, I think we would have redesign the sort controller to rather read an address from the AXI interface, which was then used to fetch a value from RAM. This would allow the software on the Zynq processor to iterate over the RAM positions and allow the data values to stay longer in the slave register.
 
 <!--stackedit_data:
 eyJkaXNjdXNzaW9ucyI6eyJSYlRmRzUwOUpTRllTSmRHIjp7In
