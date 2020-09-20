@@ -240,19 +240,20 @@ We declared some output ports and port mapped those in the `selection_sort_IP_v1
 
 After this, we created a new block design to integrate our IP, added, and customized the `ZYNQ7 Processing System`. Our next step was that we added `selection_sort_IP_v1_0.vhd` into our design and created HDL Wrapper. Further, we added the sorting controller and the block memory IP blocks into our design. The block memory generator is the previously explained external RAM and the sorting controller enables us to inspect the memory after it has been sorted. This is done by simply enabling our software running on the ZYNQ processor to read the memory through AXI.
 
-TODO add an image of the IP block diagram including the selection sort block, sort controller and memory
+![IP block design for selection sort](./figures/selection-sort/ip-block-diagram.png){#fig:ip-block-diagram width=95%}
 
-Finally, after putting together the different IP blocks, we generated a bitstream to see if there was any error and also to enable us to export the hardware design to Vitis IDE. In Vitis IDE we first created a project platform using the XSA-file, which was exported from the Vivado. After building the platform, we created a new application project to test our IP implementation using software.
+Finally, after putting together the different IP blocks and having the block diagram in @fig:ip-block-diagram, we generated a bitstream. Then we exported the hardware design to Vitis IDE. In Vitis IDE we first created a project platform using the XSA-file, which was exported from the Vivado. After building the platform, we created a new application project to test our IP implementation using software.
 
 To be able to display the sorted values in the serial terminal, we need to communicate with the sorting controller from the ZYNQ processing unit through the AXI interface. The code that has to run on the processing unit can be found in @lst:sort-controller-code. The function `Xil_In32`, provided by the platform, reads a value from the AXI interface. By reading slave register 2 of the sorting controller, we can tell if the sorting is done, as the first bit represents the `sort_done` signal. Further, by then repeatedly reading slave register 1 we will get the contents of the memory block as the sorting controller continuously updates the RAM address and reads the data into the slave register.
 
-TODO this did not work so we should reword this a bit
+However, despite the promise of this solution in theory, we could not get it working in pratice. Our best guess as to why it wasn't working was that since the sort controller updated the slave register with the RAM data value too quickly, as it's updated every clock cycle in hardware. Another possible reason for the error was that we could be reading from the wrong register at the AXI interface. Nonetheless, getting to the current non-working solution took us a considerable amount of effort, and we concluded that it was too time consuming to continue. If we were to continue trying, I think we would have redesign the sort controller to rather read an address from the AXI interface, which was then used to fetch a value from RAM. This would allow the software on the Zynq processor to iterate over the RAM positions and allow the data values to stay longer in the slave register.
 
 ## Linear cell sort
 
 Linear cell sort, as detailed by Vasquez's article [@vasquez16], receives data once per clock cycle and sorts the data while it is being clocked in. This means that the algorithm only needs the $N$ clock cycles to sort the data, giving it a time complexity of $O(N)$.
 
 Since we decided to make the algorithm generic, it will let the user decide the array's size and length. Figure 2.1 (Top FSMD architecture), the number of cells will be the same as the array size. New incoming data will be placed to the cell from top to bottom with increasing size. When all cells are empty, the first element will automatically take the first place. Second incoming data will be compared with the first element; if it is smaller than the first element, then the first element will be moved to the second cell, and the new data will be placed to the first cell. Third incoming data will be compared with the other cells; if the incoming data is smaller than the first cell, we have a full and pushed. The first cell's data will be pushed to the second cell, and the data in the second cell will be pushed to the third cell, and the new incoming data will be placed to the first cell. The sorting algorithm will continue like this until the whole array is sorted. So in essence, the algorithm only has four rules:
+
 1. If a cell is unoccupied, it will only be populated if the cell above is full.
 2. If a cell is full, the cell data will be replaced if both the incoming data is less than the stored data, and the cell above is not pushing its data.
 3. If the cell over the current cell is pushing out its stored data, then the current cell has to replace the current data with the cell data above.
@@ -277,7 +278,7 @@ Design charts for linear cell sort
 
 ![Schematic of elaborated design for linear cell sort](figures/linear-cell-sort/schematic.png){#fig:linear-cell-schematic width=95%}
 
-As we can see from the figure above, the size of the mega-mux turned out to be quite large, as a result of us having to use std_logic to make it work with generics. 
+In @fig:linear-cell-schematic we can see that the size of the MUX turned out to be quite large. This was a result of us having to use `std_logic` to make it work with generics.
 
 ![Waveform diagram for linear cell sort](figures/linear-cell-sort/waveform.png){#fig:linear-cell-waveform width=95%}
 
