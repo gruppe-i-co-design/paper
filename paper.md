@@ -155,6 +155,8 @@ Design charts for selection sort
 
 ![Schematic of elaborated design for selection sort](figures/selection-sort/schematic.png){#fig:selection-schematic width=95%}
 
+![Part of waveform diagram for selection sort](figures/selection-sort/waveform.png){#fig:selection-waveform width=95%}
+
 ### Software Implementation
 
 For the first software implentation we followed the _Vivado Quick Start Tutorial_ by Gericota for using the micro prossessor on the Zybo board [@gericotasw2020].
@@ -268,6 +270,8 @@ Design charts for odd-even sort
 </div>
 
 ![Schematic of elaborated design for odd-even sort](figures/odd-even-sort/schematic.png){#fig:odd-even-schematic}
+
+![Waveform diagram for odd-even sort](figures/odd-even-sort/waveform.png){#fig:odd-even-waveform width=95%}
 
 ### Software implementation
 
