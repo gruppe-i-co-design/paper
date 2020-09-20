@@ -319,16 +319,11 @@ Lastly, despite gaining proficiency in using the tools for hardware development,
 
 In conclusion, the development efforts between software and hardware were particularly highlighted in our project due to lack of knowledge, however the extensive development activities are still the major differencing factor.
 
-## Speed
+## The tradeoffs regarding concurrency
 
-TODO
+In hardware, everything is running concurrently, in contrast to software, where the code is executed in sequence. There are ways to make code concurrent in software, but it comes with some restrictions we do not have in hardware. We can utilize the concurrent nature of hardware when we are implementing some sorting algorithms. This often leads to the implementation being faster in hardware than software. Although utilzing concurrency in hardware have many benefits, it also comes with the drawback of requiring more hardware resources and phsical space. We can see in @tbl:overview-cells-io-nets that the resources needed for the odd-even sort, which is highly parallel, are immensely larger compared to selection sort and linear cell sort which don't utilize concurrency to the same degree. The question then becomes whether the resources need are worth the time efficiency we get by utilising the concurrency.
 
-## Space
-
-In hardware, everything is running concurrently, in contrast to software, where the code is executed in sequence. There are ways to make code concurrent in software, but it comes with some restrictions we do not have in hardware. By being able to run everything concurrently in the hardware, we can implement some sorting algorithms a bit differently then we would in software. By doing this we could make the algorithm execute/finish faster. This is a good thing, making some hardware implementations considerably faster than in software. Although concurrency is a good thing, it comes with a high cost with regards to the resources needed. We can see in figure.x that the resources needed for the odd-even sort are immensely larger compared to the other sorting algorithms that are not utilising the concurrency as significantly. The question then becomes whether the resources need are worth the time efficiency we get by utilising the concurrency. 
-
-In conclusion, utilizing concurrency is usually a good thing. Although if the resources need are immense, and the time complexity is not that important, an software implementation should be considered.
-
+In conclusion, utilizing concurrency can lead to improved speed and efficiency, however concurrent implementations in hardware also require more hardware resources. This means that there is a tradeoff to be made between multiplexing in space or multiplexing in time.
 
 # Conclusion
 
