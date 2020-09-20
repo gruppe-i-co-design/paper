@@ -279,7 +279,8 @@ Design charts for linear cell sort
 
 ![Waveform diagram for linear cell sort](figures/linear-cell-sort/waveform.png){#fig:linear-cell-waveform width=95%}
 
-TODO remember to address mega-mux!
+As we can se the size of the mega-mux turned out to be quite large as a result of us having to use std_logic to make the files work with generic. 
+(altså bare si at den ble så stor fordi vi måtte bruke std_logic for å få den til å funke med generics)
 
 ### Software implementation
 
