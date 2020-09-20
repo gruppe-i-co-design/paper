@@ -193,7 +193,7 @@ See @sec:visual-linear-cell-sort for a visual explanation of the algorithm.
 
 ### Hardware implementation
 
-The implementation of linear cell sort algorithms was more complicated than Selection sort.  We needed to draw multi FSMD and ASMD charts to implement this in hardware. Since this algorithm uses cells and to implement this in hardware we needed to draw a FSMD and ASMD chart for this to control each cell. Then we draw another FSMD and ASMD chart to control all cells and plus other components. In our implementation we neither use RAM or ROM.
+The implementation of linear cell sort algorithms was more complicated than Selection sort. We needed to draw multiple FSMDs and ASMDs charts to implement the sorting algorithm in hardware. Since the algorithm uses cells, we needed to draw an FSMD and ASMD chart for a general cell, then a top-level FSDM and ASMD for the cell connections.
 
 <div id="fig:design-charts-linear" class="subfigures">
 ![FSMD chart](figures/linear-cell-sort/fsmd.png){#fig:linear-cell-fsmd width=85%}
