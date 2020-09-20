@@ -61,25 +61,25 @@ Firstly we will give a quick overview of the different implementations. In @tbl:
 
 \pagebreak[4]
 
-| Implementation   | Input size | Cells | IO ports | Nets |
-|------------------|-----------:|------:|---------:|-----:|
-| Selection sort   |          4 |    10 |       15 |   51 |
-|                  |          8 |    10 |       27 |   87 |
-|                  |         16 |    10 |       51 |  159 |
-|                  |            |       |          |      |
-| Linear cell sort |          4 |     9 |       12 |   46 |
-|                  |          8 |    13 |       20 |  112 |
-|                  |         16 |    21 |       36 |  338 |
-|                  |            |       |          |      |
-| Odd-even sort    |          4 |    25 |       37 |  120 |
-| (N layers)       |          8 |    81 |      133 |  712 |
-|                  |         16 |   289 |      517 | 4872 |
-|                  |            |       |          |      |
-| Odd-even sort    |          4 |    24 |       37 |  104 |
-| (3 layers)       |          8 |    76 |      133 |  392 |
-|                  |         16 |   276 |      517 | 1544 |
+| Implementation   | Input size | Cells | IO-ports | Nets |  LUT |  FF |
+|------------------|-----------:|------:|---------:|-----:|-----:|----:|
+| Selection sort   |          4 |    10 |       15 |   51 |   18 |  25 |
+|                  |          8 |    10 |       27 |   87 |   37 |  45 |
+|                  |         16 |    10 |       51 |  159 |   72 |  85 |
+|                  |            |       |          |      |      |     |
+| Linear cell sort |          4 |     9 |       12 |   46 |   41 |  27 |
+|                  |          8 |    13 |       20 |  112 |  119 |  81 |
+|                  |         16 |    21 |       36 |  338 |  404 | 283 |
+|                  |            |       |          |      |      |     |
+| Odd-even sort    |          4 |    25 |       37 |  120 |   86 |  17 |
+| (N layers)       |          8 |    81 |      133 |  712 |  860 |  65 |
+|                  |         16 |   289 |      517 | 4872 | 6744 | 258 |
+|                  |            |       |          |      |      |     |
+| Odd-even sort    |          4 |    24 |       37 |  104 |   78 |  17 |
+| (3 layers)       |          8 |    76 |      133 |  392 |  431 |  65 |
+|                  |         16 |   276 |      517 | 1544 | 1583 | 257 |
 
-: Overview of cells, IO-ports and nets used across multiple input sizes for hardware implementations \label{tbl:overview-cells-io-nets}
+: Overview of cells, IO-ports, nets, LUTs and FFs used across multiple input sizes for hardware implementations \label{tbl:overview-cells-io-nets}
 
 
 ~~~{.matplotlib caption="Graph of cells, IO-ports, nets, LUTs and FFs used across multiple input sizes for hardware implementations"}
