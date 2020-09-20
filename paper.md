@@ -115,7 +115,7 @@ plt.tight_layout()
 | Odd-even sort (hardware)[^1]       | $O(n - k)$        |
 | Odd-even merge sort (software)     | $O(n (\log n)^2)$ |
 
-: Overview of time complexity for the different implementations
+: Overview of time complexity for the different implementations \label{tbl:time-complexity}
 
 | Implementation    | Worst                   | Best                    |
 |-------------------|-------------------------|-------------------------|
@@ -123,7 +123,7 @@ plt.tight_layout()
 | Linear cell sort  | $N$                     | $N$                     |
 | Odd-even sort[^1] | $N - k$                 | $1$                     |
 
-: Amount of clock cycles for hardware implementations, calculated based on ASMD charts
+: Amount of clock cycles for hardware implementations, calculated based on ASMD charts \label{tbl:clock-cycles}
 
 
 [^1]: $k$ is the amount of layers in the initial sorting network, also referred
@@ -315,13 +315,13 @@ In conclusion, the development efforts between software and hardware were partic
 
 ## Multiplexing in time vs space
 
-Hardware is by nature parallel, while software is, in general, sequential[^seq]. The perhaps biggest benefit of implementing algorithms in hardware is that we can utilize the built-in disposition for parallelism to execute multiple actions at once. This is done by creating several components separate in space which operate independently of each other, hence instead of multiplexing actions over time, we multiplex them over space. An example of a concrete benefit can be seen
+Hardware is by nature parallel, while software is, in general, sequential[^seq]. The perhaps biggest benefit of implementing algorithms in hardware is that we can utilize the built-in disposition for parallelism to execute multiple actions at once. This is done by creating several components separate in space which operate independently of each other, hence instead of multiplexing actions over time, we multiplex them over space. An example of a concrete benefit can be seen in @tbl:clock-cycles, where the speed of odd-even merge sort in hardware can at best take only $1$ clock cycle while selection sort requires at least $N^2$ cycles.
 
 [^seq]: A software program can be created to run tasks concurrently, either on separate processors or through time-slicing, however for our comparison we will consider a single-core computer running a sequential program.
 
-Although utilizing concurrency in hardware has many benefits, it also comes with the drawback of requiring specialized hardware resources. In @fig:hardware-utilization we can clearly see that the resources needed for odd-even sort, which is highly parallelized, are substantially larger compared to selection sort and linear cell sort, which don't utilize concurrency to the same degree. Further the pure software implementation of either algorithm requires no extra hardware resources besides the generic processor.
+Although utilizing parallelism in hardware has many benefits, it also comes with the drawback of requiring specialized hardware resources. In @fig:hardware-utilization we can clearly see that the resources needed for odd-even sort, which is highly parallelized, are substantially larger than selection sort and linear cell sort, which don't utilize parallelism to the same degree. Further the pure software implementation of either algorithm requires no extra hardware resources besides the generic processor.
 
-In conclusion, utilizing concurrency can lead to improved speed and efficiency, however, concurrent implementations in hardware also require more hardware resources. This means that there is a trade-off to be made between multiplexing in space or multiplexing in time.
+In conclusion, utilizing parallelism can lead to improved speed and efficiency, however, concurrent implementations in hardware also require more hardware resources. This means that there is a trade-off to be made between multiplexing in space or multiplexing in time.
 
 # Conclusion
 
