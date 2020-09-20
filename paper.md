@@ -127,11 +127,11 @@ TODO add images of waveform diagrams
 
 For the first software implentation we followed the _Vivado Quick Start Tutorial_ by Gericota for using the micro prossessor on the Zybo board [@gericotasw2020].
 
-The implementation of the algorithm in software was quick to write, and certainly inspired by the hardware implementation. To keep it consistent, we decided to stick with similar names for the different components (in particular `index_counter` and `comparing_tindex_counter`). This means that it should be easy to compare the implementations. We have tested the software implementation on Zybo board and worked perfectly.
+The implementation of the algorithm in software was quick to write, and certainly inspired by the hardware implementation. To keep it consistent, we decided to stick with similar names for the different components (in particular `index_counter` and `comparing_tindex_counter`). This means that it should be easy to compare the implementations.
 
-TODO add image from serial terminal
+We have tested the software implementation on the Zybo board and it worked perfectly, as seen in @fig:selection-serial. The code can be found in @lst:selection-code.
 
-The code for the software implementation can be found in @lst:selection-code.
+![Results in serial terminal from running selection sort](./figures/selection-sort/sw-serial.png){#fig:selection-serial width=50%}
 
 ### IP Implementation
 
@@ -215,11 +215,9 @@ Utilization synthesized report
 
 Since this algorithm is parallel by nature, there are some tradeoffs to be made when implementing it in software. As we only have a single core to work with, we have chosen to simply transform it into a sequential algorithm. This means that instead of $O(N)$ time complexity, it will be $O(N^2)$ time complexity (as we have to iterate through every cell on every insertion). As such, we chose to handle the algorithm by having a ROM and a pointer to the “incoming” input, and Instead of using cells, we chose to use an array to be simulated as multiple cells.
 
-TODO add image of vitis serial terminal
+We have tested the software implementation on the Zybo board and it worked perfectly, as seen in @fig:linear-cell-serial. The code can be found in @lst:linear-cell-code.
 
-Result from inspecting the serial monitor
-
-The code for the software implementation of linear cell sort can be found in @lst:linear-cell-code.
+![Results in serial terminal from running linear cell sort](./figures/linear-cell-sort/sw-serial.png){#fig:linear-cell-serial width=50%}
 
 ## Odd-even sort
 
@@ -274,7 +272,9 @@ Design charts for odd-even sort
 
 The main challange of this algorithm is calculating the correct neighbouring indicies for comparisions. As this is already a solved problem, we simply translated the code shared by Bekbolatov [@bekbolatov15] into C to be usable for our purpose. The function simply takes the current signal index, the current layer and the internal layer index.
 
-The code for our software implementation can be found in @lst:odd-even-code.
+We have tested the software implementation on the Zybo board and it worked perfectly, as seen in @fig:odd-even-serial. The code can be found in @lst:odd-even-code.
+
+![Results in serial terminal from running odd-even sort](./figures/odd-even-sort/sw-serial.png){#fig:odd-even-serial width=50%}
 
 # Discussion
 
