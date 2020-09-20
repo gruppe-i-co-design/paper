@@ -91,7 +91,7 @@ fig, axs = plt.subplots(2, 3, figsize=(10,6))
 fig.delaxes(axs[1][2])
 
 for column, title, ax in zip(['cells', 'io-ports', 'nets', 'lut', 'ff'], ['Cells', 'IO-ports', 'Nets', 'LUT', 'FF'], axs.flatten()):
-    for (name, group), color, offset in zip(df.groupby("implementation"), colors, np.linspace(-1, 2, 4)):
+    for (name, group), color, offset in zip(df.groupby("implementation"), colors, np.linspace(-1, 1.7, 4)):
         group.plot.bar(
             x="input-size",
             y=column,
