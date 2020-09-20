@@ -313,8 +313,6 @@ One aspect that might have impacted development effort is that we consequently d
 
 Lastly, despite gaining proficiency in using the tools for hardware development, we spent a lot of time figuring out cryptic error messages. One would think that this would improve with experience, however as we started to used more complex features we also consistently hit new errors. As an example we started using generics in our second algorithm to make it more reusable.
 
-In conclusion, the development efforts between software and hardware were particularly highlighted in our project due to lack of knowledge, however the extensive development activities are still the major differencing factor.
-
 ## Multiplexing in time vs space
 
 Hardware is by nature parallel, while software is, in general, sequential[^seq]. The perhaps biggest benefit of implementing algorithms in hardware is that we can utilize the built-in disposition for parallelism to execute multiple actions at once. This is done by creating several components separate in space which operate independently of each other, hence instead of multiplexing actions over time, we multiplex them over space. An example of a concrete benefit can be seen in @tbl:clock-cycles, where the speed of odd-even merge sort in hardware can at best take only $1$ clock cycle while selection sort requires at least $N^2$ cycles.
@@ -323,11 +321,9 @@ Hardware is by nature parallel, while software is, in general, sequential[^seq].
 
 Although utilizing parallelism in hardware has many benefits, it also comes with the drawback of requiring specialized hardware resources. In @fig:hardware-utilization we can clearly see that the resources needed for odd-even sort, which is highly parallelized, are substantially larger than selection sort and linear cell sort, which don't utilize parallelism to the same degree. Further the pure software implementation of either algorithm requires no extra hardware resources besides the generic processor.
 
-In conclusion, utilizing parallelism in hardware can substantially increase the speed of the algorithm, however, such implementations also require more hardware resources. Hence one has to make a trade-off between multiplexing the algorithm in time or in space.
-
 # Conclusion
 
-TODO
+We found that the development efforts between software and hardware were particularly highlighted in our project due to lack of knowledge. However the extensive development activities are still a major factor causing hardware development to be more labor-intensive than software development. Further utilizing parallelism in hardware can substantially increase the speed of the algorithm, however, such implementations also require more hardware resources. Hence one has to make a trade-off between multiplexing the algorithm in time or in space.
 
 # References {-}
 
