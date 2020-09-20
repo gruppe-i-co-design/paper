@@ -21,9 +21,11 @@ abstract: |
 
 # Introduction
 
-Choosing the right implementation for an algorithm is an important task. It can help you save both time and resources. It is therefore important to consider the ups and downs for both hardware and software. Is the extra development effort worth it when planning to create a hardware implementation of an algorithm? Is the concurrent nature of hardware something that is worth exploiting, or would the sequential nature of software be good enough?
+The level of concurrency varies among array sorting algorithms. In some cases it is low, e.g. selection sorting, but in other cases it is higher, e.g. odd-even sorting. As Vasquez' shows in his Hackaday article [@vasquez16], we can utilize field-programmable gate arrays (FPGAs) as a platform to implement parallelized versions of concurrent sorting algorithms. Further Skliarova [@skliarova2015] shows an example of implementing a concurrent sorting network on a FPGA. In both cases one is able to take advantage of the parallel nature of hardware to increase the performance of the algorithms.
 
-Our goal for this paper is to explore and implement three different sorting algorithms in software and hardware. Furthermore, we will compare the different implementations with regards to efficiency, performance, flexibility and complexity; in particular hardware contrary to software trade-offs.
+Depending on the context of the application, choosing the algorithm and it's implementation with care can be crucial to fulfil the given requirements. As different algorithms and implementations have widely different properties when it comes to performance, efficiency, flexibility, resource usage and code complexity. Understanding these trade-offs is valuable to develop highly effective and well engineered applications.
+
+We will explore and implement three different sorting algorithms as software (single-thread C programs) and hardware (VHDL) implementations in FPGAs. Furthermore, we will compare the different implementations with regards to efficiency, performance, flexibility, resource usage and code complexity; in particular contrasting hardware and software trade-offs.
 
 # Methods
 
@@ -224,7 +226,7 @@ The implementation and idea for the algortihm comes from Skilarova's presentatio
 
 The algorithm is inspired by bubble sort, and is a relatively straight forward. Bubble sort functioning by comparing adjacent elements; if the array elements are sorted, no swapping is terminated. Contrarily, the elements need to be switched. The even-odd transposition sort algorithm operates by comparing all odd/even listed pairs of neighboring elements in the array if the match is in incorrect order; in other words, the primary element is bigger than the second the elements are swapped. The second step is to compare all even/odd listed matches of adjoining elements. These two steps are repeating until the array is sorted.
 
-Knuth goes deeply into the ways in which sorting networks kan be optimized and are created in his masterpiece; _The Art of Computer Programming_ [@knuthsortnetwork1998]. Further the parallelization of the algorithm is well explained in the book from Nvidia called _GPU Gems 2_ [@gpugems2; chapter 46]. It details optimized sorting on GPUs using sorting networks and parallel comparisions. The parallelization aspect is quite similar between GPUs and FPGAs.
+Knuth goes deeply into the ways in which sorting networks kan be optimized and are created in his masterpiece; _The Art of Computer Programming_ [@knuthsortnetwork1998]. Further the parallelization of the algorithm is well explained in the book from Nvidia called _GPU Gems 2_ [@gpugems2]. It details optimized sorting on GPUs using sorting networks and parallel comparisions. The parallelization aspect is quite similar between GPUs and FPGAs.
 
 See @sec:visual-odd-even-sort for a visual explanation of the algorithm.
 
