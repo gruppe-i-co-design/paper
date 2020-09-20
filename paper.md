@@ -37,7 +37,7 @@ To confirm that our sorting algorithms worked as expected, we created a test ben
 
 The software implementation in contrast to the hardware implmentation was a much more straight forward process. We used Vitis 2020.1 to connect our Zybo board to our computer and created a C file that would be used to implement the algorithm. For testing, we used the built-in Vitis console.
 
-For our first algorithm, we made an effort to implement an IP implementation. Troubleshooting and implementation turned out to be an immensely time-consuming process. Seeing that the implementation of the IP would not have had a significant impact on our vision or result for our paper, we chose to exclude it.
+For our first algorithm, we e aeort to implement an IP implementation. Troubleshooting and implementation turned out to be an immensely time-consuming process. Seeing that the implementation of the IP would not have had a significant impact on our vision or result for our paper, we chose to exclude it.
 
 # Results
 
@@ -82,7 +82,7 @@ Firstly we will give a quick overview of the different implementations. In @tbl:
 : Overview of cells, IO-ports and nets used across multiple input sizes for hardware implementations \label{tbl:overview-cells-io-nets}
 
 
-~~~{.matplotlib caption="Graph of cells, IO-ports and nets used across multiple input sizes for hardware"}
+~~~{.matplotlib caption="Graph of cells, IOports and nets used across multiple input sizes for hardware"}
 
 df = pd.read_csv("/home/oruud/Dokumenter/usn/codesign/paper/resources/hardware-resources.csv")
 colors = ['r', 'g', 'b', 'm']
@@ -117,7 +117,7 @@ See @sec:visual-selection-sort for a visual explanation of the algorithm.
 
 For the first hardware implentation we followed the _Vivado Quick Start Tutorial_ by Gericota for running VHDL code on the Zybo board using Vivado [@gericotahw2020].
 
-We have created a generic counter and register in the hardware implementation, which we want to reuse as much code as possible. The comparing counter is set to 1 as a default value, and the output of the RAM will be the first element in the array when we run the program. We temporarily store this index value of this element in a register and increment the index counter to compare the elements to find the smallest element in the array. Again, we temporarily store the index and the value of the smallest element in registers, then we swap those elements till the array is sorted. We have removed the RAM from the design file into the test bench file, which we wanted an external RAM instead of an internal RAM.
+We have created a generic counter and register in the hardware implementation, which we want to reuse as much code as possible. The comparing counter is set to 1 as a default value, and the output of the  will be the first element in the ar when we run the program. We temporarily store this index value of this element in a register and increment the index counter to compare the elements to find the smallest element in the array. Again, we temporarily store the index and the value of the smallest element in registers, then we swap those elements till the array is sorted. We have removed the  from the design file into the test bench file, which we wanted an external  instead of an internal .
 
 TODO add image of synth report
 
@@ -425,6 +425,6 @@ OX19LCJjb21tZW50cyI6eyJFVzdWZUpkNHJxNFZNVXR0Ijp7Im
 Rpc2N1c3Npb25JZCI6IlJiVGZHNTA5SlNGWVNKZEciLCJzdWIi
 OiJnaDozMTIzOTQ3MSIsInRleHQiOiJUZW5rdGUgw6UgZW5kcm
 UgbGl0dCBww6UgZGVubmUiLCJjcmVhdGVkIjoxNjAwNTE3ODMz
-ODgxfX0sImhpc3RvcnkiOlstMTcxNTIzMzY2NSwxMTkzNDcyND
-M4LDk4Mzk1OTM2N119
+ODgxfX0sImhpc3RvcnkiOlstMTA4MTM0OTY2MywtMTcxNTIzMz
+Y2NSwxMTkzNDcyNDM4LDk4Mzk1OTM2N119
 -->
