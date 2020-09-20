@@ -106,28 +106,6 @@ for column, title, ax in zip(['cells', 'io-ports', 'nets'], ['Cells', 'IO-ports'
 plt.tight_layout()
 ~~~
 
-| Implementation                     | Time complexity   |
-|------------------------------------|-------------------|
-| Selection sort (hardware/software) | $O(n^2)$          |
-| Linear cell sort (hardware)        | $O(n)$            |
-| Linear cell sort (software)        | $O(n^2)$          |
-| Odd-even sort (hardware)[^1]       | $O(n - k)$        |
-| Odd-even merge sort (software)     | $O(n (\log n)^2)$ |
-
-: Overview of time complexity for the different implementations
-
-| Implementation    | Worst                   | Best                    |
-|-------------------|-------------------------|-------------------------|
-| Selection sort    | $1 + N^2 + (N - 1) * 4$ | $1 + N^2 + (N - 1) * 4$ |
-| Linear cell sort  | $N$                     | $N$                     |
-| Odd-even sort[^1] | $N - k$                 | $1$                     |
-
-: Amount of clock cycles for hardware implementations, calculated based on ASMD charts
-
-
-[^1]: $k$ is the amount of layers in the initial sorting network, also referred
-  to as `SORT_NETWORK_SIZE`.
-
 ## Selection sort
 
 The Selection Sort is the most straightforward sorting algorithm. Our implementation will identify the minimum element in the array and swap it with the element in the primary position. Then it will identify the second position minimum element and swap it with the element in the second location, and it will continue executing this until the entire array is sorted. It has an $O(n^2)$ time complexity, which means it is inefficient on larger arrays. The input array divides into two subarrays, a sorted subarray of elements built up from top to bottom, and the remaining unsorted elements occupy the rest of the array.
@@ -344,6 +322,15 @@ In conclusion, the development efforts between software and hardware were partic
 ## Speed
 
 TODO
+
+## Space
+
+In hardware everything is running concurrently unlike in software where the code is executed in sequence. There are ways to make code concurrent in software, but it has some restrictions that we dont have in hardware. By being able to run everything concurrently in hardware we can implement some sorting algorithms a bit different then we would in software to make the algorithm execute / finish faster. This is a good thing making some hardware implementations much faster than in software. This comes with a big cost with regards to the resources need, we can see in figure.x that the resources need for the odd-even sort are immensly larger compared to the other sorting algorithms.
+
+
+
+In conclusion, ...
+
 
 # Conclusion
 
