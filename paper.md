@@ -325,8 +325,7 @@ TODO
 
 ## Space
 
-In hardware everything is running concurrently unlike in software where the code is executed in sequence. There are ways to make code concurrent in software, but it has some restrictions that we dont have in hardware. By being able to run everything concurrently in hardware we can implement some sorting algorithms a bit different then we would in software to make the algorithm execute / finish faster. This is a good thing making some hardware implementations much faster than in software. This comes with a big cost with regards to the resources need, we can see in figure.x that the resources need for the odd-even sort are immensly larger compared to the other sorting algorithms.
-
+In hardware, everything is running concurrently unlike in software where the code is executed in sequence. There are ways to make code concurrent in software, but it has some restrictions that we do not have in hardware. By being able to run everything concurrently in the hardware we can implement some sorting algorithms a bit different then we would in software to make the algorithm execute/finish faster. This is a good thing making some hardware implementations much faster than in software. This comes with a big cost with regards to the resources needed, we can see in figure.x that the resources needed for the odd-even sort are immensely larger compared to the other sorting algorithms.
 
 
 In conclusion, ...
