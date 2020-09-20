@@ -79,10 +79,10 @@ Firstly we will give a quick overview of the different implementations. In @tbl:
 | (3 layers)       |          8 |    76 |      133 |  392 |  431 |  65 |
 |                  |         16 |   276 |      517 | 1544 | 1583 | 257 |
 
-: Overview of cells, IO-ports, nets, LUTs and FFs used across multiple input sizes for hardware implementations \label{tbl:overview-cells-io-nets}
+: Overview of cells, IO-ports, nets, LUTs and FFs used across multiple input sizes for hardware implementations \label{tbl:hardware-utilization}
 
 
-~~~{.matplotlib caption="Graph of cells, IO-ports, nets, LUTs and FFs used across multiple input sizes for hardware implementations"}
+~~~{.matplotlib caption="Graph of cells, IO-ports, nets, LUTs and FFs used across multiple input sizes for hardware implementations" #fig:hardware-utilization}
 
 df = pd.read_csv("/home/oruud/Dokumenter/usn/codesign/paper/resources/hardware-resources.csv")
 colors = ['r', 'g', 'b', 'm']
@@ -275,7 +275,7 @@ We have tested the software implementation on the Zybo board and it worked perfe
 
 # Discussion
 
-Through our exploration, we managed to get all three algoritms working in both hardware and software. Further, we also found some clear distinctions between the algorithms in terms of complexity, speed, size and parallelization. We will now discuss and compare the different algorithms and implementations.
+Through our exploration, we managed to get all three algorithms working in both hardware and software. Further, we also found some clear distinctions between the algorithms in terms of development complexity, performance, efficiency, resource requirements and parallelization. We will now discuss and compare the different algorithms and implementations.
 
 ## Differing development effort
 
@@ -291,15 +291,15 @@ Lastly, despite gaining proficiency in using the tools for hardware development,
 
 In conclusion, the development efforts between software and hardware were particularly highlighted in our project due to lack of knowledge, however the extensive development activities are still the major differencing factor.
 
-## The trade-offs regarding concurrency
+## Multiplexing in time vs space
 
-Hardware is by nature parallel, while software is, in general, sequential[^2]. The perhaps biggest benefit to implementing algorithms in hardware is that we can utilize the built-in disposition for parallelism to execute multiple actions at once.
+Hardware is by nature parallel, while software is, in general, sequential[^seq]. The perhaps biggest benefit of implementing algorithms in hardware is that we can utilize the built-in disposition for parallelism to execute multiple actions at once. This is done by creating several components separate in space which operate independently of each other, hence instead of multiplexing actions over time, we multiplex them over space. An example of a concrete benefit can be seen
 
-We still have some sort of sequential logic in the form of an FSMD, but we can for example generate multiple components that will handle some sort of data concurrently. In software, on the other hand, the code is executed in sequence. There are ways to make code concurrent in software, but it comes with some restrictions we do not have in hardware. We can utilize the concurrent nature of hardware when we are implementing some sorting algorithms. This often leads to the implementation being faster in hardware than software. Although utilizing concurrency in hardware has many benefits, it also comes with the drawback of requiring more hardware resources and physical space. We can see in @tbl:overview-cells-io-nets that the resources needed for odd-even sort, which is highly parallel, are immensely larger compared to selection sort and linear cell sort, which don't utilize concurrency to the same degree. The question then becomes whether the resources need are worth the time efficiency we get by utilising the concurrency.
+[^seq]: A software program can be created to run tasks concurrently, either on separate processors or through time-slicing, however for our comparison we will consider a single-core computer running a sequential program.
 
-[^2]: A software program can be created to run tasks concurrently, either on separate processors or through time-slicing, however for our comparison we will consider a single-core computer running a sequential program.
+Although utilizing concurrency in hardware has many benefits, it also comes with the drawback of requiring specialized hardware resources. In @fig:hardware-utilization we can clearly see that the resources needed for odd-even sort, which is highly parallelized, are substantially larger compared to selection sort and linear cell sort, which don't utilize concurrency to the same degree. Further the pure software implementation of either algorithm requires no extra hardware resources besides the generic processor.
 
-In conclusion, utilizing concurrency can lead to improved speed and efficiency, however, concurrent implementations in hardware also require more hardware resources. This means that there is a tradeoff to be made between multiplexing in space or multiplexing in time.
+In conclusion, utilizing concurrency can lead to improved speed and efficiency, however, concurrent implementations in hardware also require more hardware resources. This means that there is a trade-off to be made between multiplexing in space or multiplexing in time.
 
 # Conclusion
 
