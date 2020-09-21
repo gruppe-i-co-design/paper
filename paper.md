@@ -227,7 +227,7 @@ Design charts for selection sort
 
 For the first software implementation, we followed the _Vivado Quick Start Tutorial_ by Gericota for using the microprocessor on the Zybo board [@gericotasw2020].
 
-The implementation of the algorithm in software was quick to write and certainly inspired by the hardware implementation. To keep it consistent, we decided to stick with similar names for the different components (in particular `index_counter` and `comparing_tindex_counter`). This means that it should be easy to compare the implementations.
+The implementation of the algorithm in software was quick to write and certainly inspired by the hardware implementation. To keep it consistent, we decided to stick with similar names for the different components (in particular `index_counter` and `comparing_index_counter`). This means that it should be easy to compare the implementations.
 
 We have tested the software implementation on the Zybo board and it worked perfectly, as seen in @fig:selection-serial. The code can be found in @lst:selection-code.
 
@@ -404,33 +404,6 @@ We found that the development efforts between software and hardware were particu
 ~~~{#lst:selection-code .c include=listings/selection-sort-sw/selection-sort.c caption="Code for software implementation of selection sort"}
 ~~~
 
-~~~{#lst:sort-controller-code .c caption="Code for communicating with the sort controller"}
-include "xparameters.h"
-include "xuartps_hw.h"
-
-int main(){
-	xil_printf("Start selection sort\n\n\r");
-
-	xil_printf("Sorting");
-	u32 slave_reg_2;
-	do {
-		slave_reg_2 = Xil_In32(XPAR_SORT_CONTROLLER_0_S00_AXI_BASEADDR + 8);
-		xil_printf(".");
-	} while ((slave_reg_2 & 0x1) == 0);
-	xil_printf("\n\r");
-
-	xil_printf("Printing\n\r");
-	u32 slave_reg_1;
-	do {
-		slave_reg_2 = Xil_In32(XPAR_SORT_CONTROLLER_0_S00_AXI_BASEADDR + 8);
-		slave_reg_1 = Xil_In32(XPAR_SORT_CONTROLLER_0_S00_AXI_BASEADDR + 4);
-		xil_printf("%lx ", slave_reg_1);
-	} while ((slave_reg_2 & 0x1) == 1);
-
-	return 0;
-}
-~~~
-
 \clearpage
 
 ## Linear cell sort
@@ -468,6 +441,34 @@ Finally, after putting together the different IP blocks and having the block dia
 To be able to display the sorted values in the serial terminal, we need to communicate with the sorting controller from the ZYNQ processing unit through the AXI interface. The code that has to run on the processing unit can be found in @lst:sort-controller-code. The function `Xil_In32`, provided by the platform, reads a value from the AXI interface. By reading slave register 2 of the sorting controller, we can tell if the sorting is done, as the first bit represents the `sort_done` signal. Further, by then repeatedly reading slave register 1 we will get the contents of the memory block as the sorting controller continuously updates the RAM address and reads the data into the slave register.
 
 However, despite the promise of this solution in theory, we could not get it working in pratice. Our best guess as to why it wasn't working was that since the sort controller updated the slave register with the RAM data value too quickly, as it's updated every clock cycle in hardware. Another possible reason for the error was that we could be reading from the wrong register at the AXI interface. Nonetheless, getting to the current non-working solution took us a considerable amount of effort, and we concluded that it was too time consuming to continue. If we were to continue trying, I think we would have redesign the sort controller to rather read an address from the AXI interface, which was then used to fetch a value from RAM. This would allow the software on the Zynq processor to iterate over the RAM positions and allow the data values to stay longer in the slave register.
+
+~~~{#lst:sort-controller-code .c caption="Code for communicating with the sort controller"}
+include "xparameters.h"
+include "xuartps_hw.h"
+
+int main(){
+	xil_printf("Start selection sort\n\n\r");
+
+	xil_printf("Sorting");
+	u32 slave_reg_2;
+	do {
+		slave_reg_2 = Xil_In32(XPAR_SORT_CONTROLLER_0_S00_AXI_BASEADDR + 8);
+		xil_printf(".");
+	} while ((slave_reg_2 & 0x1) == 0);
+	xil_printf("\n\r");
+
+	xil_printf("Printing\n\r");
+	u32 slave_reg_1;
+	do {
+		slave_reg_2 = Xil_In32(XPAR_SORT_CONTROLLER_0_S00_AXI_BASEADDR + 8);
+		slave_reg_1 = Xil_In32(XPAR_SORT_CONTROLLER_0_S00_AXI_BASEADDR + 4);
+		xil_printf("%lx ", slave_reg_1);
+	} while ((slave_reg_2 & 0x1) == 1);
+
+	return 0;
+}
+~~~
+
 
 <!--stackedit_data:
 eyJkaXNjdXNzaW9ucyI6eyJSYlRmRzUwOUpTRllTSmRHIjp7In
