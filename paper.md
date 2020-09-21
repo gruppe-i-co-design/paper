@@ -23,23 +23,23 @@ abstract: |
 
 The level of concurrency varies among array sorting algorithms. In some cases it is low, e.g. selection sorting, but in other cases, it is higher, e.g. odd-even sorting. As Vasquez' shows in his Hackaday article [@vasquez16], we can utilize field-programmable gate arrays (FPGAs) as a platform to implement parallelized versions of concurrent sorting algorithms. Further Skliarova [@skliarova2015] shows an example of implementing a concurrent sorting network on an FPGA. In both cases, one can take advantage of the parallel nature of hardware to increase the performance of the algorithms.
 
-Depending on the context of the application, choosing the algorithm and its implementation with care can be crucial to fulfil the given requirements. As different algorithms and implementations have widely different properties when it comes to performance, efficiency, flexibility, resource usage and code complexity. Understanding these trade-offs is valuable to develop highly effective and well-engineered applications.
+Depending on the context of the application, choosing the algorithm and its implementation with care can be crucial to fulfil the given requirements. Different algorithms and implementations can have widely different properties when it comes to performance, efficiency, flexibility, resource usage and code complexity. Understanding these trade-offs is valuable to develop highly effective and well-engineered applications.
 
 We will explore and implement three different sorting algorithms as software (single-thread C programs) and hardware (VHDL) implementations in FPGAs. Furthermore, we will compare the different implementations with regards to efficiency, performance, flexibility, resource usage and code complexity; in particular contrasting hardware and software trade-offs.
 
 # Methods
 
-The tools used in this paper was Vivado 2020.1, Vitis 2020.1 and the Zybo Zynq-7000 board [@zybozynq7000]. We used Vivado for the hardware implementation of our paper to be able to program the Zynq-7000 board. For the software and IP implementation, we used the Vitis IDE, where we also used the Zynq-7000 board to test the implementations.
+The tools used in this paper was Vivado 2020.1, Vitis 2020.1 and the Zybo Zynq-7000 board [@zybozynq7000]. We used Vivado for the hardware implementations and we programmed the Zynq-7000 board. For the software and IP implementation, we used the Vitis IDE, where we also used the Zynq-7000 board for testing.
 
-For all of our algorithms, we followed the same steps. We started by creating an FSMD architecture of the overall algorithm we were currently building; we did this to get an overview of what components and signals were needed. Based on the FSMD architecture created, we designed the ASMD chart, this was done to easily convert the chart into code when implementing the algorithm, while also having a good overview of the states needed.
+For all of our algorithms, we followed the same steps. We started by creating a finite-state machine with datapath (FSMD) architecture of the overall algorithm we were currently building; we did this to get an overview of what components and signals were needed. Based on the FSMD architecture created, we designed the algorithmic state machine with datapath (ASMD) chart. This was done to easily convert the chart into code when implementing the algorithm, while also having a good overview of the states needed.
 
-After finishing making all of the necessary charts, we then started to implement the sorting algorithm into Vivado. To make the code as reusable as possible we create an individual file for each of our components. We also made the last two algorithms generic, such that the inputs and sizes could be adjusted by the user. 
+After finishing making all of the necessary charts, we then started to implement the sorting algorithm in Vivado. To make the code as reusable as possible, we created an individual file for each of our components. We also made the last two algorithms generic, such that the amount of inputs and sizes could be easily adjusted by the user.
 
-To confirm that our sorting algorithms worked as expected, we created a test bench for the project and analysed the outputs to see whether we achieved to create the algorithm or not.
+To confirm that our sorting algorithms worked as expected, we created a test bench and analysed the outputs.
 
-The software implementation in contrast to the hardware implementation was a much more straight forward process. We used Vitis 2020.1 to connect our Zybo board to our computer and created a C file that would be used to implement the algorithm. For testing, we used the built-in Vitis console.
+The software implementation, in contrast to the hardware implementation, was a much more straight forward process. Firstly, we created a generic block diagram with the Zynq processor unit in Vivado. Then after uploading it to Vitis, we simply connect the Zybo board to the computer and started running the software code. For testing, we used the built-in Vitis serial console.
 
-For our first algorithm, we made an effort to implement an IP implementation. Troubleshooting and implementation turned out to be an immensely time-consuming process. Seeing that the implementation of the IP would not have had a significant impact on our vision or result for our paper, we chose to exclude it from the final discussion and consideration, however we left the results for the particularly interested. See @sec:ip-implementation-appendix.
+For our first algorithm, we made an effort to create an IP block. This turned out to be an immensely time-consuming process due to a lot of troubleshooting. Seeing that the implementation of the IP would not have had a significant impact on our vision or result for our paper, we chose to exclude it from consideration. However we left the results for the particularly interested in @sec:ip-implementation-appendix.
 
 # Results
 
