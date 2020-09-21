@@ -397,7 +397,9 @@ We found that the development efforts between software and hardware were particu
 
 \includegraphics[page=1]{./resources/visual-explanation-even-odd-transition-and-merge-network.pdf}
 
-# The code for the software implementations
+# The code
+
+We have only included the code for the software implementations due to the hardware implementations having several hundred lines. As the code is not the primary product of this paper, it will only be available as supplementary ZIP-files.
 
 ## Selection sort
 
