@@ -1,5 +1,4 @@
 PANDOC_FLAGS= \
-	--template=template.latex \
 	--toc \
 	--toc-depth 2 \
 	--number-sections \
